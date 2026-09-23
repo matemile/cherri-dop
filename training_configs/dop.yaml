@@ -1,0 +1,789 @@
+data:
+  format: zarr
+  frequency: 12h
+  datasets:
+    microwave:
+      forcing:
+      - channel
+      - reportype
+      - satellite_identifier
+      - satellite_instrument
+      - scanline
+      - scanpos
+      - lsm
+      - seaice
+      - zenith
+      - azimuth
+      - datum_status
+      diagnostic: []
+      processors:
+        imputer:
+          _target_: anemoi.models.preprocessing.imputer.InputImputer
+          config:
+            default: mean
+        normalizer:
+          _target_: anemoi.models.preprocessing.normalizer.InputNormalizer
+          config:
+            default: mean-std
+    iasi:
+      forcing:
+      - channel
+      - wavenumber_cm1
+      diagnostic: []
+      processors:
+        imputer:
+          _target_: anemoi.models.preprocessing.imputer.InputImputer
+          config:
+            default: mean
+        normalizer:
+          _target_: anemoi.models.preprocessing.normalizer.InputNormalizer
+          config:
+            default: mean-std
+    ascat:
+      forcing:
+      - wvc_quality_flag
+      - ice_prob
+      - ice_age
+      - bs_distance
+      - wvc_index
+      diagnostic: []
+      processors:
+        imputer:
+          _target_: anemoi.models.preprocessing.imputer.InputImputer
+          config:
+            default: mean
+        normalizer:
+          _target_: anemoi.models.preprocessing.normalizer.InputNormalizer
+          config:
+            default: mean-std
+  resolution: native-observations
+dataloader:
+  prefetch_factor: 1
+  pin_memory: true
+  persistent_workers: false
+  fake_dataloading: false
+  read_group_size: ${system.hardware.num_gpus_per_model}
+  num_workers:
+    training: 1
+    validation: 1
+    test: 1
+  batch_size:
+    training: 1
+    validation: 1
+    test: 1
+  limit_batches:
+    training: null
+    validation: 2
+    test: 2
+  training:
+    datasets:
+      microwave:
+        dataset_config:
+          dataset: ${system.input.microwave}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - brightness_temperature
+          - channel
+          - reportype
+          - satellite_identifier
+          - satellite_instrument
+          - scanline
+          - scanpos
+          - lsm
+          - seaice
+          - zenith
+          - azimuth
+          - datum_status
+        start: '2020-01-01T00:00:00'
+        end: '2020-01-05T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      iasi:
+        dataset_config:
+          dataset: ${system.input.iasi}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wavenumber_radiance
+          - channel
+          - wavenumber_cm1
+        start: '2020-01-01T00:00:00'
+        end: '2020-01-05T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      ascat:
+        dataset_config:
+          dataset: ${system.input.ascat}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wind_speed
+          - wind_dir
+          - wvc_quality_flag
+          - ice_prob
+          - ice_age
+          - bs_distance
+          - wvc_index
+        start: '2020-01-01T00:00:00'
+        end: '2020-01-05T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+  validation:
+    datasets:
+      microwave:
+        dataset_config:
+          dataset: ${system.input.microwave}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - brightness_temperature
+          - channel
+          - reportype
+          - satellite_identifier
+          - satellite_instrument
+          - scanline
+          - scanpos
+          - lsm
+          - seaice
+          - zenith
+          - azimuth
+          - datum_status
+        start: '2020-01-06T00:00:00'
+        end: '2020-01-07T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      iasi:
+        dataset_config:
+          dataset: ${system.input.iasi}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wavenumber_radiance
+          - channel
+          - wavenumber_cm1
+        start: '2020-01-06T00:00:00'
+        end: '2020-01-07T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      ascat:
+        dataset_config:
+          dataset: ${system.input.ascat}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wind_speed
+          - wind_dir
+          - wvc_quality_flag
+          - ice_prob
+          - ice_age
+          - bs_distance
+          - wvc_index
+        start: '2020-01-06T00:00:00'
+        end: '2020-01-07T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+  test:
+    datasets:
+      microwave:
+        dataset_config:
+          dataset: ${system.input.microwave}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - brightness_temperature
+          - channel
+          - reportype
+          - satellite_identifier
+          - satellite_instrument
+          - scanline
+          - scanpos
+          - lsm
+          - seaice
+          - zenith
+          - azimuth
+          - datum_status
+        start: '2020-01-08T00:00:00'
+        end: '2020-01-09T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      iasi:
+        dataset_config:
+          dataset: ${system.input.iasi}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wavenumber_radiance
+          - channel
+          - wavenumber_cm1
+        start: '2020-01-08T00:00:00'
+        end: '2020-01-09T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+      ascat:
+        dataset_config:
+          dataset: ${system.input.ascat}
+          frequency: ${data.frequency}
+          window: (-3h,+0h]
+          select:
+          - wind_speed
+          - wind_dir
+          - wvc_quality_flag
+          - ice_prob
+          - ice_age
+          - bs_distance
+          - wvc_index
+        start: '2020-01-08T00:00:00'
+        end: '2020-01-09T12:00:00'
+        max_rows_per_window: 32768
+        trajectory: null
+diagnostics:
+  plot:
+    settings:
+      asynchronous: true
+      projection_kind: equirectangular
+      datashader: true
+      precip_and_related_fields:
+      - tp
+      - cp
+      colormaps:
+        default:
+          _target_: anemoi.training.utils.custom_colormaps.MatplotlibColormap
+          name: viridis
+        error:
+          _target_: anemoi.training.utils.custom_colormaps.MatplotlibColormap
+          name: bwr
+        precip:
+          _target_: anemoi.training.utils.custom_colormaps.MatplotlibColormapClevels
+          clevels:
+          - '#ffffff'
+          - '#04e9e7'
+          - '#019ff4'
+          - '#0300f4'
+          - '#02fd02'
+          - '#01c501'
+          - '#008e00'
+          - '#fdf802'
+          - '#e5bc00'
+          - '#fd9500'
+          - '#fd0000'
+          - '#d40000'
+          - '#bc0000'
+          - '#f800fd'
+          variables: ${diagnostics.plot.settings.precip_and_related_fields}
+    frequency:
+      batch: 750
+      epoch: 5
+    sample_idx: 0
+    parameters: []
+    datasets_to_plot:
+    - microwave
+    - iasi
+    - ascat
+    focus_areas:
+      europe:
+        latlon_bbox:
+        - 30.0
+        - -20.0
+        - 60.0
+        - 40.0
+      china:
+        latlon_bbox:
+        - 18.0
+        - 73.0
+        - 54.0
+        - 135.0
+    callbacks: []
+  callbacks: []
+  benchmark_profiler:
+    memory:
+      enabled: false
+      steps: 5
+      warmup: 2
+      extra_plots: false
+      trace_rank0_only: false
+    time:
+      enabled: false
+      verbose: false
+    speed:
+      enabled: false
+    system:
+      enabled: false
+    model_summary:
+      enabled: false
+    snapshot:
+      enabled: false
+      steps: 4
+      warmup: 0
+  log:
+    mlflow:
+      enabled: false
+      _target_: anemoi.training.diagnostics.mlflow.logger.AnemoiMLflowLogger
+      offline: false
+      authentication: false
+      tracking_uri: None
+      experiment_name: anemoi-debug
+      project_name: Anemoi
+      system: false
+      terminal: true
+      run_name: null
+      prefix: ''
+      log_hyperparams: true
+      on_resume_create_child: true
+      expand_hyperparams:
+      - config
+      http_max_retries: 35
+      max_params_length: 2000
+      save_dir: ${system.output.logs.mlflow}
+    interval: 100
+  debug:
+    anomaly_detection: false
+  enable_checkpointing: true
+  checkpoint:
+    every_n_minutes:
+      save_frequency: 30
+      num_models_saved: 3
+    every_n_epochs:
+      save_frequency: 1
+      num_models_saved: -1
+    every_n_train_steps:
+      save_frequency: null
+      num_models_saved: 0
+  enable_progress_bar: true
+  check_val_every_n_epoch: 1
+  print_memory_summary: false
+system:
+  output:
+    root: ${oc.env:SCRATCH,.}/cherri-dop/native-observations/
+    logs:
+      root: logs
+      wandb: wandb
+      mlflow: mlflow
+      tensorboard: tensorboard
+    checkpoints:
+      root: checkpoint
+      every_n_epochs: anemoi-by_epoch-epoch_{epoch:03d}-step_{step:06d}
+      every_n_train_steps: anemoi-by_step-epoch_{epoch:03d}-step_{step:06d}
+      every_n_minutes: anemoi-by_time-epoch_{epoch:03d}-step_{step:06d}
+    plots: plots
+    profiler: profiler
+  input:
+    dataset: aifs-ea-an-oper-0001-mars-${data.resolution}-1979-2023-6h-v8
+    graph: ${system.output.root}/graph.pt
+    loss_matrices_path: null
+    truncation: null
+    truncation_inv: null
+    warm_start: null
+    dataset_b: aifs-ea-an-oper-0001-mars-${data.resolution}-1979-2023-6h-v8
+    microwave: ${oc.env:DOP_DATA_ROOT,../../datasets}/mars-odb-radiances-tabular-20200101-20220306-3h.zarr
+    iasi: ${oc.env:DOP_DATA_ROOT,../../datasets}/metop-iasi-radiances-tabular-20200101-20220108-3h.zarr
+    ascat: ${oc.env:DOP_DATA_ROOT,../../datasets}/metop-ascat-tabular-20200101-20220108-3h.zarr
+  hardware:
+    accelerator: gpu
+    num_gpus_per_node: ${oc.decode:${oc.env:SLURM_GPUS_PER_NODE,1}}
+    num_nodes: ${oc.decode:${oc.env:SLURM_NNODES,1}}
+    num_gpus_per_model: ${system.hardware.num_gpus_per_node}
+graph:
+  overwrite: true
+  nodes:
+    microwave:
+      node_builder:
+        _target_: anemoi.graphs.nodes.AnemoiDatasetNodes
+        dataset: ${dataloader.training.datasets.microwave.dataset_config}
+      attributes:
+        timedelta:
+          _target_: anemoi.graphs.nodes.attributes.Timedeltas
+          scale_seconds: 10800.0
+    iasi:
+      node_builder:
+        _target_: anemoi.graphs.nodes.AnemoiDatasetNodes
+        dataset: ${dataloader.training.datasets.iasi.dataset_config}
+      attributes:
+        timedelta:
+          _target_: anemoi.graphs.nodes.attributes.Timedeltas
+          scale_seconds: 10800.0
+    ascat:
+      node_builder:
+        _target_: anemoi.graphs.nodes.AnemoiDatasetNodes
+        dataset: ${dataloader.training.datasets.ascat.dataset_config}
+      attributes:
+        timedelta:
+          _target_: anemoi.graphs.nodes.attributes.Timedeltas
+          scale_seconds: 10800.0
+    hidden:
+      node_builder:
+        _target_: anemoi.graphs.nodes.TriNodes
+        resolution: 5
+  edges:
+  - source_name: microwave
+    target_name: hidden
+    edge_builders:
+    - _target_: anemoi.graphs.edges.ReversedKNNEdges
+      num_nearest_neighbours: 8
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes: ${graph.attributes.edges}
+  - source_name: iasi
+    target_name: hidden
+    edge_builders:
+    - _target_: anemoi.graphs.edges.ReversedKNNEdges
+      num_nearest_neighbours: 8
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes: ${graph.attributes.edges}
+  - source_name: ascat
+    target_name: hidden
+    edge_builders:
+    - _target_: anemoi.graphs.edges.ReversedKNNEdges
+      num_nearest_neighbours: 8
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes: ${graph.attributes.edges}
+  - source_name: hidden
+    target_name: hidden
+    edge_builders:
+    - _target_: anemoi.graphs.edges.MultiScaleEdges
+      x_hops: 1
+      scale_resolutions: ${graph.nodes.hidden.node_builder.resolution}
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes: ${graph.attributes.edges}
+  - source_name: hidden
+    target_name: microwave
+    edge_builders:
+    - _target_: anemoi.graphs.edges.KNNEdges
+      num_nearest_neighbours: 3
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes:
+      edge_length: ${graph.attributes.edges.edge_length}
+      edge_dirs: ${graph.attributes.edges.edge_dirs}
+      target_timedelta:
+        _target_: anemoi.graphs.edges.attributes.Timedeltas
+        node_axis: target
+        scale_seconds: 10800.0
+  - source_name: hidden
+    target_name: iasi
+    edge_builders:
+    - _target_: anemoi.graphs.edges.KNNEdges
+      num_nearest_neighbours: 3
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes:
+      edge_length: ${graph.attributes.edges.edge_length}
+      edge_dirs: ${graph.attributes.edges.edge_dirs}
+      target_timedelta:
+        _target_: anemoi.graphs.edges.attributes.Timedeltas
+        node_axis: target
+        scale_seconds: 10800.0
+  - source_name: hidden
+    target_name: ascat
+    edge_builders:
+    - _target_: anemoi.graphs.edges.KNNEdges
+      num_nearest_neighbours: 3
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes:
+      edge_length: ${graph.attributes.edges.edge_length}
+      edge_dirs: ${graph.attributes.edges.edge_dirs}
+      target_timedelta:
+        _target_: anemoi.graphs.edges.attributes.Timedeltas
+        node_axis: target
+        scale_seconds: 10800.0
+  attributes:
+    nodes: {}
+    edges:
+      edge_length:
+        _target_: anemoi.graphs.edges.attributes.EdgeLength
+        norm: unit-std
+      edge_dirs:
+        _target_: anemoi.graphs.edges.attributes.EdgeDirection
+        norm: unit-std
+  post_processors: []
+model:
+  num_channels: 128
+  cpu_offload: false
+  keep_batch_sharded: true
+  model:
+    _target_: anemoi.models.models.AnemoiModelEncProcDec
+    hidden_nodes_name: hidden
+    latent_skip: true
+  layer_kernels:
+    LayerNorm:
+      _target_: anemoi.models.layers.normalization.AutocastLayerNorm
+    Linear:
+      _target_: torch.nn.Linear
+    Activation:
+      _target_: torch.nn.GELU
+  processor:
+    _target_: anemoi.models.layers.processor.GNNProcessor
+    num_channels: ${model.num_channels}
+    trainable_size: ${model.edge_trainable_parameters.hidden2hidden}
+    sub_graph_edge_attributes: ${model.attributes.edges}
+    num_layers: 4
+    num_chunks: 4
+    mlp_extra_layers: 0
+    mlp_hidden_ratio: 1.0
+    mlp_implementation: mlp
+    cpu_offload: ${model.cpu_offload}
+    gradient_checkpointing: true
+    layer_kernels: ${model.layer_kernels}
+  encoders:
+    microwave:
+      source_datasets:
+      - microwave
+      dataset_fusing_strategy: none
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNForwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.data2hidden}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+    iasi:
+      source_datasets:
+      - iasi
+      dataset_fusing_strategy: none
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNForwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.data2hidden}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+    ascat:
+      source_datasets:
+      - ascat
+      dataset_fusing_strategy: none
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNForwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.data2hidden}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+  latent_aggregator:
+    _target_: anemoi.models.layers.aggregator.SumAggregator
+  decoders:
+    microwave:
+      target_datasets:
+      - microwave
+      target_node_features:
+      - coordinates
+      - target_forcings
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNBackwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.hidden2data}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+    iasi:
+      target_datasets:
+      - iasi
+      target_node_features:
+      - coordinates
+      - target_forcings
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNBackwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.hidden2data}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+    ascat:
+      target_datasets:
+      - ascat
+      target_node_features:
+      - coordinates
+      - target_forcings
+      mapper:
+        _target_: anemoi.models.layers.mapper.GNNBackwardMapper
+        num_channels: ${model.num_channels}
+        trainable_size: ${model.edge_trainable_parameters.hidden2data}
+        sub_graph_edge_attributes: ${model.attributes.edges}
+        num_chunks: 4
+        mlp_extra_layers: 0
+        mlp_hidden_ratio: 1.0
+        mlp_implementation: mlp
+        cpu_offload: ${model.cpu_offload}
+        gradient_checkpointing: true
+        layer_kernels: ${model.layer_kernels}
+  residual:
+    datasets: {}
+  output_mask:
+    datasets: {}
+  node_trainable_parameters:
+    hidden: 8
+  edge_trainable_parameters:
+    data2hidden: 0
+    hidden2hidden: 8
+    hidden2data: 0
+  attributes:
+    edges:
+    - edge_length
+    - edge_dirs
+    nodes: []
+  bounding:
+    datasets: {}
+task:
+  _target_: anemoi.training.tasks.OffsetForecaster
+  input_offsets:
+  - 0h
+  output_offsets:
+  - 12h
+  rollout_shift: 12h
+  rollout:
+    start: 1
+    epoch_increment: 0
+    maximum: 1
+  validation_rollout: 1
+training:
+  scalers:
+    datasets:
+      microwave:
+        general_variable:
+          _target_: anemoi.training.losses.scalers.GeneralVariableLossScaler
+          weights:
+            default: 1.0
+      iasi:
+        general_variable:
+          _target_: anemoi.training.losses.scalers.GeneralVariableLossScaler
+          weights:
+            default: 1.0
+      ascat:
+        general_variable:
+          _target_: anemoi.training.losses.scalers.GeneralVariableLossScaler
+          weights:
+            default: 1.0
+  training_loss:
+    datasets:
+      microwave:
+        _target_: anemoi.training.losses.MSELoss
+        scalers:
+        - general_variable
+        ignore_nans: true
+      iasi:
+        _target_: anemoi.training.losses.MSELoss
+        scalers:
+        - general_variable
+        ignore_nans: true
+      ascat:
+        _target_: anemoi.training.losses.MSELoss
+        scalers:
+        - general_variable
+        ignore_nans: true
+  optimization:
+    optimizer:
+      _target_: torch.optim.AdamW
+      betas:
+      - 0.9
+      - 0.95
+    lr_scheduler:
+      _target_: timm.scheduler.CosineLRScheduler
+      lr_min: 3.0e-07
+      t_initial: ${training.max_steps}
+      warmup_t: 1000
+      t_in_epochs: false
+    lr: 6.25e-05
+    pl_lr_scheduler:
+      interval: step
+  run_id: null
+  fork_run_id: null
+  transfer_learning: false
+  load_weights_only: false
+  update_ds_stats_on_ckpt_load:
+    states: false
+    tendencies: true
+  check_variables_compatibility:
+    ignore_units: false
+    ignore_processing_period: false
+  deterministic: false
+  precision: bf16-mixed
+  accum_grad_batches: 1
+  num_sanity_val_steps: 0
+  gradient_clip:
+    val: 32.0
+    algorithm: value
+  method:
+    _target_: anemoi.training.train.methods.SingleTraining
+  strategy:
+    _target_: anemoi.training.distributed.strategy.DDPGroupStrategy
+    num_gpus_per_model: ${system.hardware.num_gpus_per_model}
+    read_group_size: ${dataloader.read_group_size}
+    use_local_synchronization: true
+    broadcast_buffers: false
+  loss_gradient_scaling: false
+  max_epochs: 1
+  max_steps: 150000
+  submodules_to_freeze: []
+  validation_metrics:
+    datasets:
+      microwave:
+        mse:
+          _target_: anemoi.training.losses.MSELoss
+          scalers: []
+          ignore_nans: true
+      iasi:
+        mse:
+          _target_: anemoi.training.losses.MSELoss
+          scalers: []
+          ignore_nans: true
+      ascat:
+        mse:
+          _target_: anemoi.training.losses.MSELoss
+          scalers: []
+          ignore_nans: true
+  variable_groups:
+    datasets:
+      microwave:
+        default: sfc
+        sfc:
+          param:
+          - brightness_temperature
+      iasi:
+        default: sfc
+        sfc:
+          param:
+          - wavenumber_radiance
+      ascat:
+        default: sfc
+        sfc:
+          param:
+          - wind_speed
+          - wind_dir
+  metrics:
+    datasets:
+      microwave:
+      - brightness_temperature
+      iasi:
+      - wavenumber_radiance
+      ascat:
+      - wind_speed
+      - wind_dir
+config_validation: true
