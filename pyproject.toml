@@ -1,0 +1,44 @@
+[project]
+name = "cherri-dop"
+version = "0.1.0"
+description = "Reproducible uv-managed development env for CHERRI project and DOP framework using Anemoi."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "anemoi-training",
+    "anemoi-models",
+    "anemoi-graphs",
+    "anemoi-inference",
+    "anemoi-datasets",
+    "anemoi-registry",
+    "earthkit-data>=0.19",
+    "zarr<3.0.0",
+    "numpy>=1.26.4",
+    "termcolor>=3.1.0",
+    "eckitlib==1.31.4",
+    "torch==2.10.0+cu128",
+    "torch-geometric==2.6.1",
+    "ipykernel>=7.0.0a1",
+    "jupyter>=1.1.1",
+    "boto3>=1.39.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "training" }
+anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "models" }
+anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "graphs" }
+torch = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
