@@ -21,3 +21,9 @@ htmlcov/
 .env
 .env.*
 !.env.example
+
+# Logs and generated training output
+*.log
+logs/
+outputs/
+output/
