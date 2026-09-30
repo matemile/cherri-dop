@@ -13,7 +13,6 @@ dependencies = [
     "anemoi-registry",
     "earthkit-data>=0.19",
     "zarr<3.0.0",
-    "numpy>=1.26.4",
     "termcolor>=3.1.0",
     "eckitlib==1.31.4",
     "torch==2.10.0+cu128",
@@ -21,6 +20,8 @@ dependencies = [
     "ipykernel>=7.0.0a1",
     "jupyter>=1.1.1",
     "boto3>=1.39.3",
+    "trimesh>=4.11.2",
+    "datashader",
 ]
 
 [dependency-groups]

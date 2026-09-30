@@ -1,0 +1,293 @@
+
+Lmod is automatically replacing "craype-x86-rome" with "craype-x86-trento".
+
+
+Lmod is automatically replacing "LUMI/25.03" with "CrayEnv".
+
++ pwd -P
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop
++ ls -l .venv/bin/python .venv/bin/anemoi-training
+-rwxrwx--x 1 milemate project_465003270 366 sep.  30 01:45 .venv/bin/anemoi-training
+lrwxrwxrwx 1 milemate project_465003270  83 sep.  30 01:45 .venv/bin/python -> /users/milemate/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11
++ head -n 1 .venv/bin/anemoi-training
+#!/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/python
++ readlink -f .venv/bin/python
+/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11
++ .venv/bin/python -c 'import sys; print(sys.executable); print(sys.prefix)'
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/python
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv
++ .venv/bin/python .venv/bin/anemoi-training --help
+  File "/opt/venv/lib/python3.12/site-packages/anemoi/utils/cli.py", line 179, in register_commands
+    imported = importlib.import_module(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/config.py", line 27, in <module>
+    from pydantic import BaseModel
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/__init__.py", line 5, in <module>
+    from ._migration import getattr_migration
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/_migration.py", line 4, in <module>
+    from pydantic.warnings import PydanticDeprecatedSince20
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/warnings.py", line 5, in <module>
+    from .version import version_short
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/version.py", line 7, in <module>
+    from pydantic_core import __version__ as __pydantic_core_version__
+  File "/opt/venv/lib/python3.12/site-packages/pydantic_core/__init__.py", line 8, in <module>
+    from ._pydantic_core import (
+usage: anemoi-training [-h] [--version] [--debug] [--rich]
+                       {checkpoint,evaluate,mlflow,profile,train,config} ...
+
+positional arguments:
+  {checkpoint,evaluate,mlflow,profile,train,config}
+                        commands:
+    checkpoint          Commands to interact with training checkpoints.
+    evaluate            Commands to evaluate Anemoi models.
+    mlflow              Commands to interact with MLflow.
+    profile             Commands to profile Anemoi models.
+    train               Commands to train Anemoi models.
+    config              Command not available.
+
+options:
+  -h, --help            show this help message and exit
+  --version, -V         show the version and exit
+  --debug, -d           Debug mode
+  --rich                Use rich for logging
++ source .venv/bin/activate
+++ '[' -z '' ']'
+++ '[' -n x ']'
+++ SCRIPT_PATH=.venv/bin/activate
+++ '[' .venv/bin/activate = /usr/bin/bash ']'
+++ deactivate nondestructive
+++ unset -f pydoc
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ hash -r
+++ '[' -z '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv
+++ '[' linux = cygwin ']'
+++ '[' linux = msys ']'
+++ export VIRTUAL_ENV
+++ '[' -z '' ']'
+++ unset SCRIPT_PATH
+++ _OLD_VIRTUAL_PATH=/users/milemate/.local/bin:/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin:/users/milemate/.local/bin:/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' xcherri-dop '!=' x ']'
+++ VIRTUAL_ENV_PROMPT=cherri-dop
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(cherri-dop) '
+++ export PS1
+++ alias pydoc
+++ true
+++ hash -r
++ unset PYTHONPATH
++ unset PYTHONHOME
++ unset VIRTUAL_ENV
++ export PYTHONNOUSERSITE=1
++ PYTHONNOUSERSITE=1
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ export MLFLOW_ALLOW_FILE_STORE=true
++ MLFLOW_ALLOW_FILE_STORE=true
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri dop training start 2026-09-30T08:40:01Z ==
++ echo '== cherri dop training start 2026-09-30T08:40:01Z =='
+== gpu env CUDA_VISIBLE_DEVICES=unset ROCR_VISIBLE_DEVICES=0 ==
++ echo '== gpu env CUDA_VISIBLE_DEVICES=unset ROCR_VISIBLE_DEVICES=0 =='
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri cli start 2026-09-30T08:40:01Z ==
++ echo '== cherri cli start 2026-09-30T08:40:01Z =='
++ /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training train --config-name=config_test.yaml --config-path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs
+2026-09-30 11:43:31 INFO Running anemoi training command with overrides: ['--config-name=config_test.yaml', '--config-path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs']
+2026-09-30 11:44:57 INFO Appending current working directory (/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop) to the search path.
+2026-09-30 11:44:57 INFO Search path is now: [provider=hydra, path=pkg://hydra.conf, provider=main, path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs, provider=anemoi-cwd-searchpath-plugin, path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop, provider=anemoi-package-searchpath-plugin, path=pkg://anemoi.training/config]
+[2026-09-30 11:44:58,553][anemoi.training.schemas.base_schema][INFO] - adjusting save_dir path to match output mlflow logs
+[2026-09-30 11:44:58,554][anemoi.training.train.train][INFO] - Skipping config validation.
+[2026-09-30 11:44:58,613][anemoi.training.train.train][INFO] - Starting from checkpoint: False
+[2026-09-30 11:44:58,613][anemoi.training.train.train][INFO] - MLFLOW logger enabled
+[2026-09-30 11:44:58,613][anemoi.training.train.train][INFO] - Initializing MLflow logger lazily...
+[2026-09-30 11:45:12,938][anemoi.training.diagnostics.mlflow.logger][INFO] - Maximum number of params allowed to be logged is: 2500
+[2026-09-30 11:45:12,939][anemoi.training.diagnostics.mlflow.logger][INFO] - MLflow is logging offline.
+[2026-09-30 11:45:13,785][pytorch_lightning.loggers.mlflow][WARNING] - Experiment with name testobs not found. Creating it.
+[2026-09-30 11:45:18,777][anemoi.training.diagnostics.mlflow.logger][INFO] - Terminal Log Path: /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/output/plots/81465613d51b4224a2b50627297101c4/plots/terminal_log.txt
+[2026-09-30 11:45:18,778][anemoi.training.diagnostics.mlflow.logger][INFO] - SLURM job id: 22448258
+[2026-09-30 11:45:18,778][anemoi.training.train.train][INFO] - Run id: 81465613d51b4224a2b50627297101c4
+[2026-09-30 11:45:18,778][anemoi.training.train.train][INFO] - Parent run server2server: None
+[2026-09-30 11:45:18,778][anemoi.training.train.train][INFO] - Fork run server2server: None
+[2026-09-30 11:45:18,779][anemoi.training.train.train][INFO] - Checkpoints path: {'root': PosixPath('/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/output/checkpoint/81465613d51b4224a2b50627297101c4'), 'every_n_epochs': 'anemoi-by_epoch-epoch_{epoch:03d}-step_{step:06d}', 'every_n_train_steps': 'anemoi-by_step-epoch_{epoch:03d}-step_{step:06d}', 'every_n_minutes': 'anemoi-by_time-epoch_{epoch:03d}-step_{step:06d}'}
+[2026-09-30 11:45:18,779][anemoi.training.train.train][INFO] - Plots path: /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/output/plots/81465613d51b4224a2b50627297101c4
+[2026-09-30 11:45:18,779][anemoi.training.train.train][INFO] - Dry run: False
+[2026-09-30 11:45:18,781][anemoi.training.data.datamodule][INFO] - Initializing multi-dataset module with datasets: ['era5', 'surface']
+[2026-09-30 11:45:18,782][anemoi.training.data.data_reader][INFO] - Creating a GriddedDataReader...
+[2026-09-30 11:45:19,895][anemoi.training.data.data_reader][INFO] - Creating ObservationDataReader...
+[2026-09-30 11:45:23,212][anemoi.datasets.date_indexing][INFO] - Created date indexing: <anemoi.datasets.date_indexing.bisect.DateBisect object at 0x15249b514c10>
+[2026-09-30 11:45:23,368][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (671089, 25), caching 7 chunks (448.00 MB)
+[2026-09-30 11:45:23,462][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (2796202, 3), caching 8 chunks (512.00 MB)
+[2026-09-30 11:45:23,612][anemoi.datasets.date_indexing][INFO] - Created date indexing: <anemoi.datasets.date_indexing.bisect.DateBisect object at 0x15249b3690d0>
+[2026-09-30 11:45:23,683][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (671089, 25), caching 7 chunks (448.00 MB)
+[2026-09-30 11:45:23,692][anemoi.datasets.date_indexing][INFO] - Created date indexing: <anemoi.datasets.date_indexing.bisect.DateBisect object at 0x15249b368e10>
+[2026-09-30 11:45:23,762][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (671089, 25), caching 7 chunks (448.00 MB)
+[2026-09-30 11:45:23,763][anemoi.datasets.date_indexing][INFO] - Created date indexing: <anemoi.datasets.date_indexing.bisect.DateBisect object at 0x15249b368d50>
+[2026-09-30 11:45:23,833][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (671089, 25), caching 7 chunks (448.00 MB)
+[2026-09-30 11:45:23,834][anemoi.datasets.date_indexing][INFO] - Created date indexing: <anemoi.datasets.date_indexing.bisect.DateBisect object at 0x15249b368e10>
+[2026-09-30 11:45:23,904][anemoi.datasets.buffering][INFO] - Initializing ReadAheadWriteBehindBuffer with chunk shape (671089, 25), caching 7 chunks (448.00 MB)
+[2026-09-30 11:45:24,468][anemoi.training.data.datamodule][INFO] - Training dataset has 56975 valid samples after applying relative date indices {'era5': [0, 1], 'surface': [0, 1]}.
+[2026-09-30 11:45:24,470][anemoi.training.train.train][INFO] - Dataset 'era5' - Number of variables: 123
+[2026-09-30 11:45:24,470][anemoi.training.train.train][INFO] - Dataset 'era5' - Variables: ['100u', '100v', '10u', '10v', '2d', '2t', 'cos_julian_day', 'cos_latitude', 'cos_local_time', 'cos_longitude', 'cp', 'insolation', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'sin_julian_day', 'sin_latitude', 'sin_local_time', 'sin_longitude', 'slor', 'sp', 't_1', 't_10', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_30', 't_300', 't_400', 't_50', 't_500', 't_600', 't_70', 't_700', 't_850', 't_925', 'tcc', 'tcw', 'tp', 'u_1', 'u_10', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_30', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_70', 'u_700', 'u_850', 'u_925', 'v_1', 'v_10', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_30', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_70', 'v_700', 'v_850', 'v_925', 'w_1', 'w_10', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_30', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_70', 'w_700', 'w_850', 'w_925', 'z', 'z_1', 'z_10', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_30', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_70', 'z_700', 'z_850', 'z_925']
+[2026-09-30 11:45:24,471][anemoi.training.train.train][INFO] - Dataset 'surface' - Number of variables: 16
+[2026-09-30 11:45:24,471][anemoi.training.train.train][INFO] - Dataset 'surface' - Variables: ['stalt', 'lsm', 'obsvalue_t2m_0', 'obsvalue_u10m_0', 'obsvalue_v10m_0', 'obsvalue_ps_0', 'obsvalue_pmsl_0', 'cos_julian_day', 'sin_julian_day', 'cos_local_time', 'sin_local_time', 'cos_sza', 'cos_latitude', 'sin_latitude', 'cos_longitude', 'sin_longitude']
+[2026-09-30 11:45:25,312][anemoi.training.train.train][INFO] - Dataset 'era5' - Total number of prognostic variables: 110
+[2026-09-30 11:45:25,313][anemoi.training.train.train][INFO] - Dataset 'era5' - Total number of auxiliary variables: 13
+[2026-09-30 11:45:25,313][anemoi.training.train.train][INFO] - Dataset 'surface' - Total number of prognostic variables: 5
+[2026-09-30 11:45:25,313][anemoi.training.train.train][INFO] - Dataset 'surface' - Total number of auxiliary variables: 11
+[2026-09-30 11:45:25,313][anemoi.training.train.train][INFO] - Total GPU count / model group size: 1 - NB: the learning rate will be scaled by this factor!
+[2026-09-30 11:45:25,313][anemoi.training.train.train][INFO] - Effective learning rate: 1.650e-04
+[2026-09-30 11:45:25,314][anemoi.training.train.train][INFO] - Training limits: max_epochs=100, max_steps=150000. Training will stop when either limit is reached first. Learning rate scheduler: {'_target_': 'timm.scheduler.CosineLRScheduler', 'lr_min': 3e-07, 't_initial': 150000, 'warmup_t': 500, 't_in_epochs': False}.
+[2026-09-30 11:45:25,648][anemoi.training.diagnostics.callbacks.plot][INFO] - Setting up asynchronous plotting ...
+[2026-09-30 11:45:25,708][anemoi.training.diagnostics.callbacks.plot][INFO] - Setting up asynchronous plotting ...
+[2026-09-30 11:45:25,712][anemoi.training.diagnostics.callbacks.plot][INFO] - Setting up asynchronous plotting ...
+[2026-09-30 11:45:25,715][anemoi.training.diagnostics.callbacks.plot][INFO] - Setting up asynchronous plotting ...
+[2026-09-30 11:45:25,716][anemoi.training.diagnostics.callbacks][INFO] - Using progress bar: <class 'pytorch_lightning.callbacks.progress.tqdm_progress.TQDMProgressBar'>
+[2026-09-30 11:45:25,985][anemoi.models.migrations.migrator][INFO] - Loading migration 1755530253_initial
+[2026-09-30 11:45:25,985][anemoi.models.migrations.migrator][INFO] - Loading migration 1762857427_deprecate_eda
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1762857428_chunking_fix
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1763479917_hardware_schema_update
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1763479918_refactor_mapper
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1767108147_move_to_multiple_datasets
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1773048851_fuse_multiple_perdataset_graphs
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1776237003_rename_swa_to_weight_averaging
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1778688800_glu_mlp_implementation
+[2026-09-30 11:45:25,986][anemoi.models.migrations.migrator][INFO] - Loading migration 1779202136_trainable_edge_perm_fix
+[2026-09-30 11:45:26,065][pytorch_lightning.utilities.rank_zero][INFO] - Using bfloat16 Automatic Mixed Precision (AMP)
+[2026-09-30 11:45:26,082][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: False, used: False
+[2026-09-30 11:45:26,082][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
+[2026-09-30 11:45:26,084][pytorch_lightning.utilities.rank_zero][INFO] - 💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+[2026-09-30 11:45:26,084][lightning_fabric.utilities.seed][INFO] - [rank: 0] Seed set to 3012267217
+[2026-09-30 11:45:26,694][anemoi.training.train.train][INFO] - Initial seed: Rank 0, initial seed 3012267217, running with random seed: 3012267217
+[2026-09-30 11:46:08,623][anemoi.training.utils.masks][WARNING] - Dataset era5 not found in 'config.model.output_mask'. Using `NoOutputMask` as default.
+[2026-09-30 11:46:08,623][anemoi.training.utils.masks][WARNING] - Dataset surface not found in 'config.model.output_mask'. Using `NoOutputMask` as default.
+[2026-09-30 11:46:08,807][anemoi.models.preprocessing][WARNING] - InputImputer: Using default method mean for all variables not specified in the config.
+[2026-09-30 11:46:28,334][anemoi.utils.settings][INFO] - Copied default settings to /users/milemate/.config/anemoi/settings.defaults.toml
+[2026-09-30 11:46:39,051][anemoi.graphs.nodes.builders.from_file][INFO] - Reading the dataset from {'dataset': '/pfs/lustrep4/scratch/project_465000451/ai-ml/datasets/aifs-ea-an-oper-0001-mars-n320-1979-2024-6h-v1-for-single-v2.zarr', 'frequency': '6h', 'drop': ['cdww', 'cos_mwd', 'sin_mwd', 'ro', 'ssrd', 'strd', 'sf', 'h1012', 'h1214', 'h1417', 'h1721', 'h2125', 'h2530', 'hcc', 'mcc', 'lcc', 'mwp', 'sf', 'sd', 'skt', 'snowc', 'stl1', 'stl2', 'swh', 'swvl1', 'swvl2', 'wmb']}.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 129, in _call_target
+    result = _target_(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/models/models/base.py", line 144, in __init__
+    self._graph_data = GraphCreator(static_graph_config).create()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/create.py", line 167, in create
+    graph = self.update_graph(graph)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/create.py", line 58, in update_graph
+    graph = instantiate(nodes_cfg.node_builder, name=nodes_name).update_graph(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/nodes/builders/base.py", line 140, in update_graph
+    graph = self.register_nodes(graph)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/nodes/builders/base.py", line 61, in register_nodes
+    graph[self.name].x = self.get_coordinates().to(dtype=torch.float32, device=self.device)
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/nodes/builders/from_refined_icosahedron.py", line 62, in get_coordinates
+    self.nx_graph, coords_rad, self.node_ordering = self.create_nodes()
+                                                    ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/nodes/builders/from_refined_icosahedron.py", line 106, in create_nodes
+    from anemoi.graphs.generate.tri_icosahedron import create_tri_nodes
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/graphs/generate/tri_icosahedron.py", line 16, in <module>
+    import trimesh
+ModuleNotFoundError: No module named 'trimesh'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/__main__.py", line 23, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/utils/cli.py", line 270, in cli_main
+    cmd.run(args, unknown)
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/train.py", line 32, in run
+    main()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/train.py", line 43, in main
+    anemoi_train()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+        ^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/core/utils.py", line 263, in return_value
+    raise self._return_value
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/core/utils.py", line 189, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 780, in main
+    AnemoiTrainer(config).train()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 766, in train
+    self.model = prepare_compilation(self.model, self.config.model, self.config.training)
+                                     ^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 374, in model
+    model = instantiate_with_runtime_kwargs(training_method_cfg, **kwargs)  # Task -> pl.LightningModule
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/utils/hydra.py", line 29, in instantiate_with_runtime_kwargs
+    return factory(**runtime_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/target_policy.py", line 1297, in __call__
+    return self._call_with_target_policy(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/target_policy.py", line 1314, in _call_with_target_policy
+    result = super().__call__(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/methods/base.py", line 210, in __init__
+    self.model = AnemoiModelInterface(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/models/interface/__init__.py", line 84, in __init__
+    self._build_model()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/models/interface/__init__.py", line 215, in _build_model
+    self.model = instantiate(
+                 ^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 251, in instantiate
+    return _instantiate_impl(config, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 299, in _instantiate_impl
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 420, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 138, in _call_target
+    raise InstantiationException(_with_full_key(msg, full_key)) from e
+hydra.errors.InstantiationException: Error in call to target 'anemoi.models.models.encoder_processor_decoder.AnemoiModelEncProcDec':
+ModuleNotFoundError("No module named 'trimesh'")
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri dop training end   2026-09-30T08:47:20Z ==
++ echo '== cherri dop training end   2026-09-30T08:47:20Z =='

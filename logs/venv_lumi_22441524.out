@@ -1,0 +1,13 @@
+
+Lmod is automatically replacing "craype-x86-rome" with "craype-x86-trento".
+
+
+Lmod is automatically replacing "LUMI/25.03" with "CrayEnv".
+
+Using CPython 3.11.16
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+error: Failed to parse `uv.lock`
+  cause: Dependency `numpy` has missing `source` field but has more than one matching package
+srun: error: nid005020: task 0: Exited with exit code 2
+srun: Terminating StepId=22441524.0

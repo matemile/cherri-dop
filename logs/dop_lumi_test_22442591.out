@@ -1,0 +1,234 @@
+
+Lmod is automatically replacing "craype-x86-rome" with "craype-x86-trento".
+
+
+Lmod is automatically replacing "LUMI/25.03" with "CrayEnv".
+
++ pwd -P
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop
++ ls -l .venv/bin/python .venv/bin/anemoi-training
+-rwxrwx--x 1 milemate project_465003270 366 sep.  30 01:45 .venv/bin/anemoi-training
+lrwxrwxrwx 1 milemate project_465003270  83 sep.  30 01:45 .venv/bin/python -> /users/milemate/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11
++ head -n 1 .venv/bin/anemoi-training
+#!/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/python
++ readlink -f .venv/bin/python
+/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11
++ .venv/bin/python -c 'import sys; print(sys.executable); print(sys.prefix)'
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/python
+/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv
++ .venv/bin/python .venv/bin/anemoi-training --help
+  File "/opt/venv/lib/python3.12/site-packages/anemoi/utils/cli.py", line 179, in register_commands
+    imported = importlib.import_module(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/config.py", line 27, in <module>
+    from pydantic import BaseModel
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/__init__.py", line 5, in <module>
+    from ._migration import getattr_migration
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/_migration.py", line 4, in <module>
+    from pydantic.warnings import PydanticDeprecatedSince20
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/warnings.py", line 5, in <module>
+    from .version import version_short
+  File "/opt/venv/lib/python3.12/site-packages/pydantic/version.py", line 7, in <module>
+    from pydantic_core import __version__ as __pydantic_core_version__
+  File "/opt/venv/lib/python3.12/site-packages/pydantic_core/__init__.py", line 8, in <module>
+    from ._pydantic_core import (
+usage: anemoi-training [-h] [--version] [--debug] [--rich]
+                       {checkpoint,evaluate,mlflow,profile,train,config} ...
+
+positional arguments:
+  {checkpoint,evaluate,mlflow,profile,train,config}
+                        commands:
+    checkpoint          Commands to interact with training checkpoints.
+    evaluate            Commands to evaluate Anemoi models.
+    mlflow              Commands to interact with MLflow.
+    profile             Commands to profile Anemoi models.
+    train               Commands to train Anemoi models.
+    config              Command not available.
+
+options:
+  -h, --help            show this help message and exit
+  --version, -V         show the version and exit
+  --debug, -d           Debug mode
+  --rich                Use rich for logging
++ source .venv/bin/activate
+++ '[' -z '' ']'
+++ '[' -n x ']'
+++ SCRIPT_PATH=.venv/bin/activate
+++ '[' .venv/bin/activate = /usr/bin/bash ']'
+++ deactivate nondestructive
+++ unset -f pydoc
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ hash -r
+++ '[' -z '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv
+++ '[' linux = cygwin ']'
+++ '[' linux = msys ']'
+++ export VIRTUAL_ENV
+++ '[' -z '' ']'
+++ unset SCRIPT_PATH
+++ _OLD_VIRTUAL_PATH=/users/milemate/.local/bin:/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin:/users/milemate/.local/bin:/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' xcherri-dop '!=' x ']'
+++ VIRTUAL_ENV_PROMPT=cherri-dop
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -z '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(cherri-dop) '
+++ export PS1
+++ alias pydoc
+++ true
+++ hash -r
++ unset PYTHONPATH
++ unset PYTHONHOME
++ unset VIRTUAL_ENV
++ export PYTHONNOUSERSITE=1
++ PYTHONNOUSERSITE=1
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri dop training start 2026-09-29T22:47:06Z ==
++ echo '== cherri dop training start 2026-09-29T22:47:06Z =='
+== gpu env CUDA_VISIBLE_DEVICES=unset ROCR_VISIBLE_DEVICES=0 ==
++ echo '== gpu env CUDA_VISIBLE_DEVICES=unset ROCR_VISIBLE_DEVICES=0 =='
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri cli start 2026-09-29T22:47:06Z ==
++ echo '== cherri cli start 2026-09-29T22:47:06Z =='
++ /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training train --config-name=config_test.yaml --config-path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs
+2026-09-30 01:51:08 INFO Running anemoi training command with overrides: ['--config-name=config_test.yaml', '--config-path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs']
+2026-09-30 01:53:00 INFO Appending current working directory (/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop) to the search path.
+2026-09-30 01:53:00 INFO Search path is now: [provider=hydra, path=pkg://hydra.conf, provider=main, path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/training_configs, provider=anemoi-cwd-searchpath-plugin, path=/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop, provider=anemoi-package-searchpath-plugin, path=pkg://anemoi.training/config]
+[2026-09-30 01:53:01,261][anemoi.training.schemas.base_schema][INFO] - adjusting save_dir path to match output mlflow logs
+[2026-09-30 01:53:01,264][anemoi.training.train.train][INFO] - Skipping config validation.
+[2026-09-30 01:53:01,338][anemoi.training.train.train][INFO] - Starting from checkpoint: False
+[2026-09-30 01:53:01,339][anemoi.training.train.train][INFO] - MLFLOW logger enabled
+[2026-09-30 01:53:01,339][anemoi.training.train.train][INFO] - Initializing MLflow logger lazily...
+[2026-09-30 01:53:24,569][anemoi.training.diagnostics.mlflow.logger][INFO] - Maximum number of params allowed to be logged is: 2500
+[2026-09-30 01:53:24,571][anemoi.training.diagnostics.mlflow.logger][INFO] - MLflow is logging offline.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 129, in _call_target
+    result = _target_(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/diagnostics/mlflow/logger.py", line 382, in __init__
+    super().__init__(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/pytorch_lightning/loggers/mlflow.py", line 153, in __init__
+    self._mlflow_client = MlflowClient(tracking_uri)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/client.py", line 254, in __init__
+    self._tracking_client = TrackingServiceClient(final_tracking_uri)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/client.py", line 98, in __init__
+    self.store
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/client.py", line 102, in store
+    return utils._get_store(self.tracking_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/utils.py", line 270, in _get_store
+    return _tracking_store_registry.get_store(store_uri, artifact_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/registry.py", line 45, in get_store
+    return self._get_store_with_resolved_uri(resolved_store_uri, artifact_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/registry.py", line 56, in _get_store_with_resolved_uri
+    return builder(store_uri=resolved_store_uri, artifact_uri=artifact_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/utils.py", line 184, in _get_file_store
+    return FileStore(store_uri, store_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/mlflow/store/tracking/file_store.py", line 225, in __init__
+    raise MlflowException(
+mlflow.exceptions.MlflowException: The filesystem tracking backend (e.g., './mlruns') is in maintenance mode and will not receive further updates. Please migrate to a database backend (e.g., 'sqlite:///mlflow.db') to access the latest MLflow features. The `mlflow migrate-filestore` tool migrates your existing data losslessly. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance. If the filesystem backend is required for your workflow, set `MLFLOW_ALLOW_FILE_STORE=true` to opt out of this exception.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/__main__.py", line 23, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/utils/cli.py", line 270, in cli_main
+    cmd.run(args, unknown)
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/train.py", line 32, in run
+    main()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/commands/train.py", line 43, in main
+    anemoi_train()
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 223, in run_and_report
+    raise ex
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+        ^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/core/utils.py", line 263, in return_value
+    raise self._return_value
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/core/utils.py", line 189, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 780, in main
+    AnemoiTrainer(config).train()
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 115, in __init__
+    self.config.training.run_id = self.run_id
+                                  ^^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 430, in run_id
+    if self.logger and self.logger.logger_name == "mlflow":
+       ^^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 560, in logger
+    return getattr(self, f"{logger_type}_logger")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/milemate/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/train/train.py", line 540, in mlflow_logger
+    return get_mlflow_logger(**self._logger_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/anemoi/training/diagnostics/logger.py", line 40, in get_mlflow_logger
+    logger = instantiate(
+             ^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 251, in instantiate
+    return _instantiate_impl(config, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 299, in _instantiate_impl
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 420, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 138, in _call_target
+    raise InstantiationException(_with_full_key(msg, full_key)) from e
+hydra.errors.InstantiationException: Error in call to target 'anemoi.training.diagnostics.mlflow.logger.AnemoiMLflowLogger':
+MlflowException("The filesystem tracking backend (e.g., './mlruns') is in maintenance mode and will not receive further updates. Please migrate to a database backend (e.g., 'sqlite:///mlflow.db') to access the latest MLflow features. The `mlflow migrate-filestore` tool migrates your existing data losslessly. See https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store for migration guidance. If the filesystem backend is required for your workflow, set `MLFLOW_ALLOW_FILE_STORE=true` to opt out of this exception.")
+++ date -u +%Y-%m-%dT%H:%M:%SZ
+== cherri dop training end   2026-09-29T22:53:54Z ==
++ echo '== cherri dop training end   2026-09-29T22:53:54Z =='
