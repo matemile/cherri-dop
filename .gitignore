@@ -7,6 +7,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .coverage
+.github/
+.python-version
 htmlcov/
 
 # Jupyter
@@ -21,3 +23,7 @@ htmlcov/
 .env
 .env.*
 !.env.example
+
+# files 
+notebooks/*.pt
+notebooks/*marimo*

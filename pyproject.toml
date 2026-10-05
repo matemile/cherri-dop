@@ -23,6 +23,7 @@ dependencies = [
     "boto3>=1.39.3",
     "datashader>=0.19.1",
     "trimesh>=5.1.0",
+    "marimo>=0.25.1",
 ]
 
 [dependency-groups]
