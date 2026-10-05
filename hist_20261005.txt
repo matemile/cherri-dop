@@ -1,0 +1,5896 @@
+    1  vim logs/radar_fcst_8km_16855495.out 
+    2  cd /scratch/project_465002262/milemate/
+    3  lcn
+    4  cd nowcasting/
+    5  lcn
+    6  vim config/radar_forecast_8km.yaml 
+    7  cd /scratch/project_465002262/milemate/
+    8  cd nowcasting/
+    9  lcn -a
+   10  lcn -a config/
+   11  rm config/.radar_forecast_8km.yaml.swp
+   12  lcn -a config/
+   13  lcn
+   14  vim job_radar_fcst.sh 
+   15  lcn
+   16  grep dantic config/*
+   17  lcn
+   18  cd /scratch/project_465002262/milemate/
+   19  lcn
+   20  cd nowcasting/
+   21  lcn
+   22  vim pydantic.txt
+   23  lcn
+   24  vim branch.txt
+   25  lcn
+   26  cd
+   27  cd git
+   28  cd run-anemoi/lumi/
+   29  lcn
+   30  vim lumi_test.sh 
+   31  grep -ir account *.sh
+   32  vim lumi_test.sh 
+   33  grep -ir partition *.sh
+   34  cd /scratch/project_465002262/milemate/
+   35  cd nowcasting/
+   36  lcn
+   37  vim config/
+   38  rmlogs/.radar_fcst_8km_16855495.out.swp 
+   39  rm logs/.radar_fcst_8km_16855495.out.swp 
+   40  vim logs/radar_fcst_8km_16855495.out 
+   41  lcn config/
+   42  cd /scratch/project_465002262/milemate/
+   43  lcn
+   44  cd nowcasting/
+   45  lcn
+   46  vim job_radar_fcst.sh 
+   47  lcn
+   48  source .venv/bin/activate
+   49  anemoi-training config validate --config-name=/scratch/project_465002262/milemate/nowcasting/config/radar_forecast_8km.yaml
+   50  cd /scratch/project_465002262/milemate/
+   51  cd nowcasting/
+   52  anemoi-training config validate --config-name=radar_forecast_8km.yaml
+   53  source .venv/bin/activate
+   54  anemoi-training config validate --config-name=radar_forecast_8km.yaml
+   55  vim config/radar_forecast_8km.yaml 
+   56  grep -ir SLURM *
+   57  vim config/radar_forecast_8km.yaml 
+   58  vim job_radar_fcst.sh 
+   59  vim config/radar_forecast_8km.yaml 
+   60  echo $SLURM_NNODES
+   61  lcn
+   62  vim config/radar_forecast_8km.yaml 
+   63  cd /scratch/project_465002262/milemate/
+   64  lcn
+   65  cd nowcasting/
+   66  lcn
+   67  vim config/radar_forecast_8km.yaml 
+   68  source .venv/bin/activate
+   69  anemoi-training config validate --config-name=radar_forecast_8km.yaml
+   70  cd /scratch/project_465002262/milemate/
+   71  cd nowcasting/
+   72  lcn
+   73  vim job_radar_fcst.sh 
+   74  sbatch job_radar_fcst.sh 
+   75  vim job_radar_fcst.sh 
+   76  sbatch job_radar_fcst.sh 
+   77  squeue -u milemate
+   78  lcn logs/
+   79  squeue -u milemate
+   80  vim logs/radar_fcst_8km_16872727.out
+   81  cd git/
+   82  lcn
+   83  pwd
+   84  cd /scratch/project_465002262/milemate/
+   85  lcn
+   86  cd nowcasting/
+   87  lcn
+   88  lcn logs/
+   89  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint
+   90  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint/radar_fcst_24ts/
+   91  cd ..
+   92  lcn
+   93  lcn anemoi-inference/
+   94  lcn
+   95  git clone git@github.com:metno/bris-inference.git
+   96  lcn
+   97  lcn bris-inference/
+   98  lcn bris-inference/config/
+   99  cd bris-inference/
+  100  lcn
+  101  lcn tests/
+  102  cd ..
+  103  lcn bris-inference/config/
+  104  cd
+  105  cd git/run-anemoi/lumi/
+  106  lcn
+  107  vim main_radar_inference_rollout.yaml 
+  108  vim lumi_radar_inference.sh 
+  109  vim run_pytorch_infer.sh 
+  110  lcn
+  111  cd /scratch/project_465002262/milemate/
+  112  lcn
+  113  cd bris-inference/
+  114  lcn
+  115  cd ../nowcasting/
+  116  lcn .venv/bin/
+  117  lcn ../bris-inference/
+  118  cd ..
+  119  lcn
+  120  cd bris-inference/
+  121  lcn
+  122  vim pyproject.toml 
+  123  lcn
+  124  uv venv -p 3.11
+  125  uv sync
+  126  vim pyproject.toml 
+  127  lcn -a
+  128  lcn .venv/
+  129  lcn .venv/bin/
+  130  lcn
+  131  cd ..
+  132  lcn
+  133  rm -rf bris-inference
+  134  git clone git@github.com:metno/bris-inference.git
+  135  lcn
+  136  cd bris-inference/
+  137  lcn
+  138  git status
+  139  git checkout feat/multiple_datasets
+  140  git status
+  141  lcn
+  142  lcn config/
+  143  lcn
+  144  vim pyproject.toml 
+  145  uv venv -p 3.9
+  146  uv sync
+  147  vim pyproject.toml 
+  148  cd ..
+  149  rm -rf bris-inference
+  150  git clone git@github.com:metno/bris-inference.git
+  151  cd bris-inference/
+  152  git checkout feat/multiple_datasets
+  153  uv venv -p 3.11
+  154  uv lock --verbose
+  155  vim pyproject.toml 
+  156  uv lock --verbose
+  157  uv sync
+  158  lcn
+  159  cd
+  160  cd git/run-anemoi/lumi/
+  161  lcn
+  162  vim lumi_radar_inference.sh 
+  163  cd /scratch/project_465002262/milemate/
+  164  lcn
+  165  pwd
+  166  cd /scratch/project_465002262/milemate/
+  167  lcn
+  168  cd nowcasting/
+  169  lcn
+  170  vim job_radar_fcst.sh 
+  171  cp job_radar_fcst.sh job_radar_inference.sh 
+  172  lcn
+  173  vim job_radar_inference.sh 
+  174  cd ../bris-inference/
+  175  lcn
+  176  git status
+  177  git checkout feat/multiple_datasets
+  178  git status
+  179  lcn
+  180  lcn config/
+  181  vim config/test_multiple_datasets.yaml 
+  182  cd ..
+  183  cd nowcasting/
+  184  lcn
+  185  vim pyproject.toml 
+  186  uv sync
+  187  lcn .venv/bin/
+  188  vim pyproject.toml 
+  189  uv sync
+  190  vim pyproject.toml 
+  191  uv sync
+  192  vim pyproject.toml 
+  193  uv lock --verbose
+  194  vim pyproject.toml 
+  195  uv lock --verbose
+  196  uv sync
+  197  lcn .venv/bin/
+  198  lcn
+  199  cd
+  200  vim .bashrc 
+  201  cd -
+  202  cd ..
+  203  lcn
+  204  lcn bris-inference/
+  205  lcn bris-inference/.venv/bin/
+  206  lcn bris-inference/.venv/bin/bris
+  207  lcn
+  208  lumi-quota -v
+  209  du -sk .* | sort -n
+  210  du -sk * | sort -n
+  211  du -sh * | sort -n
+  212  pwd
+  213  lumi-ldap-userinfo
+  214  du -sh ~
+  215  lcn
+  216  lcn ondemand/
+  217  cd git/
+  218  lcn
+  219  du -sh * | sort -n
+  220  lcn run-anemoi-crps/
+  221  lcn run-anemoi-crps/lumi/
+  222  pwd
+  223  lcn
+  224  cd ..
+  225  lcn
+  226  lumi-ldap-userinfo
+  227  du -sh * | sort -hr | head -20
+  228  du -shx ~/* | sort -hr
+  229  find ~ -type f -size +100M -ls
+  230  lumi-check-quota
+  231  lcn -a
+  232  lcn .cache/
+  233  du -sh .cache/ | sort -hr 
+  234  cd .cache/
+  235  du -sh * | sort -hr | head -20
+  236  cd uv/
+  237  du -sh * | sort -hr | head -20
+  238  cd archive-v0/
+  239  du -sh * | sort -hr | head -20
+  240  lcn UmEg4soFqTVfZl3HP4Wz_/
+  241  lcn
+  242  cd ..
+  243  lcn
+  244  du -sh * | sort -hr | head -20
+  245  cd archive-v0/
+  246  lcn
+  247  rm -rf UmEg4soFqTVfZl3HP4Wz_/
+  248  lumi-check-quota
+  249  cd ..
+  250  du -sh * | sort -hr | head -20
+  251  cd ..
+  252  lumi-ldap-userinfo
+  253  lumi-check-quota 
+  254  lumi-ldap-userinfo
+  255  cd .cache/
+  256  du -sh * | sort -hr | head -20
+  257  cd uv/
+  258  lcn
+  259  du -sh * | sort -hr | head -20
+  260  cd ..
+  261  lcn
+  262  lcn -a
+  263  cd /scratch/project_465002262/milemate/
+  264  lcn
+  265  cd nowcasting/
+  266  lcn
+  267  pwd
+  268  lcn
+  269  cd /scratch/project_465002262/milemate/
+  270  lcn
+  271  cd git/
+  272  cd run-anemoi/lumi/
+  273  lcn -
+  274  lcn -a
+  275  rm .run_pytorch_infer.sh.swp
+  276  lcn
+  277  cd git/run-anemoi-nowcast/lumi/
+  278  lcn -a
+  279  rm .container_script.sh.swp
+  280  lcn
+  281  lcn /pfs/lustrep4/scratch/project_465000527/
+  282  lcn /pfs/lustrep4/scratch/project_465000527/anemoi/containers/pytorch-2.9.1-rocm-6.4.4-py-3.12.3-v1.0.sif 
+  283  scratch2
+  284  cd /scratch/project_465002688/
+  285  lcn
+  286  lcn containers/
+  287  lcn containers/containers/
+  288  find . -name pytorch-2.9.1-rocm-6.4.4-py-3.12.3-v1.0.sif
+  289  cd /scratch/project_465002262/milemate/
+  290  lcn
+  291  cd ..
+  292  lcn
+  293  find . -name pytorch-2.9.1-rocm-6.4.4-py-3.12.3-v1.0.sif
+  294  pwd
+  295  cd milemate/
+  296  lcn
+  297  cd nowcasting/
+  298  lcn
+  299  cd /scratch/project_465002262/milemate/
+  300  cd git/
+  301  lcn
+  302  cd run-anemoi-crps/
+  303  lcn
+  304  cd ..
+  305  mkdir run-anemoi-nowcast
+  306  git clone git@github.com:metno/run-anemoi.git run-anemoi-nowcast
+  307  lcn
+  308  cd run-anemoi-nowcast/
+  309  lcn
+  310  cd lumi/
+  311  lcn
+  312  mv ../../../inf.tgz .
+  313  lcn
+  314  tar -xzvf inf.tgz 
+  315  rm inf.tgz
+  316  lcn
+  317  vim base.sh 
+  318  vim create_envirorment.sh 
+  319  lcn
+  320  vim base.sh 
+  321  lcn
+  322  chmod u+x create_envirorment.sh 
+  323  chmod u+x base.sh 
+  324  chmod u+x jobscript.sh 
+  325  chmod u+x container_script.sh 
+  326  lcn
+  327  ./create_envirorment.sh 
+  328  vim base.sh 
+  329  ./create_envirorment.sh 
+  330  lcn
+  331  vim jobscript.sh 
+  332  ./create_envirorment.sh 
+  333  lcn
+  334  lcn .venv-torch-291/bin/
+  335  lcn
+  336  vim container_script.sh 
+  337  vim jobscript.sh 
+  338  vim container_script.sh 
+  339  vim .bashrc 
+  340  cd /scratch/project_465002262/milemate/
+  341  lcn
+  342  cd nowcasting/
+  343  lcn
+  344  cd
+  345  cd git/run-anemoi/lumi/
+  346  lcn
+  347  vim make_env.sh 
+  348  cd /scratch/project_465002262/milemate/
+  349  pwd
+  350  lcn /pfs/lustrep4/scratch/project_465002262/
+  351  lcn /pfs/lustrep3/scratch/project_465002262/
+  352  cd
+  353  cd git/
+  354  cd run-anemoi/lumi/
+  355  lcn
+  356  vim make_env.sh 
+  357  vim env_setup_inf.sh 
+  358  cd
+  359  cd git/run-anemoi-nowcast/lumi/
+  360  lcn -a
+  361  git clone git@github.com:ecmwf/anemoi-core.git
+  362  lcn
+  363  lcn -a
+  364  lcn -a .venv-torch-291/
+  365  lcn -a .venv-torch-291/bin/
+  366  lcn -a
+  367  lcn -a anemoi-core/
+  368  lcn -a .venv-torch-291/bin/
+  369  cd ..
+  370  cd run-anemoi/lumi/
+  371  lcn
+  372  cd ..
+  373  cd run-anemoi-nowcast/lumi/
+  374  lcn
+  375  git clone git@github.com:metno/bris-inference.git
+  376  lcn
+  377  cd bris-inference/
+  378  git status
+  379  git checkout feat/multiple_datasets
+  380  git status
+  381  cd ..
+  382  lcn
+  383  vim base.sh 
+  384  vim install.txt
+  385  lcn
+  386  cd ..
+  387  cd run-anemoi/lumi/
+  388  lcn
+  389  vim run_pytorch_infer.sh 
+  390  vim lumi_radar_inference.sh 
+  391  lcn -a
+  392  rm .lumi_radar_inference.sh.swp
+  393  vim lumi_radar_inference.sh 
+  394  vim run_pytorch_infer.sh 
+  395  cd git/run-anemoi-nowcast/lumi/
+  396  lcn
+  397  pwd
+  398  pwd
+  399  cd git/run-anemoi-nowcast/lumi/
+  400  lcn
+  401  vim container_script.sh 
+  402  vim ../../run-anemoi/lumi/run_pytorch_infer.sh 
+  403  vim ../../run-anemoi/lumi/lumi_radar_inference.sh 
+  404  vim container_script.sh 
+  405  vim jobscript.sh 
+  406  mv jobscript.sh jobscript_inference_multi.sh 
+  407  lcn
+  408  vim jobscript_inference_multi.sh 
+  409  vim container_script.sh 
+  410  vim jobscript_inference_multi.sh 
+  411  lcn
+  412  vim jobscript_inference_multi.sh 
+  413  vim container_script.sh 
+  414  vim jobscript_inference_multi.sh 
+  415  lcn
+  416  lcn experiments/
+  417  cd
+  418  cd git/run-anemoi/lumi/
+  419  lcn
+  420  vim lumi_radar_inference.sh 
+  421  cd /scratch/project_465002262/milemate/
+  422  lcn
+  423  lcn experiments/
+  424  lcn /pfs/lustrep3/scratch/project_465002262/pytorch-2.7.0-rocm-6.2.4-py-3.12.9-v2.0.sif
+  425  lcn /pfs/lustrep4/scratch/project_465002262/pytorch-2.7.0-rocm-6.2.4-py-3.12.9-v2.0.sif
+  426  lcn /pfs/lustrep3/scratch/project_465002262/
+  427  cd
+  428  cd git/
+  429  lcn
+  430  git clone git@github.com:OpheliaMiralles/bris-multisource.git
+  431  lcn
+  432  cd bris-multisource/
+  433  lcn
+  434  lcn config/
+  435  cd git/run-anemoi-nowcast/lumi/
+  436  lcn -a
+  437  rm .jobscript_inference_multi.sh.swp
+  438  vim jobscript_inference_multi.sh 
+  439  lcn
+  440  cd git/run-anemoi-nowcast/lumi/
+  441  lcn
+  442  lcn -a
+  443  vim inference_multi.yaml 
+  444  mv inference_multi.yaml inference_base.yaml 
+  445  vim inference_multi.yaml 
+  446  lcn
+  447  mv tox_test_inference_multi.yaml inference_multi.yaml 
+  448  vim inference_multi.yaml 
+  449  cd /scratch/project_465002688/milemate/
+  450  cd logs/
+  451  lcn -a
+  452  rm .inference-nowcasting.err.swp
+  453  cd ..
+  454  lcn
+  455  vim ~/git/run-anemoi-nowcast/lumi/inference_base.yaml 
+  456  lcn ../omiralle/bris_multisource/
+  457  lcn ../omiralle/bris_multisource/config/
+  458  lcn ../omiralle/bris_multisource/
+  459  vim -R ../omiralle/bris_multisource/job_radar_fcst.sh 
+  460  vim -R ../omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  461  vim -R ../omiralle/bris_multisource/config/radar_fcst_meps.yaml 
+  462  vim -R ../omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  463  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint
+  464  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/
+  465  lcn /scratch/project_465002688/omiralle/bris_multisource/
+  466  lcn /scratch/project_465002688/omiralle/bris_multisource/config/
+  467  vim -R/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  468  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  469  pwd
+  470  lcn /pfs/lustrep3/scratch/project_465002262/
+  471  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/
+  472  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  473  lcn
+  474  cd /scratch/project_465002262/milemate/
+  475  lcn
+  476  lcn experiments/
+  477  lcn logs/
+  478  lcn graphs/
+  479  lcn
+  480  cd
+  481  cd git/run-anemoi/lumi/
+  482  lcn
+  483  vim lumi_radar_inference.sh 
+  484  cd git/run-anemoi/lumi/
+  485  lcn
+  486  lcn -a
+  487  rm .lumi_radar_inference.sh.swp
+  488  lcn
+  489  squeue -u milemate
+  490  lumi-allocations 
+  491  cd /scratch/project_465002262/milemate/
+  492  cd ../../project_465002866
+  493  cd ../../project_465002688
+  494  lcn
+  495  mkdir milemate
+  496  lcn
+  497  cd milemate/
+  498  lcn
+  499  mkdir logs experiments 
+  500  lcn
+  501  cd experiments/
+  502  mkdir nowcasting_multi
+  503  cd ..
+  504  cd experiments/nowcasting_multi/
+  505  mkdir inference
+  506  cd ..
+  507  lcn
+  508  cd experiments/nowcasting_multi/inference/
+  509  mkdir predictions
+  510  lcn predictions/
+  511  cd ..
+  512  lcn
+  513  lcn logs/
+  514  squeue -u milemate
+  515  lcn logs/
+  516  cd git/run-anemoi-nowcast/lumi/
+  517  lcn -a
+  518  vim jobscript_inference_multi.sh 
+  519  lcn
+  520  lcn /scratch/project_465002688/omiralle/bris_multisource/
+  521  vim -R /scratch/project_465002688/omiralle/bris_multisource/job_radar_fcst.sh 
+  522  lcn /scratch/project_465002688/omiralle/bris_multisource/config/
+  523  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  524  cp ../../run-anemoi/lumi/main_radar_inference_newdata_rollmstep.yaml inference_multi.yaml
+  525  vim inference_multi.yaml 
+  526  lcn
+  527  vim jobscript_inference_multi.sh 
+  528  pwd
+  529  vim jobscript_inference_multi.sh 
+  530  lcn
+  531  vim inference_multi.yaml 
+  532  lcn
+  533  vim jobscript_inference_multi.sh 
+  534  sbatch jobscript_inference_multi.sh 
+  535  vim jobscript_inference_multi.sh 
+  536  sbatch jobscript_inference_multi.sh 
+  537  vim jobscript_inference_multi.sh 
+  538  sbatch jobscript_inference_multi.sh 
+  539  vim jobscript_inference_multi.sh 
+  540  sbatch jobscript_inference_multi.sh 
+  541  vim jobscript_inference_multi.sh 
+  542  pwd
+  543  lcn
+  544  vim jobscript_inference_multi.sh 
+  545  vim container_script.sh 
+  546  lcn
+  547  vim inference_multi.yaml 
+  548  lcn
+  549  grep 2262 *
+  550  vim create_envirorment.sh 
+  551  vim base.sh 
+  552  lcn
+  553  sbatch jobscript_inference_multi.sh 
+  554  squeue -u milemate
+  555  lcn
+  556  vim inference_multi.yaml 
+  557  cd /scratch/project_465002688/milemate/
+  558  lcn
+  559  lcn logs/
+  560  vim logs/inference-nowcasting.err 
+  561  cd git/run-anemoi-nowcast/lumi/
+  562  squeue -u milemate
+  563  cd /scratch/project_465002688/milemate/
+  564  vim logs/inference-nowcasting.err 
+  565  cd git/run-anemoi-nowcast/lumi/
+  566  lcn
+  567  lcn -a
+  568  rm .inference_*
+  569  vim inference_data.yaml 
+  570  lcn
+  571  vim jobscript_inference_multi.sh 
+  572  lcn
+  573  sbatch jobscript_inference_multi.sh 
+  574  squeue -u milemate
+  575  lcn
+  576  lcn .venv-torch-291/bin/
+  577  lcn
+  578  vim create_envirorment.sh 
+  579  vim base.sh 
+  580  ./create_envirorment.sh 
+  581  lcn
+  582  sbatch jobscript_inference_multi.sh 
+  583  squeue -u milemate
+  584  vim inference_data.yaml 
+  585  squeue -u milemate
+  586  lcn
+  587  squeue -u milemate
+  588  sbatch jobscript_inference_multi.sh 
+  589  squeue -u milemate
+  590  vim inference_data.yaml 
+  591  squeue -u milemate
+  592  lcn
+  593  squeue -u milemate
+  594  sbatch jobscript_inference_multi.sh 
+  595  squeue -u milemate
+  596  vim inference_data.yaml 
+  597  grep -ir domain_name anemoi-datasets/*
+  598  vim inference_data.yaml 
+  599  squeue -u milemate
+  600  sbatch jobscript_inference_multi.sh 
+  601  squeue -u milemate
+  602  vim inference_data.yaml 
+  603  squeue -u milemate
+  604  sbatch jobscript_inference_multi.sh 
+  605  squeue -u milemate
+  606  vim ../../run-anemoi/lumi/main_radar_inference_newdata_rollmstep.yaml 
+  607  squeue -u milemate
+  608  vim inference_data.yaml 
+  609  vim ../../run-anemoi/lumi/main_radar_inference_newdata_rollmstep.yaml 
+  610  vim ../../run-anemoi/lumi/main_radar_train_imputer_newdata.yaml 
+  611  lcn
+  612  vim inference_data.yaml 
+  613  sbatch jobscript_inference_multi.sh 
+  614  squeue -u milemate
+  615  vim inference_data.yaml 
+  616  cat inference_data.yaml 
+  617  cd /scratch/project_465002688/milemate/
+  618  lcn
+  619  cd experiments/
+  620  lcn
+  621  cd nowcasting_multi/
+  622  lcn
+  623  pwd
+  624  cd git/run-anemoi-nowcast/lumi/
+  625  lcn
+  626  vim inference_multi.yaml 
+  627  cd /scratch/project_465002688/milemate/
+  628  lcn experiments/nowcasting_multi/
+  629  lcn experiments/nowcasting_multi/inference/
+  630  lcn experiments/nowcasting_multi/inference/predictions/
+  631  lcn
+  632  lcn logs/
+  633  tail -f logs/inference-nowcasting.err 
+  634  vim /pfs/lustrep4/users/milemate/git/run-anemoi-nowcast/lumi/bris-inference/bris/data/datamodule.py
+  635  vim logs/inference-nowcasting.err 
+  636  vim logs/inference-nowcasting.out 
+  637  vim logs/inference-nowcasting.err 
+  638  cd
+  639  cd git/run-anemoi-nowcast/lumi/
+  640  lcn
+  641  lcn anemoi-datasets/
+  642  lcn anemoi-datasets/src/
+  643  rm -rf anemoi-datasets/
+  644  lcn
+  645  lcn .venv-torch-291/bin/
+  646  vim install.txt 
+  647  cd /scratch/project_465002688/milemate/
+  648  lcn
+  649  lcn logs/
+  650  tail -f logs/inference-nowcasting.err 
+  651  tail -f logs/inference-nowcasting.out 
+  652  lcn experiments/nowcasting_multi/inference/
+  653  lcn experiments/nowcasting_multi/inference/predictions/
+  654  tail -f logs/inference-nowcasting.err 
+  655  vim logs/inference-nowcasting.err 
+  656  tail -f logs/inference-nowcasting.err 
+  657  tail -f logs/inference-nowcasting.out 
+  658  tail -f logs/inference-nowcasting.err 
+  659  vim logs/inference-nowcasting.err 
+  660  vim /pfs/lustrep4/users/milemate/git/run-anemoi-nowcast/lumi/bris-inference/bris/projections.py
+  661  vim logs/inference-nowcasting.err 
+  662  tail -f logs/inference-nowcasting.err 
+  663  vim logs/inference-nowcasting.err 
+  664  vim logs/inference-nowcasting.out 
+  665  lcn experiments/nowcasting_multi/inference/predictions/
+  666  vim logs/inference-nowcasting.err 
+  667  vim /pfs/lustrep4/users/milemate/git/run-anemoi-nowcast/lumi/bris-inference/bris/__init__.py
+  668  vim logs/inference-nowcasting.err 
+  669  vim /opt/venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py
+  670  vim logs/inference-nowcasting.err 
+  671  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  672  vim logs/inference-nowcasting.err 
+  673  vim /pfs/lustrep4/users/milemate/git/run-anemoi-nowcast/lumi/bris-inference/bris/projections.py
+  674  tail -f logs/inference-nowcasting.err 
+  675  cd git/run-anemoi-nowcast/lumi/
+  676  lcn
+  677  vim inference_multi.yaml 
+  678  cd git/run-anemoi-nowcast/lumi/
+  679  lcn
+  680  vim inference_multi.yaml 
+  681  lcn
+  682  vim inference_data.yaml
+  683  lcn
+  684  mv test_multiple_datasets.yaml inference_data.yaml
+  685  vim inference_data.yaml 
+  686  cd git/run-anemoi-nowcast/lumi/
+  687  lcn
+  688  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  689  find . -name brispredictor.py
+  690  vim bris-inference/bris/model/brispredictor.py 
+  691  vim base.sh 
+  692  ./create_envirorment.sh 
+  693  sbatch jobscript_inference_multi.sh 
+  694  vim bris-inference/bris/model/brispredictor.py 
+  695  ./create_envirorment.sh 
+  696  lcn .venv-torch-291/bin/
+  697  date
+  698  sbatch jobscript_inference_multi.sh 
+  699  squeue -u milemate
+  700  vim inference_data.yaml 
+  701  vim jobscript_inference_multi.sh 
+  702  vim inference_data.yaml 
+  703  sbatch jobscript_inference_multi.sh 
+  704  squeue -u milemate
+  705  lcn
+  706  rm core
+  707  vim inference_data.yaml 
+  708  lcn
+  709  lcn anemoi-core/
+  710  lcn
+  711  vim base.sh 
+  712  cd anemoi-core/
+  713  git status
+  714  cd ../bris-inference/
+  715  git status
+  716  cd ..
+  717  rm -rf anemoi-core/
+  718  lcn
+  719  git clone git@github.com:metno/anemoi-core.git
+  720  lcn
+  721  lcn anemoi-core/
+  722  lcn
+  723  vim base.sh 
+  724  ./create_envirorment.sh 
+  725  lcn
+  726  sbatch jobscript_inference_multi.sh 
+  727  squeue -u milemate
+  728  vim inference_data.yaml 
+  729  lcn
+  730  rm core
+  731  lcn
+  732  rm -rf anemoi-core/
+  733  git clone git@github.com:metno/anemoi-core.git
+  734  cd anemoi-core/
+  735  git status
+  736  git checkout wip-nowcasting
+  737  git status
+  738  cd ..
+  739  ./create_envirorment.sh 
+  740  :q
+  741  date
+  742  lcn .venv-torch-291/bin/
+  743  sbatch jobscript_inference_multi.sh 
+  744  squeue -u milemate
+  745  vim /pfs/lustrep4/users/milemate/git/run-anemoi-nowcast/lumi/anemoi-core/models/src/anemoi/models/models/encoder_processor_decoder.py
+  746  lcn
+  747  rm core
+  748  lcn
+  749  cd anemoi-core/
+  750  lcn
+  751  git status
+  752  lcn
+  753  vim models/src/anemoi/models/models/base.py 
+  754  vim models/src/anemoi/models/models/encoder_processor_decoder.py 
+  755  vim models/src/anemoi/models/models/ens_encoder_processor_decoder.py 
+  756  cd ..
+  757  cd -
+  758  git status
+  759  cd ..
+  760  ./create_envirorment.sh 
+  761  lcn .venv-torch-291/bin/
+  762  sbatch jobscript_inference_multi.sh 
+  763  squeue -u milemate
+  764  lcn
+  765  rm core
+  766  cd /scratch/project_465002688/milemate/
+  767  cd logs/
+  768  pwd
+  769  lcn
+  770  vim inference-nowcasting.err 
+  771  grep hydra inference-nowcasting.err 
+  772  lcn
+  773  vim inference-nowcasting.err 
+  774  pwd
+  775  vim -R /scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+  776  cd 
+  777  cd git/run-anemoi-nowcast/lumi/
+  778  lcn .venv-torch-291/bin/
+  779  vim install.txt 
+  780  cd /scratch/project_465002688/milemate/
+  781  tail -f logs/inference-nowcasting.err 
+  782  vim logs/inference-nowcasting.err 
+  783  tail -f logs/inference-nowcasting.err 
+  784  vim logs/inference-nowcasting.err 
+  785  tail -f logs/inference-nowcasting.err 
+  786  tail -f logs/inference-nowcasting.out 
+  787  tail -f logs/inference-nowcasting.err 
+  788  lcn experiments/nowcasting_multi/inference/predictions/
+  789  vim logs/inference-nowcasting.err 
+  790  lcn experiments/nowcasting_multi/
+  791  lcn experiments/nowcasting_multi/inference/
+  792  lcn experiments/nowcasting_multi/inference/predictions/
+  793  lcn
+  794  lcn logs/
+  795  vim logs/inference-nowcasting.out 
+  796  vim logs/inference-nowcasting.err 
+  797  cd logs/
+  798  pwd
+  799  lcn
+  800  cd ..
+  801  tail -f logs/inference-nowcasting.err 
+  802  cd
+  803  cd git/
+  804  cd run-anemoi-nowcast/lumi/
+  805  lcn
+  806  vim install.txt 
+  807  lcn .venv-torch-291/bin/
+  808  vim install.txt 
+  809  cd /scratch/project_465002688/milemate/
+  810  lcn
+  811  tail -f logs/inference-nowcasting.err 
+  812  vim logs/inference-nowcasting.err 
+  813  pwd
+  814  vim ~/git/run-anemoi-nowcast/lumi/install.txt 
+  815  lcn
+  816  tail -f logs/inference-nowcasting.err 
+  817  vim logs/inference-nowcasting.err 
+  818  lcn experiments/nowcasting_multi/
+  819  lcn experiments/nowcasting_multi/inference/predictions/
+  820  vim logs/inference-nowcasting.err 
+  821  pwd
+  822  vim logs/inference-nowcasting.err 
+  823  grep rank1 logs/inference-nowcasting.err 
+  824  pwd
+  825  vim ~/git/run-anemoi-nowcast/lumi/install.txt 
+  826  tail -f logs/inference-nowcasting.err 
+  827  vim logs/inference-nowcasting.err 
+  828  grep rank1 logs/inference-nowcasting.err 
+  829  pwd
+  830  cd /scratch/project_465002262/milemate/
+  831  lcn
+  832  cd nowcasting/
+  833  lcn
+  834  vim pyproject.toml 
+  835  grep -ir cland *
+  836  grep -ir clang *
+  837  vim uv.lock 
+  838  cd
+  839  cd git/run-anemoi-nowcast/lumi/
+  840  lcn
+  841  vim jobscript_inference_multi.sh 
+  842  cd /scratch/project_465002262/milemate/nowcasting/
+  843  lcn
+  844  vim pyproject.toml 
+  845  vim uv.lock 
+  846  lcn .venv/
+  847  lcn .venv/bin/
+  848  lcn .venv/
+  849  lcn .venv/lib
+  850  lcn .venv/lib/python3.12/
+  851  lcn .venv/lib/python3.12/site-packages/
+  852  lcn .venv/lib/python3.12/site-packages/libclang-18.1.1.dist-info/
+  853  find. -name "*clang*"
+  854  find . -name "*clang*"
+  855  lcn ./.venv/lib/python3.12/site-packages/clang
+  856  which clang
+  857  which amdclang
+  858  module avail amdclang
+  859  cd /scratch/project_465002688/milemate
+  860  lcn
+  861  lcn logs/
+  862  tail -f logs/inference-nowcasting.err 
+  863  vim logs/inference-nowcasting.err 
+  864  grep rank1 logs/inference-nowcasting.err 
+  865  cd /scratch/project_465002262/milemate/nowcasting/
+  866  lcn
+  867  grep -ir "CC="
+  868  grep -ir "CC=" *
+  869  cd git/run-anemoi-nowcast/lumi/
+  870  lcn
+  871  vim jobscript_inference_multi.sh 
+  872  sbatch jobscript_inference_multi.sh 
+  873  squeue -u milemate
+  874  lcn
+  875  rm core
+  876  echo $PATH
+  877  lcn /usr/bin/
+  878  lcn /usr/bin/amdclang
+  879  vim jobscript_inference_multi.sh 
+  880  which clang
+  881  vim jobscript_inference_multi.sh 
+  882  module load PrgEnv-cray
+  883  module load cray-clang
+  884  module spider clang
+  885  module spider cray-clang
+  886  module avail clang
+  887  lcn
+  888  echo $PATH
+  889  pwd
+  890  cd git/run-anemoi-nowcast/lumi/
+  891  lcn
+  892  module avail clang
+  893  cd /scratch/project_465002262/milemate/nowcasting/
+  894  lcn
+  895  vim uv.lock 
+  896  cd
+  897  lcn -a
+  898  vim .bashrc 
+  899  lcn
+  900  mkdir bin
+  901  lcn
+  902  cd bin/
+  903  ln -sf /usr/bin/amdclang clang
+  904  lcn
+  905  cd ..
+  906  vim .bashrc 
+  907  lcn
+  908  cd /scratch/project_465002688/milemate
+  909  tail -f logs/inference-nowcasting.err 
+  910  grep rank1 logs/inference-nowcasting.err 
+  911  grep rank1 logs/inference-nowcasting.out 
+  912  vim logs/inference-nowcasting.out 
+  913  lcn experiments/nowcasting_multi/inference/predictions/
+  914  lcn
+  915  vim logs/inference-nowcasting.err 
+  916  lcn
+  917  git clone git@github.com:OpheliaMiralles/bris-multisource.git
+  918  lcn
+  919  cd bris-multisource/
+  920  lcn
+  921  vim uv.lock 
+  922  lcn jobs/
+  923  lcn jobs/job_predict.sh 
+  924  vim jobs/job_predict.sh 
+  925  vim jobs/job_inference.sh 
+  926  lcn
+  927  vim pyproject.toml 
+  928  lcn
+  929  cd git/run-anemoi-nowcast/lumi/
+  930  sbatch jobscript_inference_multi.sh 
+  931  squeue -u milemate
+  932  lcn
+  933  rm core 
+  934  lcn
+  935  vim jobscript_inference_multi.sh 
+  936  which clang
+  937  cd /scratch/project_465002688/milemate
+  938  lcn
+  939  cd bris-multisource/
+  940  lcn
+  941  vim pyproject.toml 
+  942  lcn
+  943  vim pyproject.toml 
+  944  lcn
+  945  cd
+  946  vim .bashrc 
+  947  cd /scratch/project_465002688/milemate
+  948  lcn
+  949  git clone git@github.com:metno/anemoi-datasets.git
+  950  lcn
+  951  rm -rf anemoi-datasets/
+  952  mkdir bris-gitsource
+  953  lcn
+  954  cd bris-gitsource/
+  955  git clone git@github.com:metno/anemoi-datasets.git
+  956  git clone git@github.com:metno/anemoi-core.git
+  957  lcn
+  958  cd anemoi-core/
+  959  git status
+  960  git checkout wip-nowcasting
+  961  git status
+  962  cd ..
+  963  lcn
+  964  git clone git@github.com:metno/bris-inference.git
+  965  lcn
+  966  cd bris-inference/
+  967  git status
+  968  git checkout feat/multiple_datasets
+  969  git status
+  970  cd ..
+  971  git clone git@github.com:metno/weathermart.git
+  972  lcn
+  973  git clone git@github.com:metno/anemoi-weathermart-plugins.git
+  974  lcn
+  975  git clone https://gitlab.met.no/yrop/yrprod.git
+  976  lcn
+  977  cd ..
+  978  lcn -a
+  979  lcn /pfs/lustrep3/scratch/project_465002688/milemate/
+  980  lcn /pfs/lustrep4/scratch/project_465002688/milemate/
+  981  lcn /pfs/lustrep2/scratch/project_465002688/milemate/
+  982  lcn /pfs/lustrep1/scratch/project_465002688/milemate/
+  983  mkdir -p /pfs/lustrep1/scratch/project_465002688/milemate/.uv-cache
+  984  lcn -a
+  985  cd /scratch/project_465002688/milemate
+  986  cd bris-multisource/
+  987  lcn
+  988  vim pyproject.toml 
+  989  uv venv -p 3.12
+  990  uv sync
+  991  vim pyproject.toml 
+  992  uv sync
+  993  vim pyproject.toml 
+  994  uv sync
+  995  lcn .venv/
+  996  lcn .venv/bin/
+  997  lcn
+  998  vim pyproject.toml 
+  999  uv sync
+ 1000  vim pyproject.toml 
+ 1001  cd /scratch/project_465002688/milemate
+ 1002  lcn
+ 1003  cd git/run-anemoi-nowcast/lumi/
+ 1004  lcn
+ 1005  cd /scratch/project_465002688/milemate
+ 1006  lcn
+ 1007  echo $CACHE_DIR
+ 1008  echo $UV_CACHE_DIR
+ 1009  cd bris-multisource/
+ 1010  vim pyproject.toml 
+ 1011  cd /scratch/project_465002262/milemate
+ 1012  lcn
+ 1013  cd nowcasting/
+ 1014  lcn
+ 1015  vim pyproject.toml 
+ 1016  cd /scratch/project_465002688/milemate
+ 1017  lcn
+ 1018  cd bris-multisource/
+ 1019  lcn
+ 1020  vim pyproject_emulator.toml 
+ 1021  lcn job
+ 1022  lcn jobs/
+ 1023  lcn
+ 1024  lcn resources/
+ 1025  lcn config/
+ 1026  lcn
+ 1027  vim ~/.bashrc 
+ 1028  uv venv -p 3.12
+ 1029  lcn ../bris-gitsource/anemoi-datasets
+ 1030  lcn -a
+ 1031  uv sync
+ 1032  vim pyproject.toml 
+ 1033  cd /scratch/project_465002262/milemate/nowcasting/
+ 1034  lcn -a
+ 1035  rm .pyproject.toml.swp
+ 1036  vim pyproject.toml 
+ 1037  cd git/run-anemoi-nowcast/lumi/
+ 1038  lcn
+ 1039  vim jobscript_inference_multi.sh 
+ 1040  cd /scratch/project_465002262/milemate/nowcasting/
+ 1041  lcn -a
+ 1042  rm .pyproject.toml.swp
+ 1043  lcn
+ 1044  cd ..
+ 1045  scratch2
+ 1046  cd bris-multisource/
+ 1047  lcn
+ 1048  lcn ../bris-gitsource/bris-inference/
+ 1049  cd /scratch/project_465002688/milemate
+ 1050  lcn
+ 1051  cd bris-multisource/
+ 1052  lcn
+ 1053  vim pyproject.toml 
+ 1054  lcn -a
+ 1055  uv syn
+ 1056  uv sync
+ 1057  vim pyproject.toml 
+ 1058  uv sync
+ 1059  vim pyproject.toml 
+ 1060  uv sync
+ 1061  vim pyproject.toml 
+ 1062  uv pip index anemoi-graphs --show-versions
+ 1063  cd /scratch/project_465002688/milemate
+ 1064  lcn
+ 1065  cd bris-gitsource/
+ 1066  lcn
+ 1067  git clone git@github.com:ecmwf/anemoi-inference.git
+ 1068  lcn
+ 1069  cd anemoi-inference/
+ 1070  git status
+ 1071  cd ..
+ 1072  cd anemoi-core/
+ 1073  vim models/src/anemoi/models/models/encoder_processor_decoder.py 
+ 1074  cd ..
+ 1075  lcn
+ 1076  rm -rf anemoi-core/
+ 1077  git clone git@github.com:metno/anemoi-core.git
+ 1078  cd anemoi-core/
+ 1079  git status
+ 1080  git checkout wip-nowcasting
+ 1081  vim models/src/anemoi/models/models/encoder_processor_decoder.py 
+ 1082  cd ..
+ 1083  lcn
+ 1084  cd -
+ 1085  git status
+ 1086  cd ..
+ 1087  cd project_465002262/milemate/nowcasting/
+ 1088  lcn
+ 1089  vim pyproject.toml 
+ 1090  cd /scratch/project_465002688/milemate
+ 1091  cd bris-multisource/
+ 1092  lcn
+ 1093  cd ..
+ 1094  lcn
+ 1095  lumi-check-quota 
+ 1096  lcn /scratch/project_465002688/omiralle/wheels/torch-2.9.1+rocm6.4-cp312-cp312-manylinux_2_28_x86_64.whl 
+ 1097  cd .uv-cache/
+ 1098  lcn
+ 1099  du -sh * | sort -hr | head -20
+ 1100  lumi-quota 
+ 1101  cd ..
+ 1102  du -sh * | sort -hr | head -20
+ 1103  lumi-quota 
+ 1104  cd .uv-cache/
+ 1105  lcn
+ 1106  lcn archive-v0/
+ 1107  cd archive-v0/
+ 1108  rm -rf MI3GeV8CNvFnGam2bFh_Q HXC4g2JmNltb3WEYMh20_ 2_ibnfS57KXHrHwITbJAs
+ 1109  lumi-quota 
+ 1110  lumi-check-quota 
+ 1111  echo $UV_CACHE_DIR 
+ 1112  cd ..
+ 1113  lcn
+ 1114  lumi-check-quota 
+ 1115  lumi-quota 
+ 1116  cd /scratch/project_465002262/milemate/nowcasting/
+ 1117  vim pyproject.toml 
+ 1118  cd ..
+ 1119  lcn
+ 1120  cd anemoi-core/
+ 1121  lcn
+ 1122  cd training/
+ 1123  lcn
+ 1124  cd ..
+ 1125  lcn
+ 1126  vim nowcasting/pyproject.toml 
+ 1127  lcn
+ 1128  lcn ../../project_465002688/milemate/bris-gitsource/
+ 1129  lcn ../../project_465002688/milemate/
+ 1130  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/
+ 1131  cd /scratch/project_465002688/
+ 1132  lcn
+ 1133  cd milemate/
+ 1134  lcn
+ 1135  pwd
+ 1136  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-training
+ 1137  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-core/
+ 1138  lcn
+ 1139  lcn bris-gitsource/
+ 1140  cd /scratch/project_465002688/milemate
+ 1141  cd bris-multisource/
+ 1142  lcn
+ 1143  vim pyproject
+ 1144  vim pyproject.toml 
+ 1145  uv sync
+ 1146  vim pyproject.toml 
+ 1147  uv pip index anemoi-training --show-versions
+ 1148  uv venv -p 3.11
+ 1149  uv sync
+ 1150  vim pyproject
+ 1151  vim pyproject.toml 
+ 1152  uv sync
+ 1153  vim pyproject.toml 
+ 1154  uv sync
+ 1155  vim pyproject.toml 
+ 1156  uv sync
+ 1157  vim pyproject.toml 
+ 1158  uv sync
+ 1159  vim pyproject.toml 
+ 1160  lcn
+ 1161  vim uv.lock 
+ 1162  vim pyproject.toml 
+ 1163  vim uv.lock 
+ 1164  uv sync
+ 1165  lcn
+ 1166  vim pyproject.toml 
+ 1167  mv uv.lock ../.
+ 1168  uv sync
+ 1169  vim pyproject.toml 
+ 1170  lcn
+ 1171  lcn -a
+ 1172  lcn -a ../
+ 1173  lcn -a ../.uv-cache/
+ 1174  lcn
+ 1175  vim pyproject.toml 
+ 1176  uv sync
+ 1177  vim pyproject.toml 
+ 1178  uv sync
+ 1179  vim pyproject.toml 
+ 1180  uv sync
+ 1181  vim pyproject.toml 
+ 1182  uv sync
+ 1183  vim pyproject.toml 
+ 1184  uv sync
+ 1185  lcn -a
+ 1186  lcn -a .cache/
+ 1187  vim .bashrc 
+ 1188  cd /scratch/project_465002688/milemate
+ 1189  lcn
+ 1190  lcn -a
+ 1191  lcn .uv-cache/
+ 1192  quota -s
+ 1193  df -i .
+ 1194  lcn -a
+ 1195  rm -rf .uv-cache/
+ 1196  mkdir .uv-cache/
+ 1197  lcn
+ 1198  lcn .uv-cache/
+ 1199  lcn .uv-cache/wheels-v6/
+ 1200  cd /scratch/project_465002688/milemate
+ 1201  cd bris-multisource/
+ 1202  lcn
+ 1203  mv pyproject.toml ../.
+ 1204  pwd
+ 1205  lcn
+ 1206  vim pyproject
+ 1207  vim pyproject.toml 
+ 1208  uv sync
+ 1209  lumi-ldap-userinfo 
+ 1210  lcn
+ 1211  uv sync
+ 1212  uv cache prune
+ 1213  uv sync
+ 1214  which uv
+ 1215  uv sync
+ 1216  cd /scratch/project_465002688/milemate
+ 1217  lcn -a
+ 1218  rm -rf .uv-cache/
+ 1219  mkdir -p /pfs/lustrep1/scratch/project_465002688/milemate/.uv-cache
+ 1220  lcn -a
+ 1221  cd /scratch/project_465002688/milemate
+ 1222  lcn
+ 1223  cd bris-multisource/
+ 1224  lcn
+ 1225  uv sync
+ 1226  vim pyproject.toml 
+ 1227  lcn
+ 1228  lcn -a
+ 1229  vim pyproject.toml 
+ 1230  uv sync
+ 1231  vim pyproject.toml 
+ 1232  vim ../uv.lock 
+ 1233  lcn
+ 1234  grep -i "0.5.2" *
+ 1235  lcn
+ 1236  vim pyproject.toml 
+ 1237  ls -ltr pyproject.toml
+ 1238  cd /scratch/project_465002262/milemate/nowcasting/
+ 1239  vim pyproject.toml 
+ 1240  lcn
+ 1241  vim uv.lock 
+ 1242  cd /scratch/project_465002688/milemate
+ 1243  lcn -a
+ 1244  rm -rf .uv-cache/
+ 1245  mkdir -p /pfs/lustrep1/scratch/project_465002688/milemate/.uv-cache
+ 1246  cd bris-multisource/
+ 1247  lcn
+ 1248  lcn -a
+ 1249  rm -rf .venv/
+ 1250  lcn -a
+ 1251  lcn -a .venv/
+ 1252  lcn -a .venv/bin/
+ 1253  cd
+ 1254  lcn .local/bin/
+ 1255  cd /scratch/project_465002688/milemate
+ 1256  lcn
+ 1257  cd bris-multisource/
+ 1258  lcn .venv/bin/
+ 1259  lcn
+ 1260  lcn .venv/bin/
+ 1261  cd ../
+ 1262  cd bris-gitsource/anemoi-core/training/
+ 1263  grep -r "anemoi-graphs\|0.5.2" . --include="*.toml" --include="*.py" --include="setup*"
+ 1264  vim pyproject.toml 
+ 1265  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1266  uv pip freeze
+ 1267  lcn
+ 1268  lcn .venv/bin/
+ 1269  uv pip freeze
+ 1270  source .venv/bin/activate
+ 1271  uv pip freeze
+ 1272  deactivate 
+ 1273  lcn
+ 1274  lcn -a
+ 1275  uv venv -p 3.12
+ 1276  uv sync
+ 1277  lcn
+ 1278  vim pyproject.toml 
+ 1279  set env | less
+ 1280  set env 
+ 1281  which uv
+ 1282  uv pip install anemoi-graph
+ 1283  source .venv/bin/activate
+ 1284  uv pip install anemoi-graph
+ 1285  uv pip freeze
+ 1286  vim pyproject.toml 
+ 1287  uv pip install anemoi-graph
+ 1288  uv pip install anemoi-graphs
+ 1289  uv sync
+ 1290  deactivate 
+ 1291  uv sync
+ 1292  source .venv/bin/activate
+ 1293  uv sync
+ 1294  vim pyproject
+ 1295  vim pyproject.toml 
+ 1296  uv sync
+ 1297  vim pyproject.toml 
+ 1298  lcn
+ 1299  uv sync
+ 1300  lcn
+ 1301  vim pyproject.toml 
+ 1302  uv sync
+ 1303  vim pyproject.toml 
+ 1304  uv sync
+ 1305  vim pyproject.toml 
+ 1306  uv sync
+ 1307  lcn .venv/bin/
+ 1308  uv pip list
+ 1309  uv pip list | grep anemoi
+ 1310  lcn
+ 1311  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1312  lcn
+ 1313  lcn .venv/bin/
+ 1314  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1315  lcn
+ 1316  lcn -a
+ 1317  rm .job_inference.sh.swp
+ 1318  cd
+ 1319  cd git/run-anemoi-nowcast/lumi/
+ 1320  lcn -a
+ 1321  rm .jobscript_inference_multi.sh.swp
+ 1322  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1323  uv sync
+ 1324  source .venv/bin/activate
+ 1325  uv pip uninstall anemoi-inference -y
+ 1326  uv pip uninstall anemoi-inference
+ 1327  uv pip install anemoi-inference@. --editable
+ 1328  uv pip install anemoi-inference
+ 1329  pwd
+ 1330  lcn
+ 1331  pwd
+ 1332  lcn
+ 1333  vim job_inference.sh 
+ 1334  lcn
+ 1335  vim radar_fcst_inference.yaml 
+ 1336  lcn
+ 1337  sbatch job_inference.sh 
+ 1338  squeue -u milemate
+ 1339  lcn
+ 1340  lcn logs/
+ 1341  vim logs/inference.out 
+ 1342  vim job_inference.sh 
+ 1343  sbatch job_inference.sh 
+ 1344  squeue -u milemate
+ 1345  lcn
+ 1346  lcn logs/
+ 1347  date
+ 1348  squeue -u milemate
+ 1349  vim logs/inference.out 
+ 1350  lcn
+ 1351  vim job_inference.sh 
+ 1352  vim logs/inference.out 
+ 1353  vim job_inference.sh 
+ 1354  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1355  cd ../bris-gitsource/
+ 1356  lcn
+ 1357  cd anemoi-inference/
+ 1358  git status
+ 1359  git checkout fix/netcdf_with_postproc
+ 1360  git status
+ 1361  cd ..
+ 1362  cd bris-multisource/
+ 1363  lcn .venv/bin/
+ 1364  cd ..
+ 1365  lcn
+ 1366  rm uv.lock pyproject.toml
+ 1367  lcn
+ 1368  mkdir inference
+ 1369  lcn
+ 1370  lcn inference/
+ 1371  lcn logs/
+ 1372  lcn /scratch/project_465002688/milemate/bris-multisource
+ 1373  lcn inference/
+ 1374  lcn logs/
+ 1375  cd bris-multisource/
+ 1376  lcn -a
+ 1377  cd
+ 1378  cd git/run-anemoi-nowcast/lumi/
+ 1379  lcn
+ 1380  vim jobscript_inference_multi.sh 
+ 1381  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1382  lcn
+ 1383  squeue -u milemate
+ 1384  sbatch job_inference.sh 
+ 1385  tail -f logs/inference.out 
+ 1386  sbatch job_inference.sh 
+ 1387  tail -f logs/inference.out 
+ 1388  squeue -u milemate
+ 1389  sbatch job_inference.sh 
+ 1390  tail -f logs/inference.out 
+ 1391  lcn /pfs/lustrp1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/inference-anemoi-by_epoch-epoch_005-step_006000.ckpt
+ 1392  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/inference-anemoi-by_epoch-epoch_005-step_006000.ckpt
+ 1393  lcn /pfs/lustrep1/scratch/project_465002688/datasets/nordic-radar-2020-2025-1km-5m.zarr
+ 1394  lcn /pfs/lustrep1/scratch/project_465002688/milemate/inference/99b9265e-5ae3-45f2-bf02-669f66493f04/output.nc
+ 1395  sbatch job_inference.sh 
+ 1396  tail -f logs/inference.out 
+ 1397  squeue -u milemate
+ 1398  sbatch job_inference.sh 
+ 1399  tail -f logs/inference.out 
+ 1400  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1401  lcn
+ 1402  vim logs/inference.out 
+ 1403  lcn
+ 1404  cd
+ 1405  cd git/run-anemoi-nowcast/lumi/
+ 1406  lcn
+ 1407  vim jobscript_inference_multi.sh 
+ 1408  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1409  lcn
+ 1410  sbatch job_inference.sh 
+ 1411  squeue -u milemate
+ 1412  lcn logs/
+ 1413  tail -f logs/inference.out 
+ 1414  lcn /pfs/lustrep3/scratch/project_465002262/pytorch-2.9.1-rocm-6.4.4-py-3.12.3-v1.0.sif
+ 1415  lcn /pfs/lustrep3/scratch/project_465002262/
+ 1416  sbatch job_inference.sh 
+ 1417  tail -f logs/inference.out 
+ 1418  source .venv/bin/activate
+ 1419  cd
+ 1420  cd git
+ 1421  cd run-anemoi-nowcast/lumi/
+ 1422  lcn
+ 1423  vim jobscript_inference_multi.sh 
+ 1424  cd
+ 1425  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1426  cat logs/inference.out 
+ 1427  lcn .venv/bin/
+ 1428  cat logs/inference.out 
+ 1429  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource
+ 1430  sbatch job_inference.sh 
+ 1431  tail -f logs/inference.out 
+ 1432  squeue -u milemate
+ 1433  tail -f logs/inference.out 
+ 1434  lcn
+ 1435  sbatch job_inference.sh 
+ 1436  squeue -u milemate
+ 1437  tail -f logs/inference.out 
+ 1438  vim logs/inference.out 
+ 1439  sbatch job_inference.sh 
+ 1440  tail -f logs/inference.out 
+ 1441  vim ~/git/run-anemoi-nowcast/lumi/jobscript_inference_multi.sh 
+ 1442  sbatch job_inference.sh 
+ 1443  tail -f logs/inference.out 
+ 1444  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1445  lcn
+ 1446  lcn ../
+ 1447  lcn ../inference/
+ 1448  lcn
+ 1449  vim job_inference.sh 
+ 1450  squeue -u milemate
+ 1451  lcn ../inference/
+ 1452  lcn
+ 1453  lcn logs/
+ 1454  vim job_inference.sh 
+ 1455  squeue -u milemate
+ 1456  lcn
+ 1457  lcn ../
+ 1458  vim job_inference.sh 
+ 1459  lcn ../
+ 1460  lcn ../inference/
+ 1461  lcn
+ 1462  squeue -u milemate
+ 1463  lcn ../inference/
+ 1464  squeue -u milemate
+ 1465  vim job_inference.sh 
+ 1466  lcn
+ 1467  vim radar_fcst_inference.yaml 
+ 1468  lcn
+ 1469  lcn logs/
+ 1470  lcn
+ 1471  lcn ../
+ 1472  lcn ../inference/
+ 1473  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1474  lcn ../inference/
+ 1475  lcn ../
+ 1476  lcn
+ 1477  lcn logs/
+ 1478  vim radar_fcst_inference.yaml 
+ 1479  lcn ../inference/
+ 1480  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1481  vim job_inference.sh 
+ 1482  cd
+ 1483  cd git/run-anemoi-nowcast/lumi/
+ 1484  lcn
+ 1485  vim jobscript_inference_multi.sh 
+ 1486  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1487  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1488  lcn
+ 1489  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1490  vim job_inference.sh 
+ 1491  cd ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1492  lcn
+ 1493  pwd
+ 1494  cd ..
+ 1495  cd bris-multisource/
+ 1496  lcn
+ 1497  vim job_inference.sh 
+ 1498  squeue -u milemate
+ 1499  vim job_inference.sh 
+ 1500  squeue -u milemate
+ 1501  lcn
+ 1502  lcn ../
+ 1503  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1504  date
+ 1505  lcn /scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/inference-anemoi-by_epoch-epoch_005-step_006000.ckpt
+ 1506  vim job_inference.sh 
+ 1507  vim radar_fcst_inference.yaml 
+ 1508  vim job_inference.sh 
+ 1509  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1510  lcn
+ 1511  vim job_inference.sh 
+ 1512  squeue -u milemate
+ 1513  vim job_inference.sh 
+ 1514  squeue -u milemate
+ 1515  lcn
+ 1516  lcn logs/
+ 1517  lcn ../
+ 1518  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1519  date
+ 1520  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1521  vim job_inference.sh 
+ 1522  vim radar_fcst_inference.yaml 
+ 1523  vim job_inference.sh 
+ 1524  squeue -u milemate
+ 1525  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1526  cd ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1527  pwd
+ 1528  cd -
+ 1529  lcn
+ 1530  lcn .venv/bin/anemoi-models 
+ 1531  source .venv/bin/activate
+ 1532  uv pip list | grep -i anemoi
+ 1533  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1534  lcn
+ 1535  vim radar_fcst_inference.yaml 
+ 1536  sbatch job_inference.sh 
+ 1537  tail -f logs/inference.out 
+ 1538  vim logs/inference.out 
+ 1539  sbatch job_inference.sh 
+ 1540  tail -f logs/inference.out 
+ 1541  sbatch job_inference.sh 
+ 1542  tail -f logs/inference.out 
+ 1543  squeue -u milemate
+ 1544  vim logs/inference.out 
+ 1545  cd logs/
+ 1546  pwd
+ 1547  vim inference.out 
+ 1548  pwd
+ 1549  lcn
+ 1550  cd git
+ 1551  cd run-anemoi-nowcast/lumi/
+ 1552  lcn
+ 1553  lcn -a
+ 1554  source .venv-torch-291/bin/activate
+ 1555  pip list | grep -i litellm
+ 1556  pip list
+ 1557  python -c "import litellm; print('LiteLLM installed, version:', litellm.__version__)"
+ 1558  python3 -c "import litellm; print('LiteLLM installed, version:', litellm.__version__)"
+ 1559  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1560  deactivate 
+ 1561  source .venv/bin/activate
+ 1562  python3 -c "import litellm; print('LiteLLM installed, version:', litellm.__version__)"
+ 1563  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1564  grep -ir litellm *
+ 1565  grep -ir llm *
+ 1566  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1567  lcn
+ 1568  vim pyproject.toml 
+ 1569  lcn
+ 1570  cd ..
+ 1571  lcn
+ 1572  cd -
+ 1573  vim job_inference.sh 
+ 1574  sbatch job_inference.sh 
+ 1575  squeue -u milemate
+ 1576  tail -f logs/inference.out 
+ 1577  vim logs/inference.out 
+ 1578  tail -f logs/inference.out 
+ 1579  mv logs/inference.out logs/inference1.out 
+ 1580  lcn logs/
+ 1581  vim logs/inference.out 
+ 1582  vim job_inference.sh 
+ 1583  sbatch job_inference.sh 
+ 1584  tail -f logs/inference.out 
+ 1585  vim logs/inference.out 
+ 1586  vim job_inference.sh 
+ 1587  sbatch job_inference.sh 
+ 1588  tail -f logs/inference.out 
+ 1589  vim logs/inference.out 
+ 1590  vim job_inference.sh 
+ 1591  :q
+ 1592  sbatch job_inference.sh 
+ 1593  tail -f logs/inference.out 
+ 1594  vim logs/inference.out 
+ 1595  vim job_inference.sh 
+ 1596  cp job_inference.sh job_inference_orig.sh 
+ 1597  vim job_inference_orig.sh 
+ 1598  sbatch job_inference.sh 
+ 1599  vim logs/inference.out 
+ 1600  #sbatch job_inference_orig.sh
+ 1601  mv logs/inference.out logs/inference2.out
+ 1602  sbatch job_inference_orig.sh
+ 1603  cat logs/inference2.out 
+ 1604  lcn logs/
+ 1605  cat logs/inference.out 
+ 1606  vim job_inference.sh 
+ 1607  vim logs/inference1.out 
+ 1608  lcn
+ 1609  cd ..
+ 1610  cd bris-multisource_extension/
+ 1611  lcn
+ 1612  cd ../bris-multisource
+ 1613  lcn
+ 1614  vim job_inference_orig.sh 
+ 1615  sbatch job_inference_orig.sh
+ 1616  squeue -u milemate
+ 1617  tail -f logs/inference.out 
+ 1618  vim logs/inference.out 
+ 1619  vim job_inference
+ 1620  vim job_inference.sh 
+ 1621  vim job_inference_orig.sh 
+ 1622  vim job_inference.sh 
+ 1623  sbatch job_inference.sh 
+ 1624  tail -f logs/inference.out 
+ 1625  vim job_inference.sh 
+ 1626  sbatch job_inference.sh 
+ 1627  tail -f logs/inference.out 
+ 1628  vim job_inference.sh 
+ 1629  sbatch job_inference.sh 
+ 1630  tail -f logs/inference.out 
+ 1631  vim logs/inference.out 
+ 1632  vim job_inference_orig.sh 
+ 1633  lcn
+ 1634  vim job_inference_orig.sh 
+ 1635  vim job_inference.sh 
+ 1636  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1637  lcn
+ 1638  lcn .venv/bin/
+ 1639  lcn
+ 1640  vim pyproject.toml 
+ 1641  lcn
+ 1642  uv sync
+ 1643  squeue -u milemate
+ 1644  lcn
+ 1645  squeue -u milemate
+ 1646  uv sync
+ 1647  squeue -u milemate
+ 1648  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1649  date
+ 1650  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1651  lcn .venv/bin/anemoi-models 
+ 1652  vim job_inference.sh 
+ 1653  squeue -u milemate
+ 1654  :q
+ 1655  squeue -u milemate
+ 1656  cd ..
+ 1657  lcn
+ 1658  mkdir bris-multisource_extension
+ 1659  lcn
+ 1660  git clone git@github.com:OpheliaMiralles/bris-multisource.git bris-multisource_extension
+ 1661  lcn
+ 1662  lcn bris-multisource_extension/
+ 1663  mv bris-multisource_extension bris-multisource-extension
+ 1664  lcn
+ 1665  squeue -u milemate
+ 1666  vim ~/git/run-anemoi-nowcast/lumi/jobscript_inference_multi.sh 
+ 1667  vim ~/git/run-anemoi-nowcast/lumi/run_pytorch_infer.sh 
+ 1668  cd bris-multisource
+ 1669  lcn
+ 1670  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1671  date
+ 1672  squeue -u milemate
+ 1673  date
+ 1674  lcn
+ 1675  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1676  squeue -u milemate
+ 1677  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1678  squeue -u milemate
+ 1679  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 1680  lcn
+ 1681  cd logs/
+ 1682  pwd
+ 1683  cd ..
+ 1684  cd bris-gitsource/anemoi-core/
+ 1685  lcn
+ 1686  git status
+ 1687  git fetch --all
+ 1688  git status
+ 1689  cd ..
+ 1690  cd bris-multisource
+ 1691  lcn
+ 1692  uv sync
+ 1693  source .venv/bin/activate
+ 1694  python
+ 1695  uv pip list | grep -i anemoi
+ 1696  uv sync
+ 1697  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1698  lcn
+ 1699  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1700  cd ..
+ 1701  cd bris-gitsource/
+ 1702  lcn
+ 1703  rm -rf anemoi-core/
+ 1704  git clone git@github.com:ecmwf/anemoi-core.git
+ 1705  lcn
+ 1706  cd anemoi-core/
+ 1707  git remote -v
+ 1708  git fetch --all
+ 1709  lcn
+ 1710  git status
+ 1711  git remote -v
+ 1712  git remote set-url metno git@github.com:metno/anemoi-core.git
+ 1713  git remote -v
+ 1714  git remote add metno git@github.com:metno/anemoi-core.git
+ 1715  git remote -v
+ 1716  git fetch --all
+ 1717  git checkout wip-nowcasting
+ 1718  git status
+ 1719  git tag --list
+ 1720  git tag --list -5
+ 1721  git tag --list
+ 1722  git tag --list > out_list
+ 1723  lcn
+ 1724  vim out_list 
+ 1725  cat out_list 
+ 1726  lcn
+ 1727  rm out_list
+ 1728  lcn
+ 1729  rm -f 'ed 1673 (delta 1673), pack-reused 1576 (from 3)'
+ 1730  lcn
+ 1731  git status
+ 1732  cd ..
+ 1733  lcn
+ 1734  cd ..
+ 1735  cd bris-multisource
+ 1736  lcn
+ 1737  lcn -a
+ 1738  lcn -a .venv/
+ 1739  lcn -a .venv/bin/
+ 1740  lcn
+ 1741  vim job_inference.sh 
+ 1742  sbatch job_inference_orig.sh 
+ 1743  tail -f logs/inference.out 
+ 1744  vim radar_fcst_inference.yaml 
+ 1745  vim job_inference.sh 
+ 1746  sbatch job_inference.sh 
+ 1747  tail -f logs/inference.out 
+ 1748  vim job_inference.sh 
+ 1749  lcn .venv/bin/anemoi-inference 
+ 1750  vim job_inference.sh 
+ 1751  source .venv/bin/activate
+ 1752  python
+ 1753  vim job_inference.sh 
+ 1754  sbatch job_inference.sh 
+ 1755  tail -f logs/inference.out 
+ 1756  vim job_inference.sh 
+ 1757  sbatch job_inference.sh 
+ 1758  tail -f logs/inference.out 
+ 1759  vim job_inference.sh 
+ 1760  sbatch job_inference.sh 
+ 1761  tail -f logs/inference.out 
+ 1762  vim job_inference
+ 1763  vim job_inference.sh 
+ 1764  sbatch job_inference.sh 
+ 1765  tail -f logs/inference.out 
+ 1766  vim job_inference.sh 
+ 1767  lcn
+ 1768  vim job_inference_orig.sh 
+ 1769  sbatch job_inference_orig.sh 
+ 1770  tail -f logs/inference.out 
+ 1771  vim logs/inference1.out 
+ 1772  vim logs/inference2.out 
+ 1773  tail -f logs/inference.out 
+ 1774  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1775  cd ..
+ 1776  cd bris-gitsource/
+ 1777  lcn
+ 1778  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1779  lcn
+ 1780  uv sync
+ 1781  vim pyproject.toml 
+ 1782  uv sync
+ 1783  source .venv/bin/activate
+ 1784  uv pip list | grep -i anemoi
+ 1785  vim pyproject.toml 
+ 1786  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1787  lcn
+ 1788  cp job_inference_latest_ophelia.sh job_inf.sh
+ 1789  vim job_inf.sh 
+ 1790  lcn
+ 1791  tail -f logs/inference.out 
+ 1792  squeue -u milemate
+ 1793  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1794  lcn
+ 1795  lcn logs/
+ 1796  cd logs/
+ 1797  lcn -a
+ 1798  rm .inference.out.swp
+ 1799  cd ..
+ 1800  squeue -u milemate
+ 1801  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1802  lcn
+ 1803  vim logs/inference.out 
+ 1804  vim job_inference.sh 
+ 1805  squeue -u milemate
+ 1806  tail -f logs/inference.out 
+ 1807  mv logs/inference.out logs/inference3.out
+ 1808  tail -f logs/inference.out 
+ 1809  vim logs/inference.out 
+ 1810  vim job_inf.sh 
+ 1811  sbatch job_inf.sh 
+ 1812  squeue -u milemate
+ 1813  tail -f logs/inference.out 
+ 1814  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1815  lcn
+ 1816  lcn -a
+ 1817  pwd
+ 1818  vim pyproject.toml 
+ 1819  lcn
+ 1820  lcn -a
+ 1821  rm -rf .venv/
+ 1822  lcn -a
+ 1823  uv venv -p 3.12
+ 1824  uv sync
+ 1825  vim pyproject.toml 
+ 1826  uv sync
+ 1827  source .venv/bin/activate
+ 1828  uv pip install | grep -i anemoi
+ 1829  uv pip list | grep -i anemoi
+ 1830  lcn
+ 1831  squeue -u milemate
+ 1832  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt
+ 1833  squeue -u milemate
+ 1834  vim job_inference_orig.sh 
+ 1835  lcn ../inference/
+ 1836  mkdir -p /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a
+ 1837  lcn ../inference/
+ 1838  mkdir -p /pfs/lustrep1/scratch/project_465002688/milemate/inference/877c3d42-1a90-4357-8bd0-64cae678fc6a
+ 1839  lcn ../inference/
+ 1840  lcn
+ 1841  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1842  lcn
+ 1843  lcn ../inference/
+ 1844  lcn ../inference/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 1845  squeue -u milemate
+ 1846  pwd
+ 1847  lcn
+ 1848  mv ~/job_inference_latest_ophelia.sh .
+ 1849  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1850  lcn
+ 1851  vim job_inference_latest_ophelia.sh 
+ 1852  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1853  vim job_inference.sh 
+ 1854  squeue -u milemate
+ 1855  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1856  cat logs/inference.out 
+ 1857  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1858  lcn
+ 1859  vim job_inference.sh 
+ 1860  lcn
+ 1861  sbatch job_inf.sh 
+ 1862  squeue -u milemate
+ 1863  vim logs/inference.out 
+ 1864  vim job_inf.sh 
+ 1865  sbatch job_inf.sh 
+ 1866  squeue -u milemate
+ 1867  vim job_inf.sh 
+ 1868  vim job_inference.sh 
+ 1869  vim job_inf.sh 
+ 1870  sbatch job_inf.sh 
+ 1871  squeue -u milemate
+ 1872  vim logs/inference.out 
+ 1873  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1874  tail -f logs/inference.out 
+ 1875  cd /scratch/project_465002688/milemate/bris-multisource
+ 1876  lcn .venv/bin/activate
+ 1877  tail -f logs/inference.out 
+ 1878  lcn /pfs/lustrp1/scratch/project_465002688/milemate/bris-multisource
+ 1879  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource
+ 1880  tail -f logs/inference.out 
+ 1881  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource
+ 1882  tail -f logs/inference.out 
+ 1883  lcn /scratch/project_465002688/milemate/bris-multisource
+ 1884  lcn -a /scratch/project_465002688/milemate/bris-multisource
+ 1885  tail -f logs/inference.out 
+ 1886  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1887  lcn
+ 1888  vim job_inf.sh 
+ 1889  sbatch job_inf.sh 
+ 1890  squeue -u milemate
+ 1891  lcn -a
+ 1892  squeue -u milemate
+ 1893  vim job_inf.sh 
+ 1894  squeue -u milemate
+ 1895  sbatch job_inf.sh 
+ 1896  squeue -u milemate
+ 1897  vim job_inf.sh 
+ 1898  sbatch job_inf.sh 
+ 1899  vim job_inf.sh 
+ 1900  sbatch job_inf.sh 
+ 1901  vim job_inf.sh 
+ 1902  sbatch job_inf.sh 
+ 1903  vim job_inf.sh 
+ 1904  sbatch job_inf.sh 
+ 1905  vim job_inf.sh 
+ 1906  sbatch job_inf.sh 
+ 1907  vim job_inf.sh 
+ 1908  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1909  cat logs/inferenceo
+ 1910  cat logs/inference.out 
+ 1911  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1912  lcn .venv/
+ 1913  lcn .venv/bin/
+ 1914  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1915  lcn
+ 1916  vim job_inf.sh 
+ 1917  sbatch job_inf.sh 
+ 1918  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1919  lcn
+ 1920  vim logs/inference.out 
+ 1921  tail -f logs/inference.out 
+ 1922  cd /scratch/project_465002688/milemate/bris-multisource/../
+ 1923  lcn
+ 1924  cd bris-multisource-extension/
+ 1925  lcn
+ 1926  cd ..
+ 1927  lcn
+ 1928  cp -r bris-multisource/* bris-multisource-extension/.
+ 1929  cd bris-multisource-extension/
+ 1930  lcn
+ 1931  lcn -a
+ 1932  cp job_inf.sh job_install.sh
+ 1933  lcn
+ 1934  vim job_install.sh 
+ 1935  lcn
+ 1936  sbatch job_install.sh 
+ 1937  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1938  lcn
+ 1939  lcn -a
+ 1940  cd ../bris-multisource-extension/
+ 1941  lcn
+ 1942  vim pyproject.toml 
+ 1943  grep -ir bris-multisource-extension *
+ 1944  grep -ir bris-multisource *
+ 1945  rm job_inference*
+ 1946  rm logs/inference*
+ 1947  lcn logs/
+ 1948  lcn
+ 1949  rm job_load_netatmo_dataset.sh pyproject_emulator.toml
+ 1950  lcn
+ 1951  vim setup_env.sh 
+ 1952  rm setup_env.sh
+ 1953  lcn
+ 1954  lcn resources/
+ 1955  lcn
+ 1956  history | grep -i uv
+ 1957  lcn
+ 1958  lcn resources/
+ 1959  grep -ir bris-multisource *
+ 1960  vim job_inf.sh 
+ 1961  lcn
+ 1962  squeue -u milemate
+ 1963  lcn
+ 1964  lcn -a
+ 1965  squeue -u milemate
+ 1966  vim logs/install.out 
+ 1967  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 1968  lcn
+ 1969  tail -f logs/install.out 
+ 1970  lcn /users/milemate/.local/bin/
+ 1971  tail -f logs/install.out 
+ 1972  lcn /users/milemate/.local/bin/
+ 1973  file /users/milemate/.local/bin/env.fish 
+ 1974  cat /users/milemate/.local/bin/env.fish 
+ 1975  cat logs/install.out 
+ 1976  cat /users/milemate/.local/bin/env
+ 1977  cat /users/milemate/.local/bin/env.fish 
+ 1978  tail -f logs/install.out 
+ 1979  cd /scratch/project_465002688/milemate/bris-multisource/
+ 1980  cd ../bris-multisource-extension/
+ 1981  lcn -a
+ 1982  vim job_install.sh 
+ 1983  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 1984  lcn
+ 1985  cd
+ 1986  lcn /appl/local/laifs/containers/lumi-multitorch-u24r64f21m43t29-20260124_092648/lumi-multitorch-full-u24r64f21m43t29-20260124_092648.sif
+ 1987  lcn /appl/local/
+ 1988  lcn /appl/local/laifs/
+ 1989  lcn /appl/local/laifs/containers/
+ 1990  lcn /appl/local/laifs/containers/lumi-multitorch-u24r64f21m43t29-20260319_153422/
+ 1991  pwd
+ 1992  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 1993  lcn -a
+ 1994  rm .job_install.sh.swp
+ 1995  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 1996  lcn
+ 1997  vim job_install.sh 
+ 1998  sbatch job_install.sh 
+ 1999  vim job_install.sh 
+ 2000  sbatch job_install.sh 
+ 2001  vim job_install.sh 
+ 2002  sbatch job_install.sh 
+ 2003  lcn -a
+ 2004  lcn /pfs/lustrep1/scratch/project_465002688/milemate/.uv-cache
+ 2005  lcn
+ 2006  vim job_install.sh 
+ 2007  sbatch job_install.sh 
+ 2008  squeue -u milemate
+ 2009  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2010  lcn
+ 2011  lcn -a
+ 2012  vim job_install.sh 
+ 2013  sbatch job_install.sh 
+ 2014  squeue -u milemate
+ 2015  vim job_install.sh 
+ 2016  sbatch job_install.sh 
+ 2017  vim job_install.sh 
+ 2018  sbatch job_install.sh 
+ 2019  vim job_install.sh 
+ 2020  sbatch job_install.sh 
+ 2021  lcn -a
+ 2022  cd /scratch/project_465002688/milemate/bris-multisource/
+ 2023  cd ../bris-multisource-extension/
+ 2024  lcn
+ 2025  cat logs/install.out 
+ 2026  echo $UV_CACHE_DIR
+ 2027  tail -f logs/install.out 
+ 2028  cat logs/install.out 
+ 2029  tail -f logs/install.out 
+ 2030  lcn -a
+ 2031  tail -f logs/install.out 
+ 2032  module spider cotainr
+ 2033  module load cotainr/2025.7.1
+ 2034  module spider cotainr/2025.7.1
+ 2035  module spider cotainr
+ 2036  module spider cotainr/2025.7.1-cray-python-3.11.7
+ 2037  module load cotainr/2025.7.1-cray-python-3.11.7
+ 2038  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2039  vim job_inf.sh 
+ 2040  lcn
+ 2041  module load LUMI systools
+ 2042  cd /scratch/project_465002688/milemate/
+ 2043  lcn
+ 2044  mkdir container
+ 2045  lcn
+ 2046  cd container/
+ 2047  vim my-lumi-env.def
+ 2048  lcn
+ 2049  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2050  lcn -a
+ 2051  rm .job_inf.sh.swp
+ 2052  cotainr info
+ 2053  vim job_inf.sh 
+ 2054  module load cotainr
+ 2055  cd /scratch/project_465002688/milemate/bris-multisource/
+ 2056  lcn
+ 2057  vim job_inf.sh 
+ 2058  cd ../bris-multisource-extension/
+ 2059  pwd
+ 2060  lcn
+ 2061  pwd
+ 2062  lcn -a
+ 2063  pwd
+ 2064  cd /scratch/project_465002688/milemate/
+ 2065  lcn
+ 2066  cd container/
+ 2067  lcn
+ 2068  vim my-lumi-env.def 
+ 2069  lcn
+ 2070  singularity build my-lumi.sif my-lumi-env.def
+ 2071  lcn
+ 2072  vim my-lumi-env.def 
+ 2073  lcn
+ 2074  mkdir -p /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 2075  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 2076  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/
+ 2077  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/wheels/
+ 2078  cd /scratch/project_465002688/milemate/
+ 2079  lcn
+ 2080  cd container/
+ 2081  lcn
+ 2082  module load LUMI systools
+ 2083  man singularity
+ 2084  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2085  lcn
+ 2086  vim job_install.sh 
+ 2087  cp job_install.sh job_test.sh
+ 2088  vim job_test.sh 
+ 2089  sbatch job_test.sh 
+ 2090  tail -f logs/install.out 
+ 2091  squeue -u milemate
+ 2092  lcn
+ 2093  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2094  lcn
+ 2095  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2096  lcn
+ 2097  cd ..
+ 2098  løcn
+ 2099  lcn
+ 2100  cd container/
+ 2101  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2102  lcn
+ 2103  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2104  lcn
+ 2105  cd ..
+ 2106  lc
+ 2107  lcn
+ 2108  cd container/
+ 2109  module load LUMI systools
+ 2110  singularity build --sandbox my-lumi-sandbox my-lumi-env.def
+ 2111  lcn
+ 2112  module load LUMI/23.09 singularity/4.1.3
+ 2113  cotainr build my-lumi.sif     --base-image=/appl/local/containers/sif-images/lumi-multitorch-full-u24r64f21m43t29-20260124_092648.sif \
+ 2114  cotainr build my-lumi.sif --base-image=/appl/local/containers/sif-images/lumi-multitorch-full-u24r64f21m43t29-20260124_092648.sif --pip-install=uv
+ 2115  lcn
+ 2116  squeue -u milemate
+ 2117  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2118  lcn
+ 2119  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2120  lcn
+ 2121  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2122  lcn
+ 2123  lcn -a
+ 2124  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2125  lcn
+ 2126  lcn -a
+ 2127  lcn
+ 2128  lcn -a
+ 2129  uv venv -p 3.12
+ 2130  lcn
+ 2131  lcn -a
+ 2132  uv sync
+ 2133  lcn .venv/bin/
+ 2134  source .venv/bin/activate
+ 2135  lcn
+ 2136  vim job_radar.sh 
+ 2137  lcn /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2138  vim job_test.sh 
+ 2139  cd
+ 2140  vim .bashrc 
+ 2141  cd -
+ 2142  squeue -u milemate
+ 2143  lcn
+ 2144  lcn /scratch/project_465002688/milemate/bris-multisource-extension/config
+ 2145  vim job_test.sh 
+ 2146  lcn logs/
+ 2147  squeue -u milemate
+ 2148  lcn logs/
+ 2149  vim -R /scratch/project_465002688/omiralle/bris_multisource/job_radar_fcst.sh 
+ 2150  lcn logs/
+ 2151  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2152  lcn
+ 2153  python33
+ 2154  python3
+ 2155  lcn
+ 2156  vim job_test.sh 
+ 2157  sbatch job_test.sh 
+ 2158  squeue -u milemate
+ 2159  vim logs/install.out 
+ 2160  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/
+ 2161  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/torchenv/
+ 2162  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/torchenv/bin/
+ 2163  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/
+ 2164  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 2165  vim -R /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/README.md 
+ 2166  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/python/
+ 2167  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 2168  vim -R /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/job_radar_fcst.sh 
+ 2169  cp /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/job_radar_fcst.sh job_radar.sh
+ 2170  lcn config/
+ 2171  lcn
+ 2172  cp /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml config/.
+ 2173  lcn
+ 2174  lcn config/
+ 2175  vim config/radar_fcst_simple.yaml 
+ 2176  lcn
+ 2177  vim job_radar.sh 
+ 2178  sbatch job_radar.sh 
+ 2179  vim job_radar.sh 
+ 2180  sbatch job_radar.sh 
+ 2181  squeue -u milemate
+ 2182  lcn
+ 2183  squeue -u milemate
+ 2184  lcn
+ 2185  lcn .venv/bin/
+ 2186  vim job_radar.sh 
+ 2187  squeue -u milemate
+ 2188  vim job_radar.sh 
+ 2189  squeue -u milemate
+ 2190  vim job_radar.sh 
+ 2191  scancel 17122434
+ 2192  squeue -u milemate
+ 2193  sbatch job_radar.sh 
+ 2194  squeue -u milemate
+ 2195  vim config/radar_fcst_simple.yaml 
+ 2196  squeue -u milemate
+ 2197  scancel 17123469
+ 2198  squeue -u milemate
+ 2199  vim job_radar.sh 
+ 2200  sbatch job_radar.sh 
+ 2201  squeue -u milemate
+ 2202  sbatch job_test.sh 
+ 2203  squeue -u milemate
+ 2204  lcn
+ 2205  squeue -u milemate
+ 2206  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2207  lcn logs/
+ 2208  vim logs/radar_test_17123499.out 
+ 2209  vim logs/install.out 
+ 2210  lcn
+ 2211  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2212  lcn
+ 2213  vim job_test.sh 
+ 2214  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2215  lcn
+ 2216  lcn logs/
+ 2217  vim logs/radar_test_17123499.out 
+ 2218  cd ../bris-multisource
+ 2219  lcn
+ 2220  lcn logs/
+ 2221  vim logs/inference.out 
+ 2222  cat logs/inference.out 
+ 2223  lcn
+ 2224  vim job_inf.sh 
+ 2225  sbatch job_inf.sh 
+ 2226  squeue -u milemate
+ 2227  lcn logs/
+ 2228  cat logs/inference.out 
+ 2229  cd /scratch/project_465002688/milemate/bris-multisource
+ 2230  lcn
+ 2231  cat logs/inference.out 
+ 2232  lcn logs/
+ 2233  squeue -u milemate
+ 2234  lcn
+ 2235  cat logs/inference.out 
+ 2236  cd /scratch/project_465002688/milemate/bris-multisource
+ 2237  lcn
+ 2238  vim job_inf.sh 
+ 2239  lcn -a
+ 2240  lcn -a .venv/
+ 2241  lcn -a .venv/bin/
+ 2242  lcn
+ 2243  vim job_inf
+ 2244  vim job_inf.sh 
+ 2245  lcn
+ 2246  cd /scratch/project_465002688/milemate/bris-multisource
+ 2247  lcn
+ 2248  vim job_inf.sh 
+ 2249  sbatch job_inf.sh 
+ 2250  squeue -u milemate
+ 2251  vim job_inf.sh 
+ 2252  sbatch job_inf.sh 
+ 2253  squeue --me
+ 2254  sinfo | grep dev-g
+ 2255  squeue --me
+ 2256  vim job_inf.sh 
+ 2257  squeue --me
+ 2258  vim job_inf.sh 
+ 2259  sbatch job_inf.sh 
+ 2260  squeue --me
+ 2261  squeue | grep dev-g
+ 2262  squeue --me
+ 2263  squeue | grep dev-g
+ 2264  squeue --me
+ 2265  lcn
+ 2266  vim job_inf.sh 
+ 2267  cd ..
+ 2268  cd bris-multisource-extension/
+ 2269  lcn
+ 2270  vim pyproject.toml 
+ 2271  lcn .venv/
+ 2272  lcn .venv/bin/
+ 2273  lcn
+ 2274  cd ../bris-multisource
+ 2275  lcn
+ 2276  vim radar_fcst_inference.yaml 
+ 2277  cd /scratch/project_465002688/milemate/bris-multisource
+ 2278  lcn
+ 2279  cat logs/inference.out 
+ 2280  lcn .venv/bin/
+ 2281  cat logs/inference.out 
+ 2282  pwd
+ 2283  realpath .
+ 2284  lcn logs/
+ 2285  cat logs/inference.out 
+ 2286  ls -a
+ 2287  realpayh
+ 2288  realpath
+ 2289  realpath .
+ 2290  cat logs/inference.out 
+ 2291  lcn
+ 2292  squeue -u milemate
+ 2293  scancel 17290519
+ 2294  squeue -u milemate
+ 2295  tail -f logs/inference.out 
+ 2296  lcn
+ 2297  tail -f logs/inference.out 
+ 2298  lcn
+ 2299  lcn job
+ 2300  lcn jobs/
+ 2301  lcn
+ 2302  lcn 
+ 2303  cd ..
+ 2304  lcn
+ 2305  lcn inference/
+ 2306  lcn inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2307  lcn inference/
+ 2308  lcn
+ 2309  lcn inference/
+ 2310  lcn inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2311  squeue -u milemate
+ 2312  cat bris-multisource/logs/inference.out 
+ 2313  lcn
+ 2314  cd inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2315  pwd
+ 2316  lcn
+ 2317  cd ..
+ 2318  cd bris-multisource
+ 2319  lcn
+ 2320  lcn config/
+ 2321  lcn
+ 2322  vim radar_fcst_inference.yaml 
+ 2323  cd ../bris-multisource-extension/
+ 2324  lcn
+ 2325  cd /scratch/project_465002688/milemate/bris-multisource
+ 2326  lcn
+ 2327  cat radar_fcst_inference.yaml 
+ 2328  cd /scratch/project_465002688/milemate/bris-multisource
+ 2329  lcn
+ 2330  vim radar_fcst_inference.yaml 
+ 2331  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 2332  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/37abed78-f291-4bf3-8030-eaea77ffe089/
+ 2333  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 2334  vim radar_fcst_inference.yaml 
+ 2335  cd /scratch/project_465002688/milemate/bris-multisource
+ 2336  lcn
+ 2337  cd ../bris-multisource-extension/
+ 2338  lcn
+ 2339  lcn -a
+ 2340  lcn -a .venv/
+ 2341  lcn -a .venv/bin/
+ 2342  cd ../bris-multisource
+ 2343  lcn
+ 2344  cd ..
+ 2345  lcn
+ 2346  lcn container/
+ 2347  lcn
+ 2348  cd bris-multisource
+ 2349  lcn
+ 2350  cd ..
+ 2351  cd bris-gitsource/
+ 2352  lcn
+ 2353  cd bris-inference/
+ 2354  git status
+ 2355  git remote -v
+ 2356  cd ..
+ 2357  lcn
+ 2358  cd ..
+ 2359  cd bris-multisource-extension/
+ 2360  lcn .venv/bin/anemoi-inference 
+ 2361  lcn .venv/
+ 2362  lcn
+ 2363  vim job_install.sh 
+ 2364  lcn
+ 2365  cd ..
+ 2366  cd bris-gitsource/
+ 2367  lcn bris-inference/
+ 2368  cd
+ 2369  cd git/run-anemoi/lumi/
+ 2370  lcn .venv/bin/bris 
+ 2371  cd /scratch/project_465002688/milemate/bris-multisource
+ 2372  cd ..
+ 2373  lcn bris-gitsource/bris-inference/
+ 2374  lcn bris-gitsource/anemoi-core/
+ 2375  lcn bris-gitsource/anemoi-core/models/
+ 2376  lcn bris-gitsource/bris-inference/bris
+ 2377  vim bris-gitsource/bris-inference/pyproject.toml 
+ 2378  cd
+ 2379  cd git/run-anemoi/lumi/
+ 2380  lcn
+ 2381  vim env_setup_inf.sh 
+ 2382  cd /scratch/project_465002688/milemate/bris-multisource
+ 2383  lcn
+ 2384  cd ..
+ 2385  cd bris-multisource-extension/
+ 2386  lcn
+ 2387  vim pyproject.toml 
+ 2388  lcn
+ 2389  squeue -u milemate
+ 2390  squeue -u me
+ 2391  history | grep squeue
+ 2392  squeue --me
+ 2393  squeue | grep dev-g
+ 2394  cd /scratch/project_465002688/milemate/bris-multisource
+ 2395  lcn
+ 2396  cd ../bris-multisource-extension/
+ 2397  lcn
+ 2398  vim pyproject.toml 
+ 2399  diff pyproject.toml ../bris-multisource/pyproject.toml 
+ 2400  lcn
+ 2401  vim pyproject.toml 
+ 2402  lcn
+ 2403  uv sync
+ 2404  vim pyproject.toml 
+ 2405  uv sync
+ 2406  vim pyproject.toml 
+ 2407  uv sync
+ 2408  lcn .venv/bin/
+ 2409  cd /scratch/project_465002688/milemate/bris-multisource
+ 2410  lcn
+ 2411  cd ../bris-multisource-extension/
+ 2412  lcn
+ 2413  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource-extension
+ 2414  cd
+ 2415  cd git/run-anemoi/lumi/
+ 2416  lcn
+ 2417  vim lumi_radar_inference.sh 
+ 2418  vim run_pytorch_infer.sh 
+ 2419  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2420  lcn
+ 2421  lcn ../
+ 2422  lcn ../inference/
+ 2423  lcn ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2424  cd ../inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2425  mv output.nc anemoi_inference_output_20240101.nc 
+ 2426  lcn
+ 2427  cd
+ 2428  cd git/run-anemoi-nowcast/
+ 2429  lcn
+ 2430  cd lumi/
+ 2431  lcn
+ 2432  vim inference_data.yaml 
+ 2433  vim jobscript_inference_multi.sh 
+ 2434  vim container_script.sh 
+ 2435  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2436  lcn
+ 2437  vim radar_fcst_inference.yaml 
+ 2438  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/99b9265e-5ae3-45f2-bf02-669f66493f04/inference-last.ckpt
+ 2439  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 2440  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt
+ 2441  lcn /pfs/lustrep1/scratch/project_465002688/datasets/
+ 2442  lcn /pfs/lustrep1/scratch/project_465002688/milemate/experiments/nowcasting_multi/inference/predictions
+ 2443  lcn /pfs/lustrep1/scratch/project_465002688/milemate/
+ 2444  lcn /pfs/lustrep1/scratch/project_465002688/milemate/inference/
+ 2445  lcn /pfs/lustrep1/scratch/project_465002688/milemate/inference/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 2446  lcn /pfs/lustrep1/scratch/project_465002688/milemate/inference/99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2447  lcn
+ 2448  vim ../bris-multisource/radar_fcst_inference.yaml 
+ 2449  cd ..
+ 2450  cd inference/
+ 2451  lcn
+ 2452  lcn 877c3d42-1a90-4357-8bd0-64cae678fc6a
+ 2453  mv 99b9265e-5ae3-45f2-bf02-669f66493f04/anemoi_inference_output_20240101.nc 877c3d42-1a90-4357-8bd0-64cae678fc6a/.
+ 2454  rm -rf 99b9265e-5ae3-45f2-bf02-669f66493f04/
+ 2455  lcn
+ 2456  lcn 877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 2457  lcn
+ 2458  cd ..
+ 2459  lcn
+ 2460  lcn experiments/
+ 2461  lcn experiments/nowcasting_multi/
+ 2462  lcn experiments/nowcasting_multi/inference/
+ 2463  lcn experiments/nowcasting_multi/inference/predictions/
+ 2464  cd experiments/
+ 2465  lcn
+ 2466  rm -rf nowcasting_multi/
+ 2467  lcn
+ 2468  cd ..
+ 2469  lcn
+ 2470  lcn logs/
+ 2471  lcn inference/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 2472  cd bris-multisource-extension/
+ 2473  lcn logs/
+ 2474  tail -f logs/inference.out 
+ 2475  lcn logs/
+ 2476  cd logs/
+ 2477  pwd
+ 2478  cd ..
+ 2479  lcn
+ 2480  pwd
+ 2481  lcn
+ 2482  cd
+ 2483  cd git/
+ 2484  lcn
+ 2485  cd run-anemoi-nowcast/
+ 2486  lcn
+ 2487  cd lumi/
+ 2488  lcn
+ 2489  cd bris-inference/
+ 2490  git status
+ 2491  diff bris/model/brispredictor.py /scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/model/brispredictor.py
+ 2492  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2493  lcn
+ 2494  lcn .venv/bin/
+ 2495  lcn .venv/bin/bris
+ 2496  lcn .venv/bin/
+ 2497  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2498  lcn
+ 2499  vim job_inf.sh 
+ 2500  diff ../bris-multisource/job_inf.sh job_inf.sh 
+ 2501  cp job_inf.sh job_bris.sh
+ 2502  vim job_bris.sh 
+ 2503  lcn
+ 2504  vim job_bris.sh 
+ 2505  lcn
+ 2506  vim job_bris.sh 
+ 2507  cp ~/git/run-anemoi-nowcast/lumi/inference_data.yaml radar_fcst_inference_bris.yaml 
+ 2508  vim radar_fcst_inference_bris.yaml 
+ 2509  lcn
+ 2510  vim job_bris.sh 
+ 2511  lcn logs/
+ 2512  vim job_bris.sh 
+ 2513  sbatch job_bris.sh 
+ 2514  squeue --me
+ 2515  lcn ../inference/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 2516  squeue --me
+ 2517  vim job_bris.sh 
+ 2518  sbatch job_bris.sh 
+ 2519  squeue --me
+ 2520  lcn
+ 2521  lcn ../inference/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 2522  grep -ir msg *
+ 2523  cd ..
+ 2524  grep -ir msg bris-gitsource/bris-inference/*
+ 2525  vim bris-gitsource/bris-inference/bris/data/datamodule.py
+ 2526  cd bris-gitsource/bris-inference/
+ 2527  git status
+ 2528  cd ..
+ 2529  cd bris-multisource-extension/
+ 2530  lcn
+ 2531  cd ..
+ 2532  cd bris-gitsource/bris-inference/
+ 2533  lcn
+ 2534  pwd
+ 2535  rm bris/model/brispredictor.py
+ 2536  cp ~/git/run-anemoi-nowcast/lumi/bris-inference/bris/model/brispredictor.py bris/model/.
+ 2537  git status
+ 2538  cd ..
+ 2539  cd bris-multisource-extension/
+ 2540  lcn
+ 2541  uv sync
+ 2542  lcn .venv/bin/
+ 2543  date
+ 2544  uv lock --upgrade-package bris
+ 2545  uv sync
+ 2546  lcn .venv/bin/
+ 2547  lcn
+ 2548  rm uv.lock
+ 2549  uv sync
+ 2550  lcn .venv/bin/
+ 2551  lcn .venv/bin/bris
+ 2552  uv pip show bris
+ 2553  lcn .venv/bin/bris
+ 2554  date
+ 2555  lcn .venv/bin/
+ 2556  rm uv.lock
+ 2557  uv sync --refresh
+ 2558  lcn .venv/bin/
+ 2559  uv pip uninstall bris -y
+ 2560  source .venv/bin/activate
+ 2561  uv pip uninstall bris -y
+ 2562  uv pip uninstall bris
+ 2563  uv pip install bris --reinstall
+ 2564  deactivate 
+ 2565  lcn
+ 2566  sbatch job_bris.sh 
+ 2567  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2568  cat logs/inference.out 
+ 2569  find .venv -name "*torch*" -type d | xargs ls -la
+ 2570  lcn .venv/bin/
+ 2571  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2572  lcn
+ 2573  squeue --me
+ 2574  vim pyproject.toml 
+ 2575  cd ..
+ 2576  cd bris-gitsource/
+ 2577  lcn
+ 2578  cd anemoi-core/
+ 2579  git status
+ 2580  git remote -v
+ 2581  cd ..
+ 2582  lcn
+ 2583  cd ..
+ 2584  lcn
+ 2585  cd bris-multisource-extension/
+ 2586  lcn
+ 2587  vim pyproject.toml 
+ 2588  source .venv/bin/activate
+ 2589  uv pip uninstall torch-cluster torch-scatter torch-sparse torch-geometric
+ 2590  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2591  lcn
+ 2592  cat logs/inference.out 
+ 2593  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2594  lcn
+ 2595  squeue --me
+ 2596  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2597  lcn
+ 2598  lcn logs/
+ 2599  vim logs/inference.out 
+ 2600  lcn
+ 2601  vim pyproject.toml 
+ 2602  source .venv/bin/activate
+ 2603  uv pip uninstall torch-cluster torch-scatter torch-sparse torch-geometric
+ 2604  uv pip install torch-geometric pyg-lib torch-cluster torch-scatter torch-sparse --index-url https://download.pytorch.org/whl/cu121 
+ 2605  deactivate 
+ 2606  lcn
+ 2607  rm -rf .venv uv.lock
+ 2608  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2609  lcn
+ 2610  cd ..
+ 2611  lcn
+ 2612  cd -
+ 2613  lcn
+ 2614  uv venv -p 3.12
+ 2615  uv sync
+ 2616  lcn .venv/bin/
+ 2617  find .venv -name "*torch*" -type d | xargs ls -la
+ 2618  python -c "
+ 2619  import torch
+ 2620  try:
+ 2621      import torch_cluster
+ 2622      print('✓ torch_cluster loads OK')
+ 2623  except Exception as e:
+ 2624      print(f'✗ torch_cluster error: {e}')
+ 2625  "
+ 2626  vim test.sh
+ 2627  chmod u+x test.sh 
+ 2628  ./test.sh 
+ 2629  which python3
+ 2630  vim test.sh
+ 2631  ./test.sh 
+ 2632  source  .venv/bin/activate
+ 2633  ./test.sh 
+ 2634  vim test.sh
+ 2635  ./test.sh 
+ 2636  vim test.sh
+ 2637  lcn
+ 2638  sbatch job_bris.sh 
+ 2639  squeue --me
+ 2640  deactivate 
+ 2641  lcn
+ 2642  vim radar_fcst_inference_bris.yaml 
+ 2643  lcn
+ 2644  vim radar_fcst_inference.yaml 
+ 2645  vim job_test.sh 
+ 2646  vim radar_fcst_inference_bris.yaml 
+ 2647  cp radar_fcst_inference_bris.yaml radar_fcst_inference_multi.yaml 
+ 2648  lcn
+ 2649  vim radar_fcst_inference_bris.yaml 
+ 2650  sbatch job_bris.sh 
+ 2651  squeue --me
+ 2652  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2653  lcn
+ 2654  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2655  rm radar_fcst_inference_bris.yaml
+ 2656  mv radar_fcst_inference_multi.yaml radar_fcst_inference_bris.yaml 
+ 2657  vim radar_fcst_inference_bris.yaml 
+ 2658  sbatch job_bris.sh 
+ 2659  squeue --me
+ 2660  lcn .venv/bin/
+ 2661  squeue --me
+ 2662  lcn
+ 2663  squeue --me
+ 2664  lcn
+ 2665  vim job_inf.sh 
+ 2666  vim job_bris.sh 
+ 2667  vim radar_fcst_inference.yaml 
+ 2668  vim radar_fcst_inference_bris.yaml 
+ 2669  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2670  tail -f logs/inference.out 
+ 2671  vim logs/inference.out 
+ 2672  tail -f logs/inference.out 
+ 2673  vim logs/inference.out 
+ 2674  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2675  lcn
+ 2676  vim radar_fcst_inference_bris.yaml 
+ 2677  sbatch job_bris.sh 
+ 2678  squeue --me
+ 2679  vim ../bris-multisource/logs/inference.out 
+ 2680  vim radar_fcst_inference_bris.yaml 
+ 2681  sbatch job_bris.sh 
+ 2682  squeue --me
+ 2683  vim job_bris.sh 
+ 2684  sbatch job_bris.sh 
+ 2685  squeue --me
+ 2686  vim job_bris.sh 
+ 2687  sbatch job_bris.sh 
+ 2688  squeue --me
+ 2689  vim job_bris.sh 
+ 2690  vim ~/git/run-anemoi-nowcast/lumi/jobscript_inference_multi.sh 
+ 2691  vim ~/git/run-anemoi-nowcast/lumi/inference_multi.yaml 
+ 2692  sbatch job_bris.sh 
+ 2693  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2694  lcn
+ 2695  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2696  lcn
+ 2697  vim logs/inference.out 
+ 2698  vim job_bris.sh 
+ 2699  tail -f logs/inference.out 
+ 2700  lcn
+ 2701  vim job_test.sh 
+ 2702  vim ~/git/run-anemoi-nowcast/lumi/jobscript_inference_multi.sh 
+ 2703  tail -f logs/inference.out 
+ 2704  grep rank0 logs/inference.out 
+ 2705  vim radar_fcst_inference_bris.yaml 
+ 2706  vim job_bris.sh 
+ 2707  tail -f logs/inference.out 
+ 2708  vim logs/inference.out 
+ 2709  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2710  lcn
+ 2711  vim radar_fcst_inference_bris.yaml 
+ 2712  vim job_bris.sh 
+ 2713  vim radar_fcst_inference_bris.yaml 
+ 2714  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2715  vim logs/inference.out 
+ 2716  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2717  lcn
+ 2718  lcn -a
+ 2719  rm .radar_fcst_inference_bris.yaml.swp
+ 2720  lcn
+ 2721  vim radar_fcst_inference_bris.yaml 
+ 2722  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/model/brispredictor.py 
+ 2723  cd git/run-anemoi-nowcast/lumi/
+ 2724  lcn
+ 2725  vim jobscript_inference_multi.sh 
+ 2726  vim inference_data.yaml 
+ 2727  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2728  lcn logs/
+ 2729  vim logs/inference.out 
+ 2730  rm logs/.inference.out.swp
+ 2731  vim logs/inference.out 
+ 2732  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2733  vim config/radar_fcst_simple.yaml 
+ 2734  vim logs/inference.out 
+ 2735  cat radar_fcst_inference_bris.yaml 
+ 2736  lcn
+ 2737  vim config/radar_fcst_simple.yaml 
+ 2738  vim radar_fcst_inference_bris.yaml 
+ 2739  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2740  lcn
+ 2741  vim radar_fcst_inference_bris.yaml 
+ 2742  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/model/brispredictor.py 
+ 2743  vim job_bris.sh 
+ 2744  sbatch job_bris.sh 
+ 2745  squeue --me
+ 2746  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-inference/src/anemoi/inference/
+ 2747  grep -ir y_pred /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-inference/src/anemoi/inference/*
+ 2748  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-inference/src/anemoi/inference/runner.py
+ 2749  grep -ir y_pred /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-inference/src/anemoi/inference/*
+ 2750  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/anemoi-inference/src/anemoi/inference/runners/interpolator.py
+ 2751  lcn
+ 2752  vim radar_fcst_inference.yaml 
+ 2753  vim radar_fcst_inference_bris.yaml 
+ 2754  vim job_bris.sh 
+ 2755  sbatch job_bris.sh 
+ 2756  squeue --me
+ 2757  vim radar_fcst_inference_bris.yaml 
+ 2758  vim radar_fcst_inference.yaml 
+ 2759  vim radar_fcst_inference_bris.yaml 
+ 2760  sbatch job_bris.sh 
+ 2761  squeue --me
+ 2762  lcn
+ 2763  vim job_bris.sh 
+ 2764  vim radar_fcst_inference_bris.yaml 
+ 2765  lcn
+ 2766  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/model/brispredictor.py
+ 2767  vim radar_fcst_inference_bris.yaml 
+ 2768  lcn
+ 2769  vim config/radar_fcst_simple.yaml 
+ 2770  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/model/brispredictor.py
+ 2771  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2772  vim logs/inference.out 
+ 2773  tail -f logs/inference.out 
+ 2774  vim logs/inference.out 
+ 2775  tail -f logs/inference.out 
+ 2776  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2777  lcn
+ 2778  cd ..
+ 2779  cd bris-gitsource/
+ 2780  lcn
+ 2781  cd ..
+ 2782  cd bris-multisource-extension/
+ 2783  lcn
+ 2784  cd /pfs/lustrep1/scratch/project_465002688/datasets/
+ 2785  lcn
+ 2786  cd -
+ 2787  source .venv/bin/activate
+ 2788  cd -
+ 2789  lcn
+ 2790  anemoi-datasets inspect nordic-radar-2020-2025-1km-5m.zarr
+ 2791  cd -
+ 2792  tail -f logs/inference.out 
+ 2793  vim ~/git/run-anemoi-nowcast/lumi/inference_data.yaml 
+ 2794  squeue --me
+ 2795  tail -f logs/inference.out 
+ 2796  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2797  lcn
+ 2798  vim radar_fcst_inference_bris.yaml 
+ 2799  cd
+ 2800  cd git/run-anemoi-nowcast/lumi/
+ 2801  lcn
+ 2802  vim base.sh 
+ 2803  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2804  lcn .venv/bin/
+ 2805  lcn .venv/bin/anemoi-datasets 
+ 2806  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2807  lcn
+ 2808  vim radar_fcst_inference_bris.yaml 
+ 2809  cat radar_fcst_inference_bris.yaml 
+ 2810  vim radar_fcst_inference_bris.yaml 
+ 2811  vim ~/git/run-anemoi-nowcast/lumi/inference_data.yaml 
+ 2812  vim radar_fcst_inference_bris.yaml 
+ 2813  sbatch job_bris.sh 
+ 2814  squeue --me
+ 2815  vim radar_fcst_inference_bris.yaml 
+ 2816  sbatch job_bris.sh 
+ 2817  squeue --me
+ 2818  lcn
+ 2819  vim radar_fcst_inference_bris.yaml 
+ 2820  squeue --me
+ 2821  lcn
+ 2822  vim job_bris.sh 
+ 2823  vim radar_fcst_inference_bris.yaml 
+ 2824  squeue --me
+ 2825  vim radar_fcst_inference_bris.yaml 
+ 2826  cd ..
+ 2827  cd bris-gitsource/
+ 2828  lcn
+ 2829  vim bris-inference/bris/model/brispredictor.py 
+ 2830  cd ../bris-multisource-extension/
+ 2831  lcn
+ 2832  vim radar_fcst_inference_bris.yaml 
+ 2833  cd ..
+ 2834  cd bris-gitsource/
+ 2835  lcn
+ 2836  vim bris-inference/bris/model/brispredictor.py 
+ 2837  grep -ir batch bris-inference/*
+ 2838  vim bris-inference/bris/model/multiencdecpredictor.py
+ 2839  grep -ir "multi output" bris-inference/*
+ 2840  grep -ir "multi" bris-inference/*
+ 2841  vim test.py
+ 2842  chmod u+x test.py 
+ 2843  mv test.py ../bris-multisource-extension/test_checkpoint.sh 
+ 2844  cd ../bris-multisource-extension/
+ 2845  lcn
+ 2846  chmod u+x test_checkpoint.sh 
+ 2847  lcn
+ 2848  mv test_checkpoint.sh test_checkpoint.py
+ 2849  lcn
+ 2850  source .venv/bin/activate
+ 2851  python3 test_checkpoint.py 
+ 2852  lcn ../bris-gitsource/
+ 2853  vim test_checkpoint.py 
+ 2854  python3 test_checkpoint.py 
+ 2855  vim test_checkpoint.py 
+ 2856  mv test_checkpoint.py test_checkpoint.sh 
+ 2857  lcn
+ 2858  vim test_checkpoint.sh 
+ 2859  lcn
+ 2860  mv test_checkpoint.sh test_checkpoint.py
+ 2861  lcn
+ 2862  cat test_checkpoint.py 
+ 2863  python3
+ 2864  lcn .venv/bin/anemoi-inference 
+ 2865  python3
+ 2866  which python3
+ 2867  python3
+ 2868  deactivate 
+ 2869  lcn
+ 2870  vim config/radar_fcst_simple.yaml 
+ 2871  cd ..
+ 2872  cd bris-gitsource/
+ 2873  grep -ir multistep bris-inference/*
+ 2874  vim bris-inference/bris/data/legacy/dataset.py 
+ 2875  vim bris-inference/tests/test_model.py
+ 2876  vim bris-inference/bris/checkpoint.py 
+ 2877  cd ../bris-multisource-extension/
+ 2878  vim radar_fcst_inference.yaml 
+ 2879  cd -
+ 2880  grep -ir multistep bris-inference/*
+ 2881  vim bris-inference/bris/utils.py
+ 2882  grep -ir timeincrement *
+ 2883  vim bris-inference/bris/data/dataset/nativegrid.py 
+ 2884  cd /scratch/project_465002688/milemate/bris-multisource
+ 2885  lcn
+ 2886  cd ..
+ 2887  lcn
+ 2888  mkdir bris-multifork
+ 2889  lcn
+ 2890  git clone git@github.com:matemile/bris-multisource.git bris-multifork
+ 2891  cd bris-multifork/
+ 2892  lcn
+ 2893  rm pyproject.toml
+ 2894  cp ../bris-multisource/pyproject.toml .
+ 2895  rm pyproject_emulator.toml
+ 2896  lcn
+ 2897  git status
+ 2898  git remote -v
+ 2899  lcn
+ 2900  lcn job
+ 2901  lcn jobs/
+ 2902  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2903  git status
+ 2904  cd ..
+ 2905  cd bris-multisource
+ 2906  git status
+ 2907  git checkout -b milemate-lumi
+ 2908  git status
+ 2909  git remote -v
+ 2910  cd ..
+ 2911  lcn
+ 2912  cd -
+ 2913  lcn
+ 2914  cd ..
+ 2915  lcn
+ 2916  cd -
+ 2917  git checkout main
+ 2918  git status
+ 2919  lcn
+ 2920  lcn jobs/
+ 2921  lcn
+ 2922  cd /scratch/project_465002688/milemate/bris-multisource
+ 2923  lcn
+ 2924  vim job_inf.sh 
+ 2925  lcn config/
+ 2926  lcn
+ 2927  cp job_inf.sh ../bris-multifork/.
+ 2928  cp radar_fcst_inference.yaml ../bris-multifork/.
+ 2929  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2930  cd ..
+ 2931  cd bris-multifork/
+ 2932  lcn
+ 2933  git status
+ 2934  lcn
+ 2935  rm job_load_netatmo_dataset.sh
+ 2936  lcn
+ 2937  vim setup_env.sh 
+ 2938  lcn
+ 2939  git status
+ 2940  mv job_inf.sh job_inference.sh 
+ 2941  vim job_inference.sh 
+ 2942  lcn
+ 2943  git status
+ 2944  git remote -v
+ 2945  git checkout -b milemate-lumi
+ 2946  git add .
+ 2947  git commit -m "Changes settings, scripts, yaml to lumi env"
+ 2948  git config --global user.email "matem@met.no"
+ 2949  git config --global user.name "Mate Mile"
+ 2950  git commit -m "Changes settings, scripts, yaml to lumi env"
+ 2951  git push origin milemate-lumi 
+ 2952  cd /scratch/project_465002688/milemate/bris-multifork/
+ 2953  lcn
+ 2954  git status
+ 2955  lcn
+ 2956  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 2957  cd ..
+ 2958  cd bris-gitsource/
+ 2959  lcn
+ 2960  grep -ir multistep anemoi-inference/*
+ 2961  grep -ir multistep bris-inference/*
+ 2962  cd /scratch/project_465002688/milemate/bris-gitsource/
+ 2963  lcn
+ 2964  vim bris-inference/bris/model/brispredictor.py 
+ 2965  grep -ir predict_step anemoi-inference/*
+ 2966  vim anemoi-inference/src/anemoi/inference/testing/mock_model.py
+ 2967  cd /scratch/project_465002688/milemate/bris-gitsource/
+ 2968  lcn anemoi-inference/
+ 2969  lcn anemoi-inference/src/
+ 2970  lcn anemoi-inference/src/anemoi/inference/
+ 2971  lcn anemoi-inference/src/anemoi/inference/testing/
+ 2972  lcn -a anemoi-inference/src/anemoi/inference/testing/
+ 2973  rm anemoi-inference/src/anemoi/inference/testing/.mock_model.py.swp
+ 2974  cd /scratch/project_465002688/milemate/
+ 2975  lcn
+ 2976  cd bris-gitsource/
+ 2977  lcn
+ 2978  cd /scratch/project_465002688/milemate/
+ 2979  cd bris-gitsource/anemoi-inference/
+ 2980  grep -ir advance_input_predict *
+ 2981  grep -ir nput_predict *
+ 2982  grep -ir predict *
+ 2983  grep -ir y_pred *
+ 2984  vim src/anemoi/inference/runner.py 
+ 2985  grep -ir predict_step *
+ 2986  grep -ir "def predict_step" *
+ 2987  vim src/anemoi/inference/runners/default.py
+ 2988  vim src/anemoi/inference/runners/parallel.py 
+ 2989  vim src/anemoi/inference/runner.py 
+ 2990  vim src/anemoi/inference/testing/mock_model.py
+ 2991  vim src/anemoi/inference/runners/parallel.py
+ 2992  vim src/anemoi/inference/testing/mock_model.py
+ 2993  cd ..
+ 2994  cd bris-multisource
+ 2995  lcn
+ 2996  vim radar_fcst_inference.yaml 
+ 2997  cd ..
+ 2998  cd bris-gitsource/
+ 2999  lcn
+ 3000  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt
+ 3001  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3002  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/b6f284e5-e240-4038-939b-374136386ef6/
+ 3003  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3004  cd ..
+ 3005  cd bris-multifork/
+ 3006  lcn
+ 3007  git status
+ 3008  git fetch origin milemate-lumi
+ 3009  lcn
+ 3010  git status
+ 3011  lcn
+ 3012  cd ..
+ 3013  lcn
+ 3014  cd /scratch/project_465002688/milemate/
+ 3015  lcn
+ 3016  cd bris-in
+ 3017  cd bris-gitsource/
+ 3018  lcn bris-inference/
+ 3019  lcn bris-inference/bris/model/
+ 3020  vim bris-inference/bris/model/brispredictor.py 
+ 3021  grep -ir y_pred bris-inference/*
+ 3022  vim bris-inference/bris/model/brispredictor.py 
+ 3023  vim ../bris-multisource-extension/logs/inference.out 
+ 3024  vim bris-inference/bris/model/brispredictor.py 
+ 3025  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt
+ 3026  cd ..
+ 3027  cd bris-multisource-extension/
+ 3028  lcn
+ 3029  mkdir checkpoints
+ 3030  lcn
+ 3031  cd checkpoints/
+ 3032  mkdir 877c3d42-1a90-4357-8bd0-64cae678fc6a
+ 3033  cd 877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 3034  cp /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt .
+ 3035  lcn
+ 3036  file inference-last.ckpt 
+ 3037  head -1 inference-last.ckpt 
+ 3038  vim inference-last.ckpt 
+ 3039  cd ..
+ 3040  source .venv/bin/activate
+ 3041  anemoi-inference inspect checkpoints/877c3d42-1a90-4357-8bd0-64cae678fc6a/inference-last.ckpt 
+ 3042  deactivate 
+ 3043  lcn
+ 3044  cd ..
+ 3045  cd bris-gitsource/
+ 3046  vim bris-inference/bris/model/brispredictor.py 
+ 3047  cd bris-inference/
+ 3048  grep -ir bris *
+ 3049  vim bris/model/brispredictor.py 
+ 3050  grep -ir predict_step *
+ 3051  vim bris/writer.py
+ 3052  vim bris/model/basepredictor.py
+ 3053  vim bris/model/brispredictor.py
+ 3054  vim bris/model/interpolator.py 
+ 3055  vim bris/predict_metadata.py 
+ 3056  cd /scratch/project_465002688/milemate/
+ 3057  lcn
+ 3058  cd bris-gitsource/
+ 3059  lcn
+ 3060  cd /scratch/project_465002688/milemate/
+ 3061  cd bris-gitsource/
+ 3062  lcn
+ 3063  cd /scratch/project_465002688/milemate/
+ 3064  cd bris-gitsource/
+ 3065  vim bris-inference/bris/model/brispredictor.py 
+ 3066  cd /scratch/project_465002688/milemate/
+ 3067  cd bris-gitsource/
+ 3068  lcn
+ 3069  find bris-inference/. -name runner.py
+ 3070  find anemoi-inference/. -name runner.py
+ 3071  vim anemoi-inference/./src/anemoi/inference/runner.py
+ 3072  grep -ir leadtimes bris-inference/*
+ 3073  vim ../bris-multisource-extension/radar_fcst_inference_bris.yaml 
+ 3074  find bris-inference/. -name model.py
+ 3075  find anemoi-inference/. -name model.py
+ 3076  cd /scratch/project_465002688/milemate/
+ 3077  lcn
+ 3078  cd bris-gitsource/
+ 3079  lcn
+ 3080  cd /scratch/project_465002688/milemate/
+ 3081  cd bris-multisource
+ 3082  lcn
+ 3083  vim radar_fcst_inference.yaml 
+ 3084  lcn
+ 3085  lcn logs/
+ 3086  vim job_inf.sh 
+ 3087  lcn
+ 3088  sbatch job_inf.sh 
+ 3089  squeue --me
+ 3090  lcn
+ 3091  vim job_inf
+ 3092  vim job_inf.sh 
+ 3093  lcn
+ 3094  vim job_inference.sh 
+ 3095  vim job_inference_latest_ophelia.sh 
+ 3096  vim job_inference_orig.sh 
+ 3097  lcn
+ 3098  vim job_inf.sh 
+ 3099  lcn
+ 3100  sbatch job_inf.sh 
+ 3101  squeue --me
+ 3102  lcn ../inference/simple_resume_rollout/
+ 3103  cd /scratch/project_465002688/milemate/
+ 3104  lcn
+ 3105  cd /scratch/project_465002688/milemate/
+ 3106  cd bris-multisource
+ 3107  lcn
+ 3108  cd ..
+ 3109  lcn
+ 3110  lcn inference/
+ 3111  mkdir -p inference/simple_resume_rollout
+ 3112  lcn inference/
+ 3113  lcn inference/simple_resume_rollout/
+ 3114  tail -f bris-multisource/logs/inference_simple_resume_rollout.out 
+ 3115  cd bris-multisource-extension/
+ 3116  lcn
+ 3117  vim job_bris.sh 
+ 3118  cd ..
+ 3119  tail -f bris-multisource/logs/inference_simple_resume_rollout.out 
+ 3120  lcn inference/simple_resume_rollout/
+ 3121  cd inference/simple_resume_rollout/
+ 3122  lcn
+ 3123  pwd
+ 3124  lcn
+ 3125  pwd
+ 3126  cd /scratch/project_465002688/milemate/
+ 3127  cd bris-multisource
+ 3128  lcn
+ 3129  vim radar_fcst_inference.yaml 
+ 3130  cd ..
+ 3131  cd inference/simple_resume_rollout/
+ 3132  lcn
+ 3133  pwd
+ 3134  cd /scratch/project_465002688/milemate/
+ 3135  lcn
+ 3136  cd bris-multisource
+ 3137  lcn
+ 3138  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/
+ 3139  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 3140  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3141  cd /scratch/project_465002688/milemate/
+ 3142  lcn
+ 3143  cd bris-multisource
+ 3144  lcn
+ 3145  vim radar_fcst_inference.yaml 
+ 3146  cd /scratch/project_465002688/milemate/
+ 3147  cd /scratch/project_465002688/milemate/
+ 3148  cd bris-multi
+ 3149  cd bris-multisource
+ 3150  lcn
+ 3151  vim radar_fcst_inference.yaml 
+ 3152  cd /scratch/project_465002688/milemate/
+ 3153  cd git/run-anemoi/lumi/
+ 3154  lcn
+ 3155  vim main_radar_train_imputer_recheck.yaml 
+ 3156  cd /scratch/project_465002688/milemate/
+ 3157  cd bris-multisource
+ 3158  lcn
+ 3159  vim radar_fcst_inference.yaml 
+ 3160  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3161  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 3162  vim -R /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+ 3163  cd /scratch/project_465002688/milemate/
+ 3164  lcn
+ 3165  cd bris-multisource-extension/
+ 3166  lcn
+ 3167  lcn checkpoints/
+ 3168  lcn
+ 3169  lcn -a
+ 3170  rm -rf uv.lock .venv
+ 3171  uv venv -p 3.12
+ 3172  uv sync
+ 3173  lcn .venv/bin/
+ 3174  uv sync
+ 3175  vim pyproject.toml 
+ 3176  uv sync
+ 3177  lcn .venv/bin/bris
+ 3178  lcn
+ 3179  vim bris_sparse_meps.yaml 
+ 3180  lcn
+ 3181  cd ..
+ 3182  cd bris-gitsource/
+ 3183  lcn
+ 3184  mv anemoi-core anemoi-core-multiple-datasets
+ 3185  lcn
+ 3186  git clone git@github.com:metno/anemoi-core.git
+ 3187  lcn
+ 3188  cd anemoi-core
+ 3189  git status
+ 3190  git checkout wip/nowcasting
+ 3191  git checkout wip-nowcasting
+ 3192  git status
+ 3193  cd ..
+ 3194  cd bris-multisource-extension/
+ 3195  rm -rf uv.lock .venv/
+ 3196  lcn
+ 3197  uv venv -p 3.12
+ 3198  uv sync
+ 3199  lcn
+ 3200  cd ..
+ 3201  cd bris-gitsource/
+ 3202  lcn
+ 3203  cd anemoi-core-multiple-datasets/
+ 3204  git remote
+ 3205  cd ..
+ 3206  cd anemoi-core
+ 3207  git remote -v
+ 3208  cd ..
+ 3209  rm -rf anemoi-core/
+ 3210  git clone git@github.com:ecmwf/anemoi-core.git
+ 3211  cd anemoi-core
+ 3212  git status
+ 3213  git remote -v
+ 3214  git fetch --all
+ 3215  git status
+ 3216  git remote set-url metno git@github.com:metno/anemoi-core.git
+ 3217  git remote -v
+ 3218  git remote add metno git@github.com:metno/anemoi-core.git
+ 3219  git remote -v
+ 3220  git fetch --all
+ 3221  git status
+ 3222  git remote -v
+ 3223  git checkout wip-nowcasting
+ 3224  git status
+ 3225  git remote -v
+ 3226  git tag --list
+ 3227  cd ..
+ 3228  cd bris-multisource-extension/
+ 3229  lcn -a
+ 3230  rm -rf .venv/
+ 3231  uv venv -p 3.12
+ 3232  uv sync
+ 3233  lcn
+ 3234  vim job_bris.sh 
+ 3235  lcn
+ 3236  sbatch job_bris_sparse_meps.sh 
+ 3237  squeue --me
+ 3238  lcn /scratch/project_465002688/milemate/bris-multisource-extension/python/container_venv_backup.py
+ 3239  lcn /scratch/project_465002688/omiralle/bris-multisource-extension/python/container_venv_backup.py
+ 3240  lcn /scratch/project_465002688/omiralle/bris_multisource/python/
+ 3241  vim -R /scratch/project_465002688/omiralle/bris_multisource/python/container_venv_backup.py 
+ 3242  vim job_bris_sparse_meps.sh 
+ 3243  sbatch job_bris_sparse_meps.sh 
+ 3244  squeue --me
+ 3245  vim job_bris_sparse_meps.sh 
+ 3246  sbatch job_bris_sparse_meps.sh 
+ 3247  squeue --me
+ 3248  vim job_bris_sparse_meps.sh 
+ 3249  squeue --me
+ 3250  sbatch job_bris_sparse_meps.sh 
+ 3251  vim job_bris_sparse_meps.sh 
+ 3252  sbatch job_bris_sparse_meps.sh 
+ 3253  squeue --me
+ 3254  vim job_bris_sparse_meps.sh 
+ 3255  sbatch job_bris_sparse_meps.sh 
+ 3256  squeue --me
+ 3257  lcn ../inference/
+ 3258  lcn ../inference/meps_resume/
+ 3259  squeue --me
+ 3260  lcn ../inference/meps_resume/
+ 3261  squeue --me
+ 3262  lcn ../inference/meps_resume/
+ 3263  squeue --me
+ 3264  lcn ../inference/meps_resume/
+ 3265  squeue --me
+ 3266  lcn ../inference/meps_resume/
+ 3267  squeue --me
+ 3268  lcn ../inference/meps_resume/
+ 3269  squeue --me
+ 3270  lcn ../inference/meps_resume/
+ 3271  lcn ../inference/
+ 3272  lcn
+ 3273  lcn ../
+ 3274  lcn ../inference/meps_resume/
+ 3275  squeue --me
+ 3276  lcn ../inference/meps_resume/
+ 3277  squeue --me
+ 3278  cd ../inference/meps_resume/
+ 3279  pwd
+ 3280  lcn
+ 3281  squeue --me
+ 3282  lcn
+ 3283  squeue --me
+ 3284  lcn
+ 3285  squeue --me
+ 3286  lcn
+ 3287  rm nordic_radar_2024*
+ 3288  lcn
+ 3289  sbatch job_bris_sparse_meps.sh 
+ 3290  squeue --me
+ 3291  sbatch job_bris_sparse_meps.sh 
+ 3292  cd ..
+ 3293  cd bris-multisource-extension/
+ 3294  sbatch job_bris_sparse_meps.sh 
+ 3295  squeue --me
+ 3296  '
+ 3297  squeue --me
+ 3298  vim bris_sparse_meps.yaml 
+ 3299  lcn
+ 3300  squeue --me
+ 3301  cd /scratch/project_465002688/milemate/
+ 3302  cd bris-gitsource/
+ 3303  lcn
+ 3304  cd bris-inference/
+ 3305  git status
+ 3306  cd ..
+ 3307  lcn
+ 3308  mv bris-inference bris-inference-multiple-datasets
+ 3309  lcn
+ 3310  git clone git@github.com:metno/bris-inference.git
+ 3311  lcn
+ 3312  cd bris-inference
+ 3313  lcn
+ 3314  git status
+ 3315  git checkout nowcasting
+ 3316  git status
+ 3317  vim ../bris-inference-multiple-datasets/bris/model/brispredictor.py 
+ 3318  diff ../bris-inference-multiple-datasets/bris/model/brispredictor.py bris/model/brispredictor.py 
+ 3319  git status
+ 3320  cd ..
+ 3321  cd bris-multisource-extension/
+ 3322  lcn
+ 3323  pwd
+ 3324  lcn
+ 3325  history | grep "uv "
+ 3326  cd ..
+ 3327  cd bris-gitsource/
+ 3328  lcn
+ 3329  lcn bris-inference/
+ 3330  lcn bris-inference/bris
+ 3331  lcn bris-inference
+ 3332  diff bris-inference/pyproject.toml bris-inference-multiple-datasets/pyproject.toml 
+ 3333  vim bris-inference/pyproject.toml 
+ 3334  cd anemoi-core/
+ 3335  git status
+ 3336  cd ..
+ 3337  lcn
+ 3338  cd bris-multisource-extension/
+ 3339  lcn
+ 3340  cd ..
+ 3341  lcn
+ 3342  lcn inference/
+ 3343  mkdir -p inference/meps_resume
+ 3344  diff bris-gitsource/anemoi-core-multiple-datasets/graphs/pyproject.toml bris-gitsource/anemoi-core/graphs/pyproject.toml 
+ 3345  diff bris-gitsource/anemoi-core-multiple-datasets/models/pyproject.toml bris-gitsource/anemoi-core/models/pyproject.toml 
+ 3346  diff bris-gitsource/anemoi-core-multiple-datasets/training/pyproject.toml bris-gitsource/anemoi-core/training/pyproject.toml 
+ 3347  history | grep metno
+ 3348  cd bris-multisource-extension/
+ 3349  lcn
+ 3350  vim job_bris_sparse_meps.sh 
+ 3351  lcn
+ 3352  lcn logs/
+ 3353  vim logs/bris_inference_sparse_17773033.out 
+ 3354  lcn logs/
+ 3355  cat logs/bris_inference_sparse_17773084.out 
+ 3356  lcn /scratch/project_465002688/omiralle/
+ 3357  lcn logs/
+ 3358  cat logs/bris_inference_sparse_17773123.out 
+ 3359  lcn /scratch/project_465002688/omiralle/bris_multisource/python/container_venv_backup.py
+ 3360  lcn /scratch/project_465002688/omiralle/bris_multisource/python/
+ 3361  cp -r /scratch/project_465002688/omiralle/bris_multisource/python .
+ 3362  lcn
+ 3363  lcn logs/
+ 3364  tail -f logs/bris_inference_sparse_17773162.out 
+ 3365  vim job_bris.sh 
+ 3366  tail -f logs/bris_inference_sparse_17773205.out 
+ 3367  vim logs/bris_inference_sparse_17773205.out 
+ 3368  vim job_bris.sh 
+ 3369  lcn /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource-extension
+ 3370  lcn logs/
+ 3371  tail -f logs/bris_inference_sparse_17773611.out 
+ 3372  lcn
+ 3373  vim job_bris_sparse_meps.sh 
+ 3374  lcn logs/
+ 3375  cd logs/
+ 3376  rm bris_inference_sparse_177730*
+ 3377  rm bris_inference_sparse_177731*
+ 3378  rm bris_inference_sparse_17773205.out
+ 3379  lcn
+ 3380  cd ..
+ 3381  lcn
+ 3382  vim bris_sparse_meps.yaml 
+ 3383  squeue --me
+ 3384  lcn
+ 3385  cd ..
+ 3386  lcn inference/
+ 3387  lcn inference/meps_resume/
+ 3388  lcn /scratch/project_465002688/omiralle/
+ 3389  lcn /scratch/project_465002688/
+ 3390  lcn /scratch/project_465002688/datasets/
+ 3391  lcn /scratch/project_465002688/datasets/msg-seviri-2020-2025-3km-15m-nordic-1dchunks.zarr/
+ 3392  cd bris-multisource-extension/
+ 3393  source .venv/bin/activate
+ 3394  anemoi-datasets inspect /scratch/project_465002688/datasets/msg-seviri-2020-2025-3km-15m-nordic-1dchunks.zarr
+ 3395  lcn /scratch/project_465002688/omiralle/nowcast2024/
+ 3396  lcn /scratch/project_465002688/omiralle/nowcast2024/2024/
+ 3397  lcn /scratch/project_465002688/omiralle/nowcast2024/2024/01/
+ 3398  lcn /scratch/project_465002688/omiralle/nowcast2024/2024/01/01/
+ 3399  lcn
+ 3400  vim bris_sparse_meps.yaml 
+ 3401  lcn /scratch/project_465002688/omiralle/nowcast2024/2024/01/01/
+ 3402  squeue --me
+ 3403  cd /scratch/project_465002688/milemate/
+ 3404  lcn inference/meps_resume/
+ 3405  squeue --me
+ 3406  lcn
+ 3407  cd bris-multisource-extension/
+ 3408  lcn
+ 3409  cp bris_sparse_meps.yaml bris_sparse_meps_verif.yaml 
+ 3410  vim bris_sparse_meps.yaml 
+ 3411  lcn
+ 3412  sbatch job_bris_sparse_meps.sh 
+ 3413  squeue --me
+ 3414  cd /scratch/project_465002688/milemate/
+ 3415  cd bris-multisource-extension/
+ 3416  lcn
+ 3417  lcn logs/
+ 3418  vim logs/bris_inference_sparse_17774505.out 
+ 3419  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3420  lcn
+ 3421  cd /scratch/project_465002688/milemate/
+ 3422  lcn
+ 3423  cd /scratch/project_465002688/milemate/
+ 3424  lcn
+ 3425  cd bris-multisource-extension/
+ 3426  øcm
+ 3427  lcn
+ 3428  cd /scratch/project_465002688/milemate/
+ 3429  lcn
+ 3430  cd bris-multisource-extension/
+ 3431  lcn
+ 3432  lcn
+ 3433  cd git/
+ 3434  lcn
+ 3435  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3436  lcn
+ 3437  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3438  lcn logs/
+ 3439  lcn
+ 3440  vim bris_sparse_meps.yaml 
+ 3441  lcn logs/
+ 3442  tail -f logs/bris_inference_sparse_17863236.out
+ 3443  source .venv/bin/activate
+ 3444  lcn /pfs/lustrep1/scratch/project_465002688/datasets/nordic-radar-2020-2025-1km-5m.zarr
+ 3445  lcn /pfs/lustrep1/scratch/project_465002688/datasets/
+ 3446  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/netatmo-qc-2020-2025-5m.zarr
+ 3447  edac
+ 3448  deactivate 
+ 3449  lcn
+ 3450  lcn logs/
+ 3451  tail -f logs/bris_inference_sparse_17864029.out 
+ 3452  vim logs/bris_inference_sparse_17864029.out 
+ 3453  tail logs/bris_inference_sparse_17864367.out 
+ 3454  tail -f logs/bris_inference_sparse_17864367.out 
+ 3455  cd ..
+ 3456  cd inference/
+ 3457  lcn
+ 3458  cd meps_resume
+ 3459  lcn
+ 3460  lcn 17864367_1/
+ 3461  lcn
+ 3462  cd ..
+ 3463  mv meps_resume meps_resume_test1
+ 3464  mkdir meps_resume
+ 3465  lcn
+ 3466  cd meps_resume
+ 3467  lcn
+ 3468  watch -d "ls -ltr | tail -40"
+ 3469  lcn
+ 3470  pwd
+ 3471  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3472  lcn 
+ 3473  lcn ../inference/meps_resume/
+ 3474  lcn logs/
+ 3475  tail -f logs/bris_inference_sparse_17865820.out
+ 3476  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3477  lcn
+ 3478  vim job_bris_sparse_meps.sh 
+ 3479  lcn
+ 3480  sbatch job_bris_sparse_meps.sh 
+ 3481  squeue --me
+ 3482  lcn inference_configs/
+ 3483  lcn ../inference/
+ 3484  lcn ../inference/meps_resume/
+ 3485  squeue --me
+ 3486  lcn ../inference/meps_resume/
+ 3487  cd ../inference/meps_resume/
+ 3488  cd ..
+ 3489  lcn
+ 3490  mv meps_resume meps_resume_all
+ 3491  mkdir meps_resume
+ 3492  lcn
+ 3493  lcn meps_resume
+ 3494  lcn meps_resume_all/
+ 3495  lcn meps_resume_all/ | wc -l
+ 3496  python33
+ 3497  python3
+ 3498  cd ..
+ 3499  lcn
+ 3500  cd bris-multisource-extension/
+ 3501  lcn
+ 3502  vim bris_sparse_meps_verif.yaml 
+ 3503  lcn ../inference/meps_resume/
+ 3504  lcn
+ 3505  vim bris_sparse_meps_verif.yaml 
+ 3506  lcn
+ 3507  vim job_bris_sparse_meps.sh 
+ 3508  lcn
+ 3509  sbatch job_bris_sparse_meps.sh 
+ 3510  squeue --me
+ 3511  vim job_bris_sparse_meps.sh 
+ 3512  vim bris_sparse_meps_verif.yaml 
+ 3513  sbatch job_bris_sparse_meps.sh 
+ 3514  squeue --me
+ 3515  lcn ../inference/meps_resume
+ 3516  date
+ 3517  lcn ../inference/meps_resume
+ 3518  vim bris_sparse_meps_verif.yaml 
+ 3519  lcn ../inference/meps_resume
+ 3520  lcn ../inference/meps_resume/17864367_1/
+ 3521  lcn ../inference/meps_resume
+ 3522  lcn ../inference/meps_resume/17864367_1/
+ 3523  lcn ../inference/meps_resume
+ 3524  lcn ../inference/meps_resume/17864367_1/
+ 3525  lcn ../inference/meps_resume
+ 3526  lcn ../inference/meps_resume/17864367_1/
+ 3527  file ../inference/meps_resume/17864367_1/1708581600_0.npy
+ 3528  lcn ../inference/meps_resume/17864367_1/
+ 3529  lcn ../inference/meps_resume
+ 3530  squeue --me
+ 3531  lcn ../inference/meps_resume
+ 3532  vim bris_sparse_meps_verif.yaml 
+ 3533  vim job_bris_sparse_meps.sh 
+ 3534  sbatch job_bris_sparse_meps.sh 
+ 3535  squeue --me
+ 3536  lcn logs/
+ 3537  tail -f logs/bris_inference_sparse_17864809.out
+ 3538  squeue --me
+ 3539  lcn
+ 3540  vim bris_sparse_meps_verif.yaml 
+ 3541  squeue --me
+ 3542  tail -f logs/bris_inference_sparse_17864809.out
+ 3543  vim bris_sparse_meps_verif.yaml 
+ 3544  sbatch job_bris_sparse_meps.sh 
+ 3545  squeue --me
+ 3546  lcn ../inference/meps_resume/
+ 3547  date
+ 3548  lcn ../inference/meps_resume/
+ 3549  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3550  lcn
+ 3551  vim job_bris_sparse_meps.sh 
+ 3552  lcn
+ 3553  vim bris_sparse_meps_verif.yaml 
+ 3554  sbatch job_bris_sparse_meps.sh 
+ 3555  squeue --me
+ 3556  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3557  cd ..
+ 3558  cd inference/
+ 3559  lcn
+ 3560  rm -rf meps_resume
+ 3561  mkdir meps_resume
+ 3562  lcn
+ 3563  lcn meps_resume/
+ 3564  squeue --me
+ 3565  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3566  vim bris_sparse_meps_verif.yaml 
+ 3567  squeue --me
+ 3568  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3569  lcn
+ 3570  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3571  lcn
+ 3572  cd ..
+ 3573  lcn inference/meps_resume
+ 3574  squeue --me
+ 3575  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3576  cd ..
+ 3577  lcn inference/
+ 3578  lcn inference/meps_resume/
+ 3579  cd inference/meps_resume/
+ 3580  pwd
+ 3581  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3582  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/simple_resume_rollout/last.ckpt
+ 3583  lcn
+ 3584  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3585  lcn
+ 3586  vim bris_sparse_meps_verif.yaml 
+ 3587  cp bris_sparse_meps_verif.yaml bris_sparse_simple_verif.yaml 
+ 3588  vim bris_sparse_simple_verif.yaml 
+ 3589  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3590  lcn
+ 3591  squeue --me
+ 3592  vim bris_sparse_meps_verif.yaml 
+ 3593  lcn
+ 3594  source .venv/bin/activate
+ 3595  lcn /scratch/project_465002688/
+ 3596  lcn /scratch/project_465002688/datasets/
+ 3597  anemoi-datasets inspect /scratch/project_465002688/datasets/msg-seviri-2020-2025-3km-15m-nordic-1dchunks.zarr
+ 3598  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3599  lcn ../inference/meps_resume
+ 3600  squeue --me
+ 3601  lcn logs/
+ 3602  vim logs/bris_inference_sparse_17869942.out
+ 3603  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3604  lcn logs/
+ 3605  vim logs/bris_inference_sparse_17869942.out 
+ 3606  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3607  lcn
+ 3608  source .venv/bin/activate
+ 3609  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/netatmo-qc-2020-2025-5m.zarr
+ 3610  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/nordic-radar-2020-2025-1km-5m.zarr
+ 3611  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3612  source .venv/bin/activate
+ 3613  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/netatmo-qc-2020-2025-5m.zarr
+ 3614  vim logs/bris_inference_sparse_17869942.out
+ 3615  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3616  lcn
+ 3617  vim bris_sparse_meps_verif.yaml 
+ 3618  vim -R /pfs/lustrep1/scratch/project_465002688/datasets/netatmo-qc-2020-2025-5m.zarr/.zattrs 
+ 3619  vim bris_sparse_meps_verif.yaml 
+ 3620  pwd
+ 3621  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3622  lcn
+ 3623  vim bris_sparse_simple_verif.yaml 
+ 3624  cd logs/
+ 3625  lcn -a
+ 3626  rm .bris_inference_sparse_17869942.out.sw*
+ 3627  lcn -a
+ 3628  cd ..
+ 3629  lcn
+ 3630  squeue --me
+ 3631  vim bris_sparse_simple_verif.yaml 
+ 3632  lcn
+ 3633  cd ..
+ 3634  lcn inference/
+ 3635  cd inference/
+ 3636  cd meps_resume
+ 3637  lcn
+ 3638  rm -rf nordic_radar_2024* 17869942_1/
+ 3639  lcn
+ 3640  cd ..
+ 3641  lcn
+ 3642  mkdir simple_resume
+ 3643  lcn
+ 3644  squeue --me
+ 3645  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3646  lcn
+ 3647  vim bris_sparse_meps_verif.yaml 
+ 3648  vim job_bris_sparse_meps.sh 
+ 3649  lcn
+ 3650  sbatch job_bris_sparse_meps.sh 
+ 3651  squeue --me
+ 3652  lcn
+ 3653  vim bris_sparse_simple_verif.yaml 
+ 3654  lcn
+ 3655  vim radar_fcst_inference_bris.yaml 
+ 3656  pwd
+ 3657  squeue --me
+ 3658  lcn
+ 3659  vim bris_sparse_simple_verif.yaml 
+ 3660  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3661  lcn
+ 3662  cp job_bris_sparse_meps.sh job_bris_sparse_simple.sh 
+ 3663  lcn
+ 3664  vim job_bris_sparse_simple.sh 
+ 3665  lcn
+ 3666  sbatch job_bris_sparse_simple.sh 
+ 3667  squeue --me
+ 3668  lcn ../inference/
+ 3669  lcn ../inference/simple_resume
+ 3670  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3671  lcn logs/
+ 3672  tail -f logs/bris_inference_simple_17897698.out 
+ 3673  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3674  lcn logs/
+ 3675  vim logs/bris_inference_simple_17897698.out 
+ 3676  vim radar_fcst_inference_bris.yaml 
+ 3677  sbatch job_bris_sparse_simple.sh 
+ 3678  squeue --me
+ 3679  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3680  lcn
+ 3681  vim bris_sparse_simple_verif.yaml 
+ 3682  lcn logs/
+ 3683  tail -f logs/bris_inference_simple_17899475.out 
+ 3684  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3685  lcn /pfs/lustrep1/scratch/project_465002688/datasets/
+ 3686  lcn /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr/
+ 3687  lcn /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr
+ 3688  source .venv/bin/activate
+ 3689  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr
+ 3690  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3691  vim bris_sparse_meps_frost.yaml 
+ 3692  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3693  cd ..
+ 3694  cd bris-gitsource/
+ 3695  grep -ir verif_dataset bris-inference/*
+ 3696  vim -R bris-inference/config/stretched_grid_template.yaml
+ 3697  grep -ir interpolate bris-inference/*
+ 3698  grep -ir interpolate_freq bris-inference/*
+ 3699  cd ..
+ 3700  cd bris-multisource-extension/
+ 3701  lcn logs/
+ 3702  tail logs/bris_inference_sparse_17905817.out
+ 3703  squeue --me
+ 3704  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3705  squeue --me
+ 3706  scancel 17896524
+ 3707  lcn
+ 3708  vim bris_sparse_meps_verif.yaml 
+ 3709  cp bris_sparse_meps_verif.yaml bris_sparse_meps_frost.yaml 
+ 3710  lcn
+ 3711  vim bris_sparse_meps_frost.yaml 
+ 3712  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3713  lcn
+ 3714  vim bris_sparse_meps_frost.yaml 
+ 3715  lcn
+ 3716  vim job_bris_sparse_meps.sh
+ 3717  sbatch job_bris_sparse_meps.sh 
+ 3718  squeue --me
+ 3719  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3720  lcn logs/
+ 3721  tail -f logs/bris_inference_sparse_17905817.out
+ 3722  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3723  vim bris_sparse_meps_frost.yaml 
+ 3724  sbatch job_bris_sparse_meps.sh 
+ 3725  squeue --me
+ 3726  lcn
+ 3727  lcn ../inference/
+ 3728  lcn ../inference/meps_resume
+ 3729  lcn ../inference/simple_resume
+ 3730  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3731  lcn logs/
+ 3732  tail -f logs/bris_inference_sparse_17910475.out
+ 3733  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3734  lcn
+ 3735  vim bris_sparse_meps_frost.yaml 
+ 3736  sbatch job_bris_sparse_meps.sh 
+ 3737  squeue --me
+ 3738  lcn
+ 3739  vim bris_sparse_meps_frost.yaml 
+ 3740  sbatch job_bris_sparse_meps.sh 
+ 3741  squeue --me
+ 3742  vim bris_sparse_meps_frost.yaml 
+ 3743  sbatch job_bris_sparse_meps.sh 
+ 3744  squeue --me
+ 3745  vim bris_sparse_meps_frost.yaml 
+ 3746  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3747  lcn logs/
+ 3748  vim logs/bris_inference_sparse_17910475.out
+ 3749  lcn logs/
+ 3750  tail -f logs/bris_inference_sparse_17916205.out
+ 3751  tail -f logs/bris_inference_sparse_17916241.out 
+ 3752  source .venv/bin/activate
+ 3753  anemoi-datasets inspect /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr
+ 3754  lcn logs/
+ 3755  vim logs/bris_inference_sparse_17910475.out
+ 3756  grep -i variable /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr/.zattrs 
+ 3757  vim /pfs/lustrep1/scratch/project_465002688/datasets/frost-rainrate-2024.zarr/.zattrs 
+ 3758  deactivate 
+ 3759  lcn logs/
+ 3760  tail -f logs/bris_inference_sparse_17916284.out
+ 3761  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3762  lcn
+ 3763  vim bris_sparse_meps_frost.yaml 
+ 3764  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3765  lcn logs/
+ 3766  vim logs/bris_inference_sparse_17916284.out
+ 3767  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3768  lcn
+ 3769  vim bris_sparse_simple_verif.yaml 
+ 3770  lcn
+ 3771  vim job_bris_sparse_simple.sh 
+ 3772  sbatch job_bris_sparse_simple.sh
+ 3773  squeue --me
+ 3774  lcn
+ 3775  lcn ../inference/
+ 3776  lcn ../inference/simple_resume
+ 3777  squeue --me
+ 3778  vim bris_sparse_simple_verif.yaml 
+ 3779  sbatch job_bris_sparse_simple.sh
+ 3780  squeue --me
+ 3781  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3782  lcn logs/
+ 3783  vim logs/bris_inference_simple_17899475.out
+ 3784  lcn
+ 3785  vim radar_fcst_inference_bris.yaml 
+ 3786  vim radar_fcst_inference.yaml 
+ 3787  vim radar_fcst_inference_bris.yaml 
+ 3788  vim logs/bris_inference_simple_17899475.out
+ 3789  lcn logs/
+ 3790  vim logs/bris_inference_simple_17897698.out
+ 3791  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource-extension/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py 
+ 3792  vim logs/bris_inference_simple_17897698.out
+ 3793  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource-extension/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py 
+ 3794  vim radar_fcst_inference_bris.yaml 
+ 3795  lcn logs/
+ 3796  tail -f logs/bris_inference_simple_17923170.out
+ 3797  lcn logs/
+ 3798  vim logs/bris_inference_simple_17923170.out
+ 3799  lcn logs/
+ 3800  tail -f logs/bris_inference_simple_17923571.out 
+ 3801  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3802  lcn
+ 3803  vim bris_sparse_simple_verif.yaml 
+ 3804  vim bris_sparse_meps_frost.yaml 
+ 3805  sbatch job_bris_sparse_meps.sh 
+ 3806  squeue --me
+ 3807  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3808  lcn
+ 3809  lcn logs/
+ 3810  tail -f logs/bris_inference_sparse_17947490.out
+ 3811  lcn logs/
+ 3812  lcn ../inference/
+ 3813  lcn ../inference/meps_resume
+ 3814  squeue --me
+ 3815  lcn ../inference/meps_resume
+ 3816  squeue --me
+ 3817  lcn ../inference/meps_resume
+ 3818  cd ../inference/meps_resume
+ 3819  lcn
+ 3820  squeue --me
+ 3821  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3822  lcn
+ 3823  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3824  squeue --me
+ 3825  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3826  cd ..
+ 3827  cd inference/meps_resume
+ 3828  lcn
+ 3829  rm -rf nordic_radar_2024* 17947490_1/
+ 3830  lcn
+ 3831  cd ..
+ 3832  lcn
+ 3833  cd ..
+ 3834  cd bris-multisource-extension/
+ 3835  lcn
+ 3836  lcn logs/
+ 3837  vim logs/bris_inference_simple_17923571.out 
+ 3838  lcn
+ 3839  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3840  lcn
+ 3841  vim job_bris_sparse_meps.sh 
+ 3842  lcn
+ 3843  squeue --me
+ 3844  vim job_bris_sparse_meps.sh 
+ 3845  sbatch job_bris_sparse_meps.sh
+ 3846  squeue --me
+ 3847  lcn
+ 3848  squeue --me
+ 3849  lcn
+ 3850  vim bris_sparse_simple_verif.yaml
+ 3851  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3852  lcn
+ 3853  lcn -a
+ 3854  rm .bris_sparse_simple_verif.yaml.swp
+ 3855  lcn
+ 3856  vim bris_sparse_simple_verif.yaml 
+ 3857  lcn
+ 3858  sbatch job_bris_sparse_simple.sh
+ 3859  squeue --me
+ 3860  vim bris_sparse_simple_verif.yaml 
+ 3861  sbatch job_bris_sparse_simple.sh
+ 3862  squeue --me
+ 3863  vim bris_sparse_simple_verif.yaml 
+ 3864  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3865  cd logs/
+ 3866  lcn
+ 3867  lcn -a
+ 3868  rm .bris_inference_simple_17923571.out.swp
+ 3869  lcn
+ 3870  cd ..
+ 3871  vim logs/bris_inference_simple_17923571.out
+ 3872  squeue --me
+ 3873  vim logs/bris_inference_simple_17923571.out
+ 3874  lcn
+ 3875  vim radar_fcst_inference.yaml 
+ 3876  vim radar_fcst_inference_bris.yaml 
+ 3877  lcn logs/
+ 3878  tail -f logs/bris_inference_simple_17947885.out
+ 3879  cd ..
+ 3880  cd bris-gitsource/
+ 3881  grep bris.model bris-inference/*
+ 3882  grep -ir bris.model bris-inference/*
+ 3883  vim bris-inference/config/working_example.yaml
+ 3884  cd ..
+ 3885  cd bris-multisource-extension/
+ 3886  lcn
+ 3887  squeue --me
+ 3888  lcn logs/
+ 3889  vim logs/bris_inference_simple_17947916.out
+ 3890  vim ../bris-gitsource/bris-inference/config/working_example.yaml
+ 3891  cd ../bris-gitsource/
+ 3892  grep- ir decoder_name bris-inference*
+ 3893  grep -ir decoder_name bris-inference*
+ 3894  cd ../bris-multisource-extension/
+ 3895  lcn
+ 3896  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3897  lcn
+ 3898  squeue --me
+ 3899  lcn
+ 3900  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3901  lcn
+ 3902  cd ..
+ 3903  cd bris-gitsource/
+ 3904  lcn
+ 3905  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/__main__.py
+ 3906  cd ../bris-multisource-extension/
+ 3907  lcn
+ 3908  vim bris_sparse_simple_verif.yaml 
+ 3909  sbatch job_bris_sparse_simple.sh 
+ 3910  squeue --me
+ 3911  lcn
+ 3912  squeue --me
+ 3913  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3914  lcn
+ 3915  lcn logs/
+ 3916  vim logs/bris_inference_simple_17947885.out
+ 3917  lcn logs/
+ 3918  tail -f logs/bris_inference_simple_17950985.out
+ 3919  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3920  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 3921  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/
+ 3922  vim -R /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml 
+ 3923  cd ..
+ 3924  cd bris-gitsource/bris-inference
+ 3925  git status
+ 3926  git remote -v
+ 3927  cd ..
+ 3928  lcn
+ 3929  cd -
+ 3930  git status
+ 3931  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3932  lcn
+ 3933  cd ../bris-gitsource/
+ 3934  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-gitsource/bris-inference/bris/checkpoint.py 
+ 3935  vim /pfs/lustrep1/scratch/project_465002688/milemate/bris-multisource-extension/.venv/lib/python3.12/site-packages/hydra/_internal/instantiate/_instantiate2.py
+ 3936  cd -
+ 3937  lcn
+ 3938  vim bris_sparse_simple_verif.yaml
+ 3939  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/simple_resume_rollout/last.ckpt
+ 3940  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/
+ 3941  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/checkpoint/simple_resume_rollout/
+ 3942  squeue --me
+ 3943  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3944  cd ..
+ 3945  lcn inference/
+ 3946  lcn inference/meps_resume
+ 3947  cd inference/
+ 3948  lcn
+ 3949  cd meps_resume
+ 3950  lcn
+ 3951  rm -rf nordic_radar_2024*  17947683_1/
+ 3952  lcn
+ 3953  cd ..
+ 3954  lcn
+ 3955  lcn
+ 3956  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3957  lcn
+ 3958  lcn logs/
+ 3959  vim logs/bris_inference_sparse_17947683.out
+ 3960  lcn
+ 3961  vim job_bris_sparse_meps.sh 
+ 3962  vim logs/bris_inference_sparse_17947683.out
+ 3963  lcn
+ 3964  vim job_bris_sparse_meps.sh 
+ 3965  lcn logs/
+ 3966  vim logs/bris_inference_sparse_17947683.out
+ 3967  lcn
+ 3968  vim job_bris_sparse_meps.sh
+ 3969  lcn
+ 3970  sbatch job_bris_sparse_meps.sh 
+ 3971  squeue --me
+ 3972  squeue --me
+ 3973  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3974  lcn
+ 3975  squeue --me
+ 3976  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 3977  lcn logs/
+ 3978  vim logs/bris_inference_sparse_18478365.out
+ 3979  cd ..
+ 3980  lcn inference/
+ 3981  lcn inference/meps_resume
+ 3982  lumi-check-quota 
+ 3983  cd -
+ 3984  lcn logs/
+ 3985  vim logs/bris_inference_sparse_18478365.out
+ 3986  cd ..
+ 3987  cd inference/
+ 3988  lcn
+ 3989  cd meps_resume/
+ 3990  lcn
+ 3991  rm nordic_radar_2024* 18478365_1/
+ 3992  rm -rf nordic_radar_2024* 18478365_1/
+ 3993  lcn
+ 3994  cd ..
+ 3995  cd bris-multisource-extension/
+ 3996  lcn logs/
+ 3997  vim logs/bris_inference_sparse_18478365.out
+ 3998  lcn /pfs/lustrep1/scratch/project_465002688/milemate/inference/meps_resume/nordic_radar_20240803T23Z.nc
+ 3999  pwd
+ 4000  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4001  lcn
+ 4002  sbatch job_bris_sparse_meps.sh 
+ 4003  squeue --me
+ 4004  lumi-quota 
+ 4005  pwd
+ 4006  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4007  cd ..
+ 4008  lcn
+ 4009  du -sh * | sort -hr | head -20
+ 4010  cd inference/
+ 4011  du -sh * | sort -hr | head -20
+ 4012  lcn meps_resume_all/
+ 4013  lcn
+ 4014  du -sh * | sort -hr | head -20
+ 4015  squeue --me
+ 4016  cd meps_resume_all/
+ 4017  lcn
+ 4018  rm nordic_radar_2024*
+ 4019  lcn
+ 4020  cd ..
+ 4021  lcn
+ 4022  du -sh * | sort -hr | head -20
+ 4023  lumi-quota 
+ 4024  lcn
+ 4025  squeue --me
+ 4026  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4027  cd ..
+ 4028  lcn inference/meps_resume/
+ 4029  cd -
+ 4030  lcn logs/
+ 4031  tail -f logs/bris_inference_sparse_18508239.out
+ 4032  vim logs/bris_inference_sparse_18508239.out
+ 4033  date
+ 4034  vim logs/bris_inference_sparse_18508239.out
+ 4035  lcn ../inference/meps_resume/
+ 4036  tail -f logs/bris_inference_sparse_18508239.out
+ 4037  squeue --me
+ 4038  date
+ 4039  squeue --me
+ 4040  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4041  lcn logs/
+ 4042  tail -f logs/bris_inference_sparse_18508239.out
+ 4043  squeue --me
+ 4044  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4045  cd ..
+ 4046  lcn inference/meps_resume
+ 4047  du -sh * | sort -hr | head -20
+ 4048  cd inference/
+ 4049  du -sh * | sort -hr | head -20
+ 4050  cd meps_resume
+ 4051  rm -rf nordic_radar_2024* 18508239_1/
+ 4052  lcn
+ 4053  cd ..
+ 4054  squeue --me
+ 4055  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4056  lcn logs/
+ 4057  vim logs/bris_inference_sparse_18508239.out
+ 4058  lcn
+ 4059  vim job_bris_sparse_meps.sh
+ 4060  sbatch job_bris_sparse_meps.sh 
+ 4061  squeue --me
+ 4062  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4063  lcn ../inference/meps_resume
+ 4064  cd ../inference/meps_resume
+ 4065  cd ..
+ 4066  du -sh * | sort -hr | head -20
+ 4067  squeue --me
+ 4068  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4069  cd ../inference/
+ 4070  du -sh * | sort -hr | head -20
+ 4071  squeue --me
+ 4072  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4073  cd ../inference/
+ 4074  du -sh * | sort -hr | head -20
+ 4075  lcn meps_resume
+ 4076  lcn meps_resume | wc -l
+ 4077  python33
+ 4078  python3
+ 4079  squeue --me
+ 4080  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4081  cd ../inference/
+ 4082  du -sh * | sort -hr | head -20
+ 4083  squeue --me
+ 4084  lcn meps_resume | wc -l
+ 4085  squeue --me
+ 4086  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4087  cd ../inference/
+ 4088  lcn meps_resume
+ 4089  du -sh * | sort -hr | head -20
+ 4090  cd meps_resume
+ 4091  pwd
+ 4092  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4093  cd ../inference/meps_resume
+ 4094  pwd
+ 4095  sftp sbz@boaccess.ecmwf.int
+ 4096  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4097  cd ..
+ 4098  cd inference/meps_resume
+ 4099  pwd
+ 4100  lcn
+ 4101  sftp sbz@boaccess.ecmwf.int
+ 4102  cd /scratch/project_465002688/milemate/bris-multisource-extension/../inference/meps_resume
+ 4103  lcn
+ 4104  sftp sbz@boaccess.ecmwf.int
+ 4105  lcn
+ 4106  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4107  lcn
+ 4108  vim config/radar_fcst_simple.yaml 
+ 4109  lcn config/
+ 4110  lcn config/training/
+ 4111  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/
+ 4112  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/
+ 4113  vim /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_meps_sparse.yaml
+ 4114  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/
+ 4115  vim /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_simple.yaml
+ 4116  vim /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_meps_sparse_test.yaml 
+ 4117  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4118  lcn
+ 4119  lcn config/
+ 4120  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4121  lcn
+ 4122  lcn config/
+ 4123  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4124  lcn
+ 4125  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/
+ 4126  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4127  lcn /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/
+ 4128  vim /pfs/lustrep1/scratch/project_465002688/omiralle/bris_multisource/config/radar_fcst_meps_sparse.yaml
+ 4129  cd /scratch/project_465002688/milemate/bris-multisource-extension/../inference/
+ 4130  lcn
+ 4131  cd meps_resume
+ 4132  lcn
+ 4133  pwd
+ 4134  lcn verif_frost.nc 
+ 4135  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4136  lcn
+ 4137  lcn logs/
+ 4138  vim logs/bris_inference_simple_17950985.out
+ 4139  cd /scratch/project_465002688/milemate/bris-multisource-extension/
+ 4140  lcn
+ 4141  vim bris_sparse_simple_verif.yaml 
+ 4142  lcn
+ 4143  pwd
+ 4144  scratch
+ 4145  scratch2
+ 4146  lcn
+ 4147  lcn ../omiralle/
+ 4148  lcn ../omiralle/diff_precip/
+ 4149  lcn ../omiralle/anemoi-
+ 4150  lcn ../omiralle/anemoi-datasets/
+ 4151  cd
+ 4152  lcn
+ 4153  cd git/run-anemoi-crps/
+ 4154  lcn
+ 4155  cd lumi/
+ 4156  lcn
+ 4157  vim main_radar_train_crps.yaml 
+ 4158  grep -ir synop *
+ 4159  grep -ir netatmo *
+ 4160  grep -ir radar *
+ 4161  grep -ir nordic *
+ 4162  lcn
+ 4163  cd ..
+ 4164  lcn
+ 4165  cd bris-multisource/
+ 4166  lcn
+ 4167  grep -ir radar *
+ 4168  cd ..
+ 4169  lcn
+ 4170  cd run-anemoi-nowcast/
+ 4171  lcn
+ 4172  cd lumi/
+ 4173  lcn
+ 4174  grep -ir radar *
+ 4175  lcn /scratch/project_465002688/datasets/
+ 4176  lcn /scratch/project_465002688/datasets/frost-rainrate-2024.zarr
+ 4177  lcn
+ 4178  vim base.sh 
+ 4179  vim jobscript_inference_multi.sh 
+ 4180  vim lumi_jobscript.sh 
+ 4181  vim container_script.sh 
+ 4182  vim lumi_jobscript.sh 
+ 4183  lcn -a
+ 4184  cd ..
+ 4185  cd -
+ 4186  lcn -a
+ 4187  cd ..
+ 4188  lcn -a
+ 4189  cd ..
+ 4190  lcn
+ 4191  cd git/
+ 4192  lcn
+ 4193  lcn -a
+ 4194  cd ..
+ 4195  lcn
+ 4196  lcn bin/
+ 4197  lcn ondemand/
+ 4198  lcn
+ 4199  scratch
+ 4200  scratch2
+ 4201  lcn
+ 4202  cd git/
+ 4203  lcn
+ 4204  scratch2 
+ 4205  cd
+ 4206  vim .bashrc 
+ 4207  cd git/
+ 4208  lcn
+ 4209  cd bris-multisource/
+ 4210  lcn
+ 4211  cd ..
+ 4212  lcn
+ 4213  cd anemoi-hpc-benchmarks/
+ 4214  lcn
+ 4215  cd ../bris-multisource/
+ 4216  lcn
+ 4217  lcn -a
+ 4218  lcn -a .git
+ 4219  lcn
+ 4220  scratch2
+ 4221  lcn
+ 4222  cd bris-multisource-extension/
+ 4223  lcn
+ 4224  lcn -a
+ 4225  lcn -a .venv/bin/
+ 4226  lcn -a .venv/bin/anemoi-datasets 
+ 4227  lcn
+ 4228  vim job_bris_sparse_meps.sh 
+ 4229  pwd
+ 4230  lcn /scratch/project_465003270/
+ 4231  cd /scratch/project_465003270/
+ 4232  mkdir milemate
+ 4233  lcn
+ 4234  cd milemate/
+ 4235  lcn
+ 4236  lcn /scratch/project_465002688/milemate/
+ 4237  lcn /scratch/project_465002688/milemate/container/
+ 4238  lcn /scratch/project_465002688/milemate/logs/
+ 4239  scratch3
+ 4240  lcn
+ 4241  cd
+ 4242  scratch2
+ 4243  lcn
+ 4244  cd bris-multisource-extension/
+ 4245  lcn
+ 4246  cd ..
+ 4247  du -sk * 
+ 4248  lcn inference/
+ 4249  du -sh * 
+ 4250  cd inference/
+ 4251  du -sh * 
+ 4252  lcn meps_resume
+ 4253  lcn meps_resume | less
+ 4254  lcn
+ 4255  scratch3 
+ 4256  lcn
+ 4257  git clone git@github.com:metno/bris-multisource.git
+ 4258  git clone git@github.com:matemile/bris-multisource.git
+ 4259  lcn
+ 4260  mv bris-multisource bris-multisource-dop
+ 4261  lcn
+ 4262  cd bris-multisource-dop/
+ 4263  lcn
+ 4264  scratch2
+ 4265  lcn
+ 4266  cd
+ 4267  vim .bashrc 
+ 4268  scratch3 
+ 4269  lcn
+ 4270  cd bris-multisource-dop/
+ 4271  lcn
+ 4272  cd ..
+ 4273  lcn
+ 4274  lcn -a
+ 4275  lcn /pfs/lustrep1/scratch/project_465003270/milemate/.uv-cache
+ 4276  lcn /pfs/lustrep1/scratch/project_465003270/milemate/
+ 4277  lcn /pfs/lustrep2/scratch/project_465003270/milemate/
+ 4278  lcn /pfs/lustrep3/scratch/project_465003270/milemate/
+ 4279  mkdir /pfs/lustrep3/scratch/project_465003270/milemate/.uv_cache
+ 4280  lcn /pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache
+ 4281  lcn /pfs/lustrep3/scratch/project_465003270/milemate/
+ 4282  mv .uv_cache .uv-cache
+ 4283  lcn -a
+ 4284  lcn /pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache
+ 4285  scratch3 
+ 4286  lcn
+ 4287  cd bris-multisource-dop/
+ 4288  lcn
+ 4289  cd
+ 4290  vim .bashrc 
+ 4291  scratch3 
+ 4292  cd bris-multisource-dop/
+ 4293  lcn
+ 4294  lcn config/
+ 4295  cd ..
+ 4296  lcn
+ 4297  lcn -a
+ 4298  mkdir .tmp
+ 4299  lcn
+ 4300  vim .bashrc 
+ 4301  scratch3
+ 4302  lcn
+ 4303  lcn bris-multisource-dop/
+ 4304  lcn bris-multisource-dop/config/
+ 4305  lcn
+ 4306  echo SCRATCH
+ 4307  echo $SCRATCH
+ 4308  echo $CACHE_DIR
+ 4309  lcn /pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache
+ 4310  scratch3 
+ 4311  lcn bris-multisource-dop/
+ 4312  lcn bris-multisource-dop/config/
+ 4313  cd bris-multisource-dop/
+ 4314  lcn
+ 4315  uv venv -p 3.11
+ 4316  lcn -a
+ 4317  lcn .venv/
+ 4318  cat .venv/CACHEDIR.TAG 
+ 4319  uv sync
+ 4320  lcn
+ 4321  vim pyproject.toml 
+ 4322  scratch3
+ 4323  lcn bris-multisource-dop/
+ 4324  lcn bris-multisource-dop/dataset_configs/
+ 4325  lcn
+ 4326  lcn -a
+ 4327  echo $TMPDIR
+ 4328  lcn /pfs/lustrep3/scratch/project_465003270/milemate/.tmp
+ 4329  lcn
+ 4330  scratch2
+ 4331  lcn
+ 4332  cd bris-multisource-extension/
+ 4333  lcn
+ 4334  vim pyproject.toml 
+ 4335  lcn ../
+ 4336  lcn ../bris-gitsource/
+ 4337  scratch3 
+ 4338  lcn
+ 4339  mkdir bris-gitsource
+ 4340  cd bris-gitsource/
+ 4341  git clone git@github.com:ecmwf/anemoi-core.git
+ 4342  lcn anemoi-core/
+ 4343  git clone git@github.com:ecmwf/anemoi-inference.git
+ 4344  lcn
+ 4345  git clone git@github.com:matemile/anemoi-weathermart-plugins.git
+ 4346  lcn
+ 4347  git clone https://gitlab.met.no/yrop/yrprod.git
+ 4348  scratch3
+ 4349  lcn bris-multisource-dop/
+ 4350  lcn bris-multisource-dop/config/
+ 4351  lcn
+ 4352  cd bris-multisource-dop/
+ 4353  vim pyproject.toml 
+ 4354  cd ..
+ 4355  lcn
+ 4356  mkdir project_45000288_material
+ 4357  lcn
+ 4358  cd project_45000288_material/
+ 4359  cp -r /scratch/project_465002688/milemate/logs .
+ 4360  lcn logs/
+ 4361  lcn
+ 4362  cp -r /scratch/project_465002688/milemate/container .
+ 4363  cp -r /scratch/project_465002688/milemate/experiments .
+ 4364  cp -r /scratch/project_465002688/milemate/bris-multisource-extension .
+ 4365  cd ..
+ 4366  mv project_45000288_material project_46500288_material
+ 4367  lcn
+ 4368  cd project_46500288_material/
+ 4369  lcn
+ 4370  cp -r /scratch/project_465002688/milemate/bris-gitsource .
+ 4371  cp -r /scratch/project_465002688/milemate/bris-multisource .
+ 4372  lcn
+ 4373  cp -r /scratch/project_465002688/milemate/inference .
+ 4374  lcn
+ 4375  cd ..
+ 4376  lcn
+ 4377  cd bris-multisource-dop/
+ 4378  vim pyproject.toml 
+ 4379  lcn
+ 4380  uv sync
+ 4381  lcn -a
+ 4382  uv sync
+ 4383  rm -rf .venv
+ 4384  uv venv -p 3.12
+ 4385  lcn -a
+ 4386  uv sync
+ 4387  scratch2
+ 4388  lcn
+ 4389  lcn bris-multisource-extension/
+ 4390  du -sh * 
+ 4391  cd inference/
+ 4392  du -sh * 
+ 4393  cd meps_resume
+ 4394  lcn
+ 4395  lcn nordic_radar_2024* | wc -l
+ 4396  rm nordic_radar_2024*
+ 4397  cd ..
+ 4398  du -sh * 
+ 4399  lcn
+ 4400  lcn bris-multisource-extension/
+ 4401  cd bris-multisource-extension/
+ 4402  du -sh * 
+ 4403  lcn checkpoints/
+ 4404  lcn checkpoints/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 4405  lcn
+ 4406  lcn /scratch/project_465003270/
+ 4407  lcn /scratch/project_465003270/milemate/
+ 4408  lcn /scratch/project_465003270/milemate/project_45000288_material/
+ 4409  lcn /scratch/project_465003270/milemate/project_45000288_material/bris-multisource-extension/
+ 4410  lcn /scratch/project_465003270/milemate/project_45000288_material/bris-multisource-extension/checkpoints/
+ 4411  lcn /scratch/project_465003270/milemate/project_45000288_material/bris-multisource-extension/checkpoints/877c3d42-1a90-4357-8bd0-64cae678fc6a/
+ 4412  lcn /scratch/project_465003270/milemate/project_45000288_material/bris-multisource-extension/checkpoints/
+ 4413  lcn /scratch/project_465003270/milemate/project_45000288_material/bris-multisource-extension/
+ 4414  lcn /scratch/project_465003270/milemate/project_45000288_material/
+ 4415  cd ..
+ 4416  lcn
+ 4417  lcn inference/
+ 4418  scratch3
+ 4419  cd project_46500288_material/
+ 4420  lcn bris-gitsource/yrprod/
+ 4421  cd ..
+ 4422  cd bris-gitsource/
+ 4423  lcn
+ 4424  cp -r ../project_46500288_material/bris-gitsource/yrprod .
+ 4425  lcn
+ 4426  cd ..
+ 4427  lcn
+ 4428  cd bris-multisource-dop/
+ 4429  vim pyproject.toml 
+ 4430  lcn
+ 4431  vim pyproject.toml 
+ 4432  scratch3 
+ 4433  lcn bris-multisource-dop/
+ 4434  lcn bris-multisource-dop/config/
+ 4435  cd bris-multisource-dop/
+ 4436  lcn
+ 4437  vim pyproject.toml 
+ 4438  lcn .venv/bin/
+ 4439  lcn
+ 4440  vim pyproject.toml 
+ 4441  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 4442  vim pyproject.toml 
+ 4443  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 4444  vim pyproject.toml 
+ 4445  rm -rf .venv/
+ 4446  vim pyproject.toml 
+ 4447  lcn
+ 4448  rm -rf .venv/ uv.lock
+ 4449  vim pyproject.toml 
+ 4450  lcn ../bris-gitsource/
+ 4451  lcn ../bris-gitsource/yrprod/
+ 4452  date
+ 4453  grep -ir yrprod *
+ 4454  vim python/data_exploration.py 
+ 4455  cd ..
+ 4456  lcn .uv-cache/
+ 4457  grep -ir yrprod .uv-cache/*
+ 4458  cd .uv-cache/
+ 4459  lcn
+ 4460  rm git-v0/ 
+ 4461  rm -rf git-v0/ 
+ 4462  cd ..
+ 4463  cd bris-multisource-dop/
+ 4464  lcn
+ 4465  lcn -a
+ 4466  rm -rf .venv/
+ 4467  lcn
+ 4468  cd ..
+ 4469  grep -ir yrprod .uv-cache/*
+ 4470  cd .uv-cache/
+ 4471  lcn
+ 4472  lcn git-v0/
+ 4473  lcn git-v0/locks/
+ 4474  lcn git-v0/checkouts/
+ 4475  lcn git-v0/checkouts/30b43e8ed7bff30e/
+ 4476  lcn git-v0/checkouts/30b43e8ed7bff30e/011273c/
+ 4477  vim git-v0/checkouts/30b43e8ed7bff30e/011273c/pyproject.toml 
+ 4478  rm -rf git-v0/
+ 4479  cd ../bris-multisource-dop/
+ 4480  rm -rf .venv/
+ 4481  lcn
+ 4482  vim pyproject.toml 
+ 4483  lcn
+ 4484  cd ..
+ 4485  cd .uv-cache/
+ 4486  grep -ir yrprod *
+ 4487  cd ..
+ 4488  cd bris-gitsource/weathermart/
+ 4489  grep -ir yrprod *
+ 4490  vim pyproject.toml 
+ 4491  lcn
+ 4492  scratch3
+ 4493  lcn bris-multisource-dop/
+ 4494  lcn bris-multisource-dop/config/
+ 4495  cd bris-multisource-dop/
+ 4496  lcn -a
+ 4497  uv sync
+ 4498  lcn
+ 4499  uv venv -p 3.12
+ 4500  uv sync
+ 4501  uv venv -p 3.12
+ 4502  uv sync
+ 4503  uv venv -p 3.12
+ 4504  uv sync
+ 4505  uv venv -p 3.12
+ 4506  uv sync
+ 4507  vim pyproject.toml 
+ 4508  cd ..
+ 4509  cd bris-gitsource/
+ 4510  lcn
+ 4511  git clone git@github.com:matemile/weathermart.git
+ 4512  lcn
+ 4513  cd weathermart/
+ 4514  lcn
+ 4515  vim pyproject.toml 
+ 4516  uv venv -p 3.12
+ 4517  uv sync
+ 4518  cd ..
+ 4519  cd bris-multisource-dop/
+ 4520  uv venv -p 3.12
+ 4521  uv sync
+ 4522  grep -ir yrprod ../bris-gitsource/*
+ 4523  lcn bin/
+ 4524  lcn bin/clang 
+ 4525  which uv
+ 4526  lcn .local/
+ 4527  lcn .local/bin/
+ 4528  file .local/bin/uv
+ 4529  gerp -ir yrprod *
+ 4530  grep -ir yrprod *
+ 4531  scratch3
+ 4532  cd bris-multisource-dop/
+ 4533  lcn
+ 4534  uv venv -p 3.12
+ 4535  uv sync
+ 4536  lcn
+ 4537  lcn -a
+ 4538  lcn .git
+ 4539  grep -ir yrprod *
+ 4540  vim pyproject.toml 
+ 4541  uv venv -p 3.12
+ 4542  uv sync
+ 4543  vim pyproject.toml 
+ 4544  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 4545  vim pyproject.toml 
+ 4546  lcn
+ 4547  lcn -a
+ 4548  uv venv -p 3.12
+ 4549  uv sync
+ 4550  pwd
+ 4551  uv project
+ 4552  uv sync -vv
+ 4553  scratch3
+ 4554  lcn
+ 4555  grep -ir yrprod .uv-cache/*
+ 4556  vim .uv-cache/git-v0/checkouts/30b43e8ed7bff30e/011273c/uv.lock
+ 4557  find . -name uv.lock
+ 4558  cd .uv-cache/
+ 4559  lcn
+ 4560  rm -rf git-v0/
+ 4561  lcn
+ 4562  cd ..
+ 4563  lcn
+ 4564  grep -ir yrprod.git *
+ 4565  cd bris-gitsource/yrprod/
+ 4566  lcn
+ 4567  vim yrprod.egg-info/
+ 4568  lcn yrprod.egg-info/
+ 4569  grep -i yrprod yrprod.egg-info/*
+ 4570  grep -i yrprod.git yrprod.egg-info/*
+ 4571  vim yrprod.egg-info/PKG-INFO 
+ 4572  which uv
+ 4573  cd ..
+ 4574  cd bris-gitsource/yrprod/
+ 4575  lcn -a
+ 4576  rm -rf .git yrprod.egg-info/
+ 4577  lcn
+ 4578  lcn -a
+ 4579  rm -rf .git*
+ 4580  cd 
+ 4581  scratch3 
+ 4582  cd bris-multisource-dop/
+ 4583  rm -rf .venv/
+ 4584  lcn
+ 4585  rm -rf .venv/
+ 4586  cd ..
+ 4587  cd .uv-cache/
+ 4588  lcn
+ 4589  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4590  lcn
+ 4591  lcn -a
+ 4592  rm .lock .gitignore
+ 4593  lcn -a
+ 4594  cd ..
+ 4595  cd bris-multisource-dop/
+ 4596  lcn
+ 4597  lcn -a
+ 4598  lcn .git
+ 4599  lcn
+ 4600  lcn .venv/
+ 4601  cd ..
+ 4602  cd .uv-cache/
+ 4603  lcn
+ 4604  vim git-v0/checkouts/30b43e8ed7bff30e/011273c/uv.lock 
+ 4605  vim git-v0/checkouts/50e4c2a8faa22d5d/b9e0111/
+ 4606  vim git-v0/checkouts/30b43e8ed7bff30e/011273c/uv.lock 
+ 4607  cd ..
+ 4608  lcn .tmp/
+ 4609  vim .tmp/uv-setuptools-7b08394a2556ac5c.lock
+ 4610  lcn -a .tmp/
+ 4611  lcn -a
+ 4612  cd bris-multisource-dop/
+ 4613  rm -rf .venv/
+ 4614  cd ..
+ 4615  cd .uv-cache/
+ 4616  lcn
+ 4617  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4618  lcn
+ 4619  cd ..
+ 4620  cd bris-multisource-dop/
+ 4621  lcn
+ 4622  cd ..
+ 4623  cd -
+ 4624  vim pyproject.toml 
+ 4625  cd ../bris-gitsource/weathermart/
+ 4626  lcn
+ 4627  vim pyproject.toml 
+ 4628  cd ../anemoi-weathermart-plugins/
+ 4629  vim pyproject.toml 
+ 4630  scratch3
+ 4631  lcn
+ 4632  cd bris-multisource-dop/
+ 4633  lcn
+ 4634  lcn .venv/
+ 4635  lcn .venv/bin/
+ 4636  lcn
+ 4637  vim pyproject.toml 
+ 4638  lcn python/
+ 4639  cd ..
+ 4640  cd bris-gitsource/
+ 4641  lcn
+ 4642  cd weathermart/
+ 4643  lcn
+ 4644  cd ..
+ 4645  rm -rf weathermart/
+ 4646  git clone git@github.com:OpheliaMiralles/weathermart.git
+ 4647  lc
+ 4648  lcn
+ 4649  cd weathermart/
+ 4650  lcn
+ 4651  git status
+ 4652  vim pyproject.toml 
+ 4653  lcn
+ 4654  vim uv.lock 
+ 4655  vim pyproject.toml 
+ 4656  cd ..
+ 4657  cd yrprod/
+ 4658  lcn
+ 4659  vim uv.lock 
+ 4660  rm uv.lock
+ 4661  cd ../weathermart/
+ 4662  grep yrprod *
+ 4663  grep -ir yrprod *
+ 4664  rm uv.lock
+ 4665  cd ..
+ 4666  cd bris-multisource-dop/
+ 4667  lcn
+ 4668  vim pyproject.toml 
+ 4669  lcn
+ 4670  lcn -a
+ 4671  rm -rf .venv/
+ 4672  uv venv -p 3.12
+ 4673  uv sync
+ 4674  cd ..
+ 4675  cd bris-gitsource/yrprod/
+ 4676  lcn -a
+ 4677  lcn -a .git/
+ 4678  scratch3
+ 4679  lcn
+ 4680  cd bris-gitsource/
+ 4681  lcn
+ 4682  cd ../bris-multisource-dop/
+ 4683  lcn ../bris-gitsource/anemoi-core/models
+ 4684  lcn ../bris-gitsource/anemoi-inference
+ 4685  lcn ../bris-gitsource/weathermart
+ 4686  lcn ../bris-gitsource/anemoi-weathermart-plugins
+ 4687  env | grep '^UV_'
+ 4688  grep -RInE -- '--no-sources|UV_NO_SOURCES|uv sync|uv lock'   Makefile makefile . 2>/dev/null
+ 4689  lcn
+ 4690  echo $UV_NO_SOURCE
+ 4691  unset UV_NO_SOURCES
+ 4692  rm -f uv.lock
+ 4693  uv lock -vv 2>&1 | tee uv-lock.log
+ 4694  lcn
+ 4695  grep -n -B5 -A10 -i 'github\.com' uv-lock.log
+ 4696  vim uv-lock.log 
+ 4697  vim pyproject.toml 
+ 4698  cd ..
+ 4699  lcn
+ 4700  cd bris-gitsource/
+ 4701  lcn
+ 4702  mkdir yrprod_cloned
+ 4703  scratch3 
+ 4704  lcn
+ 4705  cd bris-multisource-dop/
+ 4706  lcn
+ 4707  lcn -a
+ 4708  vim pyproject.toml 
+ 4709  lcn ../bris-gitsource/
+ 4710  lcn ../bris-gitsource/yrprod
+ 4711  lcn -a
+ 4712  lcn .ssh/
+ 4713  cat .ssh/id_rsa.pub 
+ 4714  cat .ssh/id_ed25519.pub 
+ 4715  lcn
+ 4716  scratch3 
+ 4717  lcn
+ 4718  cd bris-multisource-dop/
+ 4719  lcn
+ 4720  cd ..
+ 4721  cd bris-gitsource/
+ 4722  cd yrprod
+ 4723  git remote -v
+ 4724  cd
+ 4725  lcn .ssh/
+ 4726  cat .ssh/config 
+ 4727  scratch3
+ 4728  cd bris-multisource-dop/
+ 4729  lcn
+ 4730  vim pyproject.toml 
+ 4731  rm -rf .venv/
+ 4732  grep -RInE   'github\.com/(OpheliaMiralles/weathermart|ecmwf/anemoi-transform|ecmwf/anemoi-plugins)|gitlab\.met\.no/yrop/yrprod|weathermart|anemoi-transform|anemoi-plugins|yrprod'   pyproject.toml ../*/pyproject.toml 2>/dev/null
+ 4733  uv venv -p 3.12
+ 4734  uv sync
+ 4735  cd ../bris-gitsource/
+ 4736  lcn
+ 4737  git clone git@github.com:ecmwf/anemoi-datasets.git
+ 4738  lcn
+ 4739  git clone git@github.com:ecmwf/anemoi-utils.git
+ 4740  git clone git@github.com:ecmwf/anemoi-registry.git
+ 4741  lcn
+ 4742  cd ../
+ 4743  cd .uv-cache/
+ 4744  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4745  cd ..
+ 4746  cd bris-multisource-dop/
+ 4747  rm -rf .venv/
+ 4748  lcn
+ 4749  uv lock -vv 2>&1 | tee uv-lock2.log
+ 4750  uv venv -p 3.12
+ 4751  uv sync
+ 4752  grep -RInE   'yrprod|yrop/yrprod|gitlab\.met\.no|git\+https://'   ../weathermart   ../anemoi-transform   ../anemoi-plugins   ../anemoi-datasets   ../anemoi-training \
+ 4753  cd ..
+ 4754  cd bris-gitsource/
+ 4755  lcn
+ 4756  mkdir test
+ 4757  cd test/
+ 4758  grep -RInE   'yrprod|yrop/yrprod|gitlab\.met\.no|git\+https://'   ../weathermart   ../anemoi-transform   ../anemoi-plugins   ../anemoi-datasets   ../anemoi-training   2>/dev/null
+ 4759  find   ../weathermart   ../anemoi-transform   ../anemoi-plugins   ../anemoi-datasets   ../anemoi-training   \( -name pyproject.toml -o -name setup.py -o -name setup.cfg -o -name 'PKG-INFO' -o -name 'METADATA' \)   -print
+ 4760  grep -RIna   --exclude-dir=.git   --exclude-dir=.venv   --exclude-dir=.uv-cache   'yrprod\|gitlab\.met\.no/yrop'   ../weathermart ../anemoi-transform ../anemoi-plugins   2>/dev/null
+ 4761  git -C ../weathermart remote -v
+ 4762  git -C ../weathermart branch --show-current
+ 4763  git -C ../weathermart grep -nE 'yrprod|gitlab\.met\.no|git\+https' metno
+ 4764  find /pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache   -type f   \( -name pyproject.toml -o -name setup.py -o -name setup.cfg -o -name PKG-INFO -o -name METADATA \)   -print0 | xargs -0 grep -nH -E 'yrprod|gitlab\.met\.no/yrop' 2>/dev/null
+ 4765  scratch3
+ 4766  lcn
+ 4767  cd bris-gitsource/
+ 4768  lcn
+ 4769  git clone git@gitlab.met.no:yrop/yrprod.git yrprod_cloned
+ 4770  ssh -vvv -T git@gitlab.met.no
+ 4771  git clone https://gitlab.met.no/yrop/yrprod.git yrprod_cloned
+ 4772  hostname
+ 4773  nc -vz -w 5 gitlab.met.no 22
+ 4774  lcn
+ 4775  cd yrprod
+ 4776  git remote -v
+ 4777  lcn
+ 4778  vim pyproject.toml 
+ 4779  cd ..
+ 4780  cd .uv-cache/
+ 4781  lcn
+ 4782  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4783  lcn -a
+ 4784  cd ..
+ 4785  lcn
+ 4786  grep -ir gitlab *
+ 4787  grep -ir "gitlab.met.no" *
+ 4788  cd bris-multisource-dop/
+ 4789  vim uv-lock.log 
+ 4790  lcn
+ 4791  grep -RInE   'github\.com/(OpheliaMiralles/weathermart|ecmwf/anemoi-transform|ecmwf/anemoi-plugins)|gitlab\.met\.no/yrop/yrprod|weathermart|anemoi-transform|anemoi-plugins|yrprod'   pyproject.toml ../*/pyproject.toml 2>/dev/null
+ 4792  sed -n '/^\[tool\.uv\.sources\]/,/^\[/p' pyproject.toml
+ 4793  vim pyproject.toml 
+ 4794  lcn
+ 4795  vim pyproject.toml 
+ 4796  lcn -a
+ 4797  cd ..
+ 4798  grep -ir "yrprod.git" *
+ 4799  scratch3 
+ 4800  lcn
+ 4801  cd bris-multisource-dop/
+ 4802  lcn
+ 4803  lcn config/
+ 4804  lcn
+ 4805  scratch3
+ 4806  lcn bris-multisource-dop/
+ 4807  lcn bris-multisource-dop/config/
+ 4808  cd bris-gitsource/weathermart/
+ 4809  lcn
+ 4810  vim pyproject.toml 
+ 4811  cd ..
+ 4812  cd yrprod
+ 4813  lcn
+ 4814  lcn yrprod.egg-info/
+ 4815  vim yrprod.egg-info/PKG-INFO 
+ 4816  grep -nEi   '^(Requires-Dist|Requires|Dependency|Home-page|Project-URL|Download-URL)|yrprod|gitlab\.met\.no|git\+https'   /path/to/yrprod/yrprod.egg-info/PKG-INFO
+ 4817  grep -nEi   '^(Requires-Dist|Requires|Dependency|Home-page|Project-URL|Download-URL)|yrprod|gitlab\.met\.no|git\+https'   yrprod.egg-info/PKG-INFO
+ 4818  find .   -type d   \( -name '*.egg-info' -o -name '*.dist-info' \)   -prune -print
+ 4819  lcn
+ 4820  rm -rf yrprod.egg-info/
+ 4821  lcn
+ 4822  lcn build/
+ 4823  rm -rf build/
+ 4824  lcn
+ 4825  lcn -a
+ 4826  cd ..
+ 4827  lcn .uv-cache/
+ 4828  lcn .uv-cache/git-v0/
+ 4829  lcn .uv-cache/git-v0/checkouts/
+ 4830  lcn .uv-cache/git-v0/checkouts/30b43e8ed7bff30e/
+ 4831  lcn .uv-cache/git-v0/checkouts/30b43e8ed7bff30e/011273c/
+ 4832  vim .uv-cache/git-v0/checkouts/30b43e8ed7bff30e/011273c/uv.lock 
+ 4833  cd bris-multisource-dop/
+ 4834  CACHE=/pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache
+ 4835  CHECKOUT="$CACHE/git-v0/checkouts/30b43e8ed7bff30e/011273c"
+ 4836  grep -nE '^(name|version)\s*=' "$CHECKOUT/pyproject.toml"
+ 4837  git -C "$CHECKOUT" remote -v
+ 4838  git -C "$CHECKOUT" branch --show-current
+ 4839  git -C "$CHECKOUT" rev-parse HEAD
+ 4840  grep -RIn   --exclude-dir=.git   'yrprod\|gitlab\.met\.no/yrop'   "$CHECKOUT"
+ 4841  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-datasets
+ 4842  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-core/models
+ 4843  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-core/training
+ 4844  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-core/graphs
+ 4845  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-inference
+ 4846  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/yrprod
+ 4847  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/weathermart
+ 4848  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-weathermart-plugins
+ 4849  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-utils
+ 4850  lcn /pfs/lustrep3/scratch/project_465003270/milemate/bris-gitsource/anemoi-registry
+ 4851  cd ../bris-gitsource/
+ 4852  lcn
+ 4853  cd weathermart/
+ 4854  lcn
+ 4855  grep gitlab *
+ 4856  grep yrprod *
+ 4857  grep -ir yrprod *
+ 4858  grep -ir gitlab *
+ 4859  git remote -v
+ 4860  cd ..
+ 4861  cd bris-multisource-dop/
+ 4862  lcn
+ 4863  vim uvlock.txt 
+ 4864  cd ..
+ 4865  lcn
+ 4866  lcn -a
+ 4867  lcn .tmp/
+ 4868  type -a uv
+ 4869  uv --version
+ 4870  cd bris-multisource-dop/
+ 4871  make -n install
+ 4872  vim pyproject.toml 
+ 4873  lcn
+ 4874  sed -n '1,160p' pyproject.toml 
+ 4875  uv lock --project . -vv
+ 4876  lcn
+ 4877  vim pyproject.toml 
+ 4878  lcn
+ 4879  scar3
+ 4880  scratch3
+ 4881  lcn bris-multisource-dop/
+ 4882  lcn bris-multisource-dop/config/
+ 4883  cd bris-multisource-dop/
+ 4884  lcn
+ 4885  lcn -a
+ 4886  lcn -a .venv/bin/
+ 4887  lcn
+ 4888  rm -rf .venv/
+ 4889  cd
+ 4890  scratch3 
+ 4891  cd .uv-cache/
+ 4892  lcn
+ 4893  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4894  lcn
+ 4895  cd ..
+ 4896  cd bris-multisource-dop/
+ 4897  lcn
+ 4898  lcn -a
+ 4899  pwd
+ 4900  cd
+ 4901  vim .bashrc 
+ 4902  scratch3 
+ 4903  cd bris-multisource-dop/
+ 4904  lcn
+ 4905  vim pyproject
+ 4906  vim pyproject_emulator.toml 
+ 4907  vim pyproject.toml 
+ 4908  lcn
+ 4909  lcn -a
+ 4910  uv venv -p 3.12
+ 4911  uv cache clean
+ 4912  uv venv -p 3.12
+ 4913  uv sync
+ 4914  cd ..
+ 4915  cd .uv-cache/
+ 4916  lcn
+ 4917  lcn git-v0/checkouts/30b43e8ed7bff30e/
+ 4918  lcn git-v0/checkouts/30b43e8ed7bff30e/011273c/
+ 4919  CACHE=/pfs/lustrep3/scratch/project_465003270/milemate/.uv-cache
+ 4920  CHECKOUT="$CACHE/git-v0/checkouts/30b43e8ed7bff30e/011273c"
+ 4921  echo "=== checkout ==="
+ 4922  realpath "$CHECKOUT"
+ 4923  echo "=== pyproject identity ==="
+ 4924  sed -n '/^\[project\]/,/^\[/p' "$CHECKOUT/pyproject.toml" |   grep -E '^(name|version|requires-python)\s*='
+ 4925  echo "=== Git origin/revision ==="
+ 4926  git -C "$CHECKOUT" remote -v
+ 4927  git -C "$CHECKOUT" status --short --branch
+ 4928  git -C "$CHECKOUT" rev-parse HEAD
+ 4929  git -C "$CHECKOUT" log -1 --format='%H %D%n%s'
+ 4930  ROOT=/pfs/lustrep3/scratch/project_465003270/milemate
+ 4931  CACHE="$ROOT/.uv-cache"
+ 4932  grep -RIna   --exclude-dir=.git   --exclude-dir=.venv   'gitlab\.met\.no/yrop/yrprod\|yrprod\.git\|name = "yrprod"'   "$ROOT" "$CACHE" 2>/dev/null
+ 4933  cd ..
+ 4934  cd bris-multisource-dop/
+ 4935  lcn
+ 4936  rm uv-lock*
+ 4937  lcn
+ 4938  lcn -a
+ 4939  ls -la pyproject
+ 4940  ls -la pyproject.toml
+ 4941  uv lock -vv
+ 4942  uv lock -vv > uvlock.txt 2>&1
+ 4943  vim pyproject.toml 
+ 4944  grep -nE '^\[project\]|^name[[:space:]]*=|^version[[:space:]]*=|^requires-python[[:space:]]*='   pyproject.toml
+ 4945  cd ..
+ 4946  d="$PWD"
+ 4947  while [ "$d" != "/" ]; do     for f in pyproject.toml uv.toml uv.lock; do         if [ -e "$d/$f" ]; then             printf '%s\n' "$d/$f";         fi;     done;     d=$(dirname "$d"); done
+ 4948  cd -
+ 4949  while [ "$d" != "/" ]; do     for f in pyproject.toml uv.toml uv.lock; do         if [ -e "$d/$f" ]; then             printf '%s\n' "$d/$f";         fi;     done;     d=$(dirname "$d"); done
+ 4950  env | grep -E '^UV_|^VIRTUAL_ENV=' | sort
+ 4951  ind . .. -maxdepth 3   \( -name pyproject.toml -o -name uv.toml -o -name .python-version -o -name uv.lock \)   -print
+ 4952  find . .. -maxdepth 3   \( -name pyproject.toml -o -name uv.toml -o -name .python-version -o -name uv.lock \)   -print
+ 4953  ROJECT=/pfs/lustrep3/scratch/project_465003270/milemate
+ 4954  env -u UV_PROJECT     -u UV_NO_PROJECT     -u UV_NO_SYNC     -u UV_NO_SOURCES     uv lock --project "$PROJECT" --refresh -vv
+ 4955  ls -lh "$PROJECT/uv.lock"
+ 4956  PROJECT=/pfs/lustrep3/scratch/project_465003270/milemate
+ 4957  env -u UV_PROJECT     -u UV_NO_PROJECT     -u UV_NO_SYNC     -u UV_NO_SOURCES     uv lock --project "$PROJECT" --refresh -vv
+ 4958  ls -lh "$PROJECT/uv.lock"
+ 4959  cd ..
+ 4960  env -u UV_PROJECT     -u UV_NO_PROJECT     -u UV_NO_SYNC     -u UV_NO_SOURCES     uv lock --project "$PROJECT" --refresh -vv
+ 4961  cd -
+ 4962  lcn -a
+ 4963  lcn
+ 4964  cd
+ 4965  vim .bashrc 
+ 4966  lcn bin/
+ 4967  lcn
+ 4968  pwd
+ 4969  scratch2
+ 4970  lcn
+ 4971  cd bris-multisource-extension/
+ 4972  lcn
+ 4973  vim uv.lock 
+ 4974  vim pyproject.toml 
+ 4975  rm -rf .venv/
+ 4976  cd ..
+ 4977  scratch3 
+ 4978  cd bris-multisource-dop/
+ 4979  rm -rf .venv/
+ 4980  cd ..
+ 4981  cd .uv-cache/
+ 4982  lcn
+ 4983  rm -rf CACHEDIR.TAG interpreter-v4/ git-v0/ builds-v0/ sdists-v9/ simple-v20/ archive-v0/ wheels-v6/
+ 4984  lcn
+ 4985  cd ..
+ 4986  cd bris-multisource-dop/
+ 4987  lcn
+ 4988  uv venv -p 3.12
+ 4989  uv sync -vv 
+ 4990  uv lock --project /pfs/lustrep3/scratch/project_465003270/milemate/bris-multisource-dop -vv   2>&1 | tee uv-lock-debug.log
+ 4991  lcn
+ 4992  vim uv-lock-debug.log 
+ 4993  scratch3
+ 4994  lcn
+ 4995  cd bris-multisource-dop/
+ 4996  lcn
+ 4997  scratch3 
+ 4998  lcn
+ 4999  cd bris-multisource-dop/
+ 5000  lcn
+ 5001  scratch3
+ 5002  lcn
+ 5003  scratch3 
+ 5004  lcn
+ 5005  cd bris-multisource-dop/
+ 5006  lcn
+ 5007  vim pyproject.toml 
+ 5008  scratch3 
+ 5009  lcn
+ 5010  cd bris-multisource-dop/
+ 5011  lcn
+ 5012  scratch3 
+ 5013  lcn
+ 5014  mkdir cherri-dop
+ 5015  lcn
+ 5016  scratch3 
+ 5017  lcn
+ 5018  scratch3 
+ 5019  lcn
+ 5020  cd cherri-dop/
+ 5021  lcn
+ 5022  cd ..
+ 5023  cd cherri-dop/
+ 5024  git init
+ 5025  lcn -a
+ 5026  git branch -M main
+ 5027  git remote add origin git@github.com:matemile/cherri-dop.git
+ 5028  curl -LsSf https://astral.sh/uv/install.sh | sh
+ 5029  uv --version
+ 5030  printf "3.11\n" > .python-version
+ 5031  vim ../bris-multisource-dop/pyproject
+ 5032  vim ../bris-multisource-dop/pyproject.toml 
+ 5033  lcn -a
+ 5034  lcn .venv/
+ 5035  lcn .venv/bin/
+ 5036  lcn
+ 5037  uv run python -c "import anemoi.training; print('anemoi-training import: OK')"
+ 5038  uv run python -c "import torch; print('torch:', torch.__version__)"
+ 5039  vim ../bris-multisource-dop/pyproject.toml 
+ 5040  vim .gitignore
+ 5041  vim README.md
+ 5042  vim .gitignore
+ 5043  scratch3 
+ 5044  cd cherri-dop/
+ 5045  lcn
+ 5046  lcn -a
+ 5047  lcn ../bris-multisource-dop/
+ 5048  mkdir dataset_configs training_configs inference_configs jobs
+ 5049  lcn
+ 5050  lcn .local/
+ 5051  lcn .local/bin/
+ 5052  scratch3 
+ 5053  cd cherri-dop/
+ 5054  lcn -a
+ 5055  vim pyproject.toml
+ 5056  mkdir scripts
+ 5057  vim scripts/check_install.py
+ 5058  uv sync --all-groups
+ 5059  lcn -a
+ 5060  uv run python scripts/check_install.py
+ 5061  vim pyproject.toml 
+ 5062  lcn
+ 5063  rm -rf .venv/ uv.lock
+ 5064  uv lock
+ 5065  vim pyproject.toml 
+ 5066  uv lock
+ 5067  vim pyproject.toml 
+ 5068  uv lock
+ 5069  uv sync --all-groups
+ 5070  lcn
+ 5071  lcn -a
+ 5072  scratch3 
+ 5073  cd cherri-dop/
+ 5074  lcn
+ 5075  vim ../project_46500288_material/bris-multisource-extension/python/container_venv_backup.py 
+ 5076  rm ../project_46500288_material/bris-multisource-extension/python/.container_venv_backup.py.swp
+ 5077  vim ../project_46500288_material/bris-multisource-extension/python/container_venv_backup.py 
+ 5078  lcn
+ 5079  lcn training_configs/
+ 5080  vim ../project_46500288_material/bris-multisource-extension/job_test.sh 
+ 5081  vim ../project_46500288_material/bris-multisource-extension/job_radar.sh 
+ 5082  lcn
+ 5083  scratch3 
+ 5084  cd cherri-dop/
+ 5085  lcn
+ 5086  lcn -a
+ 5087  lcn -a jobs/
+ 5088  rm jobs/.job_dop_lumi.sh.swp
+ 5089  vim jobs/job_dop_lumi.sh 
+ 5090  lcn
+ 5091  mkdir python
+ 5092  lcn
+ 5093  cp ../project_46500288_material/bris-multisource-extension/python/container_venv_backup.py python/.
+ 5094  lcn
+ 5095  lcn python/
+ 5096  vim python/container_venv_backup.py 
+ 5097  vim jobs/job_dop_lumi.sh 
+ 5098  lcn
+ 5099  vim jobs/job_dop_lumi.sh 
+ 5100  cd training_configs/
+ 5101  lcn
+ 5102  cp config_ms.yaml config_test.yaml 
+ 5103  lcn
+ 5104  vim config_test.yaml 
+ 5105  scratch3 
+ 5106  cd cherri-dop/
+ 5107  lcn
+ 5108  cd
+ 5109  lcn
+ 5110  mv config_ms.yaml /scratch/project_465003270/milemate/cherri-dop/training_configs/.
+ 5111  lcn
+ 5112  scr3
+ 5113  scratch3
+ 5114  cd cherri-dop/
+ 5115  uv run python - <<'PY'
+ 5116  import torch
+ 5117  print("Torch version:       ", torch.__version__)
+ 5118  print("Torch CUDA version:  ", torch.version.cuda)
+ 5119  print("CUDA available:      ", torch.cuda.is_available())
+ 5120  print("CUDA device count:   ", torch.cuda.device_count())
+ 5121  if torch.cuda.is_available():
+ 5122      for i in range(torch.cuda.device_count()):
+ 5123          print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
+ 5124  PY
+ 5125  scratch3 
+ 5126  cd cherri-dop/
+ 5127  lcn -a
+ 5128  pwd
+ 5129  lcn
+ 5130  lcn training_configs/
+ 5131  vim training_configs/config_ms.yaml 
+ 5132  lcn
+ 5133  vim README.md 
+ 5134  git status
+ 5135  lcn
+ 5136  lcn -a
+ 5137  mkdir -p .github/workflows
+ 5138  vim .github/workflows/ci.yml
+ 5139  lcn -a
+ 5140  git add   .gitignore   .python-version   README.md   pyproject.toml   uv.lock \
+ 5141  git add .gitignore .python-version README.md pyproject.toml uv.lock scripts/check_install.py training_configs/config_ms.yaml inference_configs/ dataset_configs/
+ 5142  git commit -m "Initial commit CHERRI-DOP env"
+ 5143  git push -u origin main
+ 5144  git status
+ 5145  git branch --show-current
+ 5146  git remote -v
+ 5147  git add .gitignore .python-version README.md pyproject.toml uv.lock scripts/check_install.py training_configs/config_ms.yaml inference_configs/ dataset_configs/ .github/workflows/ci.yml 
+ 5148  git commit -m "Initial commit CHERRI-DOP env"
+ 5149  git push -u origin main --force-with-lease
+ 5150  git fetch origin
+ 5151  git log --oneline --decorate --all -10
+ 5152  git push -u origin main --force-with-lease
+ 5153  scratch3 
+ 5154  cd cherri-dop/
+ 5155  lcn
+ 5156  git status
+ 5157  lcn
+ 5158  vim jobs/job_dop_lumi.sh
+ 5159  scratch3 
+ 5160  cd cherri-dop/
+ 5161  lcn
+ 5162  cd ../project_46500288_material/bris-multisource-extension/
+ 5163  lcn
+ 5164  vim job_bris_sparse_meps.sh 
+ 5165  vim job_test.sh 
+ 5166  lcn /scratch/project_465003270/
+ 5167  lcn /scratch/project_465003270/omiralle/
+ 5168  lcn /scratch/project_465003270/milemate/
+ 5169  lcn /scratch/project_465003270/milemate/project_46500288_material/
+ 5170  lcn /scratch/project_465003270/milemate/project_46500288_material/container/
+ 5171  lcn /scratch/project_465002688/
+ 5172  lcn /scratch/project_465002688/containers/
+ 5173  lcn /scratch/project_465002688/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif 
+ 5174  cd ..
+ 5175  lcn
+ 5176  mkdir containers
+ 5177  cp /scratch/project_465002688/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif containers/.
+ 5178  lcn -/scratch/project_465003270/milemate/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif
+ 5179  lcn /scratch/project_465003270/milemate/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif
+ 5180  lcn /scratch/project_465003270/milemate/
+ 5181  lcn /scratch/project_465003270/milemate/containers/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif 
+ 5182  lcn /scratch/project_465003270/milemate/containers/pytorch-2.9.1-PYG-rocm-6.4.4-py-3.12.3-v1.0.sif
+ 5183  cd cherri-dop/
+ 5184  lcn
+ 5185  lcn ../bris-multisource-dop/python/
+ 5186  vim ../project_46500288_material/bris-multisource-extension/python/container_venv_backup.py 
+ 5187  scratch3 
+ 5188  cd cherri-dop/
+ 5189  lcn -a training_configs/
+ 5190  rm training_configs/.config_test.yaml.swp
+ 5191  vim training_configs/config_test.yaml 
+ 5192  lcn
+ 5193  git status
+ 5194  vim training_configs/config_test.yaml 
+ 5195  scratch3 
+ 5196  lcn
+ 5197  cd cherri-dop/
+ 5198  lcn
+ 5199  git status
+ 5200  lcn jobs/
+ 5201  vim jobs/job_dop_lumi.sh 
+ 5202  vim training_configs/config_test.yaml 
+ 5203  scratch3 
+ 5204  lcn
+ 5205  cd cherri-dop/
+ 5206  lcn
+ 5207  scratch3 
+ 5208  lcn
+ 5209  cd cherri-dop/
+ 5210  lcn
+ 5211  vim training_configs/config_test.yaml 
+ 5212  scratch3 
+ 5213  lcn
+ 5214  mkdir arctic-dop
+ 5215  git clone git@github.com:matemile/cherri-dop.git arctic-dop
+ 5216  cd arctic-dop/
+ 5217  lcn
+ 5218  git status
+ 5219  git remote -v
+ 5220  git checkout native-observation-config
+ 5221  git status
+ 5222  lcn
+ 5223  lcn training_configs/
+ 5224  vim training_configs/dop.yaml 
+ 5225  lcn ..
+ 5226  lcn ../../omiralle/bris_multisource/
+ 5227  vim training_configs/dop.yaml 
+ 5228  lcn
+ 5229  lcn scripts/
+ 5230  vim scripts/build_dop_config.py 
+ 5231  lcn
+ 5232  lcn scripts/
+ 5233  vim training_configs/dop.yaml 
+ 5234  pwd
+ 5235  lcn /scratch/project_465002688/
+ 5236  lcn /scratch/project_465002688/datasets/
+ 5237  lcn ../../
+ 5238  vim training_configs/dop.yaml 
+ 5239  lcn
+ 5240  cd ../cherri-dop/
+ 5241  mkdir output
+ 5242  lcn
+ 5243  lcn /scratch/project_465000451/ai-ml/datasets/dop-ea-ofb-0001-1979-2025-v4-combined-surface-observations.zarr 
+ 5244  lcn /scratch/project_465000451/ai-ml/datasets/
+ 5245  scratch3 
+ 5246  cd cherri-dop/
+ 5247  lcn
+ 5248  vim training_configs/config_test.yaml 
+ 5249  squeue --me
+ 5250  scratch3 
+ 5251  lcn
+ 5252  cd cherri-dop/
+ 5253  lcn
+ 5254  vim training_configs/config_test.yaml 
+ 5255  lcn /scratch/project_465000451/ai-ml/datasets/aifs-ea-an-oper-0001-mars-n320-1979-2024-6h-v1-for-single-v2.zarr 
+ 5256  scratch3 
+ 5257  cd cherri-dop/
+ 5258  vim training_configs/config_test.yaml 
+ 5259  scr3
+ 5260  scratch3 
+ 5261  cd cherri-dop/
+ 5262  lcn
+ 5263  git statu
+ 5264  git status
+ 5265  vim training_configs/config_test.yaml 
+ 5266  vim jobs/job_dop_lumi.sh 
+ 5267  vim training_configs/config_test.yaml 
+ 5268  lcn
+ 5269  vim jobs/job_dop_lumi.sh 
+ 5270  history | grep -i sbatch
+ 5271  squeue --me
+ 5272  sbatch jobs/job_dop_lumi.sh
+ 5273  squeue --me
+ 5274  vim jobs/job_dop_lumi.sh 
+ 5275  sbatch jobs/job_dop_lumi.sh
+ 5276  squeue --me
+ 5277  lcn
+ 5278  vim jobs/job_dop_lumi.sh 
+ 5279  lcn .venv/bin/anemoi-training 
+ 5280  history | grep -i uv
+ 5281  lcn
+ 5282  vim jobs/job_dop_lumi.sh 
+ 5283  sbatch jobs/job_dop_lumi.sh
+ 5284  squeue --me
+ 5285  vim jobs/job_dop_lumi.sh 
+ 5286  sbatch jobs/job_dop_lumi.sh
+ 5287  squeue --me
+ 5288  vim jobs/job_dop_lumi.sh 
+ 5289  sbatch jobs/job_dop_lumi.sh
+ 5290  squeue --me
+ 5291  vim jobs/job_dop_lumi.sh 
+ 5292  sbatch jobs/job_dop_lumi.sh
+ 5293  squeue --me
+ 5294  vim jobs/job_dop_lumi.sh 
+ 5295  sbatch jobs/job_dop_lumi.sh
+ 5296  vim jobs/job_dop_lumi.sh 
+ 5297  squeue --me
+ 5298  cd /scratch/project_465000451/ai-ml/datasets/dop-ea-ofb-0001-1979-2025-v4-combined-surface-observations.zarr 
+ 5299  pwd
+ 5300  scratch3 
+ 5301  lcn
+ 5302  lcn cherri-dop/
+ 5303  lcn bris-multisource-dop/
+ 5304  cd /scratch/project_465000451/ai-ml/datasets/dop-ea-ofb-0001-1979-2025-v4-combined-surface-observations.zarr 
+ 5305  pwd
+ 5306  lcn /pfs/lustrep4/scratch/project_465000451/ai-ml/datasets/dop-ea-ofb-0001-1979-2025-v4-combined-surface-observations.zarr
+ 5307  lcn /pfs/lustrep4/scratch/project_465000451/ai-ml/datasets/
+ 5308  scratch3 
+ 5309  cd cherri-dop/
+ 5310  lcn
+ 5311  lcn jobs/
+ 5312  vim jobs/job_dop_lumi.sh 
+ 5313  lcn ../project_46500288_material/bris-multisource-extension/
+ 5314  vim ../project_46500288_material/bris-multisource-extension/job_bris_sparse_meps.sh 
+ 5315  vim ../project_46500288_material/bris-multisource-extension/job_bris.sh 
+ 5316  vim ../project_46500288_material/bris-multisource/job_inf.sh 
+ 5317  cd
+ 5318  lcn
+ 5319  cd git/
+ 5320  lcn
+ 5321  cd run-anemoi-nowcast/
+ 5322  lcn
+ 5323  cd lumi/
+ 5324  lcn
+ 5325  vim jobscript_inference_multi.sh 
+ 5326  scratch3 
+ 5327  cd cherri-dop/
+ 5328  lcn
+ 5329  vim jobs/job_dop_lumi.sh 
+ 5330  lcn /pfs/lustrep3/scratch/project_465003270/milemate/
+ 5331  vim jobs/job_dop_lumi.sh 
+ 5332  lcn
+ 5333  lcn logs/
+ 5334  tail -f logs/dop_lumi_test_22408277.out 
+ 5335  vim logs/dop_lumi_test_22408277.out 
+ 5336  lcn logs/dop_lumi_test_22408
+ 5337  lcn logs/
+ 5338  vim logs/dop_lumi_test_22408317.out 
+ 5339  grep -ir anemoi-traninig ../project_46500288_material/bris-multisource-extension/*
+ 5340  grep -ir anemoi-training ../project_46500288_material/bris-multisource-extension/*
+ 5341  vim ../project_46500288_material/bris-multisource-extension/jobs/job_exp1.sh 
+ 5342  cat logs/dop_lumi_test_22408317.out 
+ 5343  lcn .venv/bin/
+ 5344  lcn .venv/bin/anemoi-training 
+ 5345  cat logs/dop_lumi_test_22408317.out 
+ 5346  uv pip list | grep anemoi
+ 5347  uv pip list | grep anemoi-training
+ 5348  lcn
+ 5349  lcn logs/
+ 5350  cd logs/
+ 5351  cat dop_lumi_test_22408879.out 
+ 5352  lcn /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training
+ 5353  vim ../project_46500288_material/bris-multisource-extension/jobs/job_exp1.sh 
+ 5354  cd ..
+ 5355  vim ../project_46500288_material/bris-multisource-extension/jobs/job_exp1.sh 
+ 5356  lcn logs/
+ 5357  vim ../project_46500288_material/bris-multisource-extension/jobs/job_exp1.sh 
+ 5358  lcn logs/
+ 5359  cat logs/dop_lumi_test_22408986.out 
+ 5360  vim ../project_46500288_material/bris-multisource-extension/jobs/job_exp1.sh 
+ 5361  lcn logs/
+ 5362  cd logs/
+ 5363  lcn
+ 5364  rm dop_lumi_test_22408*
+ 5365  lcn
+ 5366  watch -d "ls -ltr | tail -40"
+ 5367  lcn
+ 5368  cd ..
+ 5369  cat logs/dop_lumi_test_22409278.out 
+ 5370  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5371  vim ../project_46500288_material/bris-multisource-extension/job_inf.sh 
+ 5372  lcn ../project_46500288_material/bris-multisource-extension/.venv/bin/
+ 5373  lcn ../project_46500288_material/bris-multisource-extension/.venv/bin/anemoi-inference 
+ 5374  cat logs/dop_lumi_test_22409278.out 
+ 5375  lcn /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin/anemoi-training
+ 5376  vim ../project_46500288_material/bris-multisource-extension/job_inf.sh 
+ 5377  lcn lcn logs/
+ 5378  cat logs/dop_lumi_test_22409533.out 
+ 5379  lcn logs/
+ 5380  vim logs/dop_lumi_test_22409670.out 
+ 5381  lcn ../../
+ 5382  lcn ../../omiralle/
+ 5383  lcn ../../omiralle/bris_multisource/
+ 5384  vim logs/dop_lumi_test_22409670.out 
+ 5385  scratch3 
+ 5386  cd cherri-dop/
+ 5387  lcn
+ 5388  cat logs/dop_lumi_test_22409670.out 
+ 5389  scratch3 
+ 5390  lcn
+ 5391  cd cherri-dop/
+ 5392  lcn
+ 5393  scratch3 
+ 5394  cd cherri-dop/
+ 5395  lcn
+ 5396  scratch3 
+ 5397  cd cherri-dop/
+ 5398  lcn
+ 5399  ls -l /usr/bin/python3.11
+ 5400  command -v python3
+ 5401  python3 --version
+ 5402  head -n 1 .venv/bin/anemoi-training
+ 5403  mv .venv .venv.broken
+ 5404  lcn -a
+ 5405  uv venv --python "$(command -v python3)" .venv
+ 5406  lcn -a
+ 5407  uv sync --all-groups
+ 5408  lcn .venv/bin/
+ 5409  ls -l /usr/bin/python3.11
+ 5410  command -v python3
+ 5411  python3 --version
+ 5412  set -x
+ 5413  pwd -P
+ 5414  ls -l .venv/bin/python .venv/bin/anemoi-training
+ 5415  head -n 1 .venv/bin/anemoi-training
+ 5416  readlink -f .venv/bin/python || true
+ 5417  .venv/bin/python -c 'import sys; print(sys.executable); print(sys.prefix)'
+ 5418  .venv/bin/python .venv/bin/anemoi-training --help
+ 5419  ls -l .venv/bin/python .venv/bin/anemoi-training
+ 5420  head -n 1 .venv/bin/anemoi-training
+ 5421  readlink -f .venv/bin/python || true
+ 5422  lcn /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/bin
+ 5423  scratch3 
+ 5424  cd cherri-dop/
+ 5425  lcn logs/
+ 5426  cat logs/dop_lumi_test_22409670.out 
+ 5427  vim jobs/job_dop_lumi.sh 
+ 5428  sbatch jobs/job_dop_lumi.sh
+ 5429  squeue --me
+ 5430  lcn logs/
+ 5431  squeue --me
+ 5432  lcn logs/
+ 5433  cat logs/dop_lumi_test_22439312.out 
+ 5434  lcn
+ 5435  vim jobs/job_dop_lumi.sh 
+ 5436  sbatch jobs/job_dop_lumi.sh
+ 5437  lcn logs/
+ 5438  squeue --me
+ 5439  vim logs/dop_lumi_test_22439429.out 
+ 5440  sbatch jobs/job_dop_lumi.sh
+ 5441  vim jobs/job_dop_lumi.sh 
+ 5442  squeue --me
+ 5443  cd logs/
+ 5444  lcn
+ 5445  rm dop_lumi_test_224*
+ 5446  lcn
+ 5447  cd ..
+ 5448  sbatch jobs/job_dop_lumi.sh
+ 5449  lcn logs/
+ 5450  cat logs/dop_lumi_test_22439488.out 
+ 5451  vim jobs/job_dop_lumi.sh 
+ 5452  sbatch jobs/job_dop_lumi.sh
+ 5453  lcn logs/
+ 5454  vim logs/dop_lumi_test_22439505.out 
+ 5455  lcn -a
+ 5456  lcn
+ 5457  pwd
+ 5458  cd jobs/
+ 5459  lcn
+ 5460  cp job_dop_lumi.sh job_venv.sh 
+ 5461  vim job_venv.sh 
+ 5462  cd ..
+ 5463  lcn
+ 5464  lcn .a
+ 5465  lcn -a
+ 5466  lcn  logs/
+ 5467  cat logs/dop_lumi_test_22440026.out 
+ 5468  lcn -a
+ 5469  cat logs/dop_lumi_test_22440026.out 
+ 5470  lcn -a 
+ 5471  sbatch jobs/job_dop_lumi.sh
+ 5472  lcn logs/
+ 5473  vim logs/dop_lumi_test_22440079.out 
+ 5474  tail -f logs/dop_lumi_test_22440079.out 
+ 5475  scratch3 
+ 5476  cd cherri-dop/
+ 5477  vim jobs/job_dop_lumi.sh 
+ 5478  lcn .venv/bin/
+ 5479  lcn .venv/bin/python
+ 5480  vim jobs/job_dop_lumi.sh 
+ 5481  ls -l /usr/bin/python3.11
+ 5482  command -v python
+ 5483  command -v python3
+ 5484  python -c 'import sys; print(sys.executable); print(sys.version)'
+ 5485  rm -rf .venv
+ 5486  lcn -a
+ 5487  history | grep -i venv
+ 5488  lcn
+ 5489  lcn -a
+ 5490  python3 --version
+ 5491  history | grep -i uv
+ 5492  lcn
+ 5493  sbatch jobs/job_venv.sh
+ 5494  squeue --me
+ 5495  scratch3 
+ 5496  lcn
+ 5497  cd cherri-dop/
+ 5498  lcn
+ 5499  grep -ir datashader ../project_46500288_material/bris-multisource-extension/*
+ 5500  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5501  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5502  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5503  rm -rf .venv
+ 5504  lcn -a
+ 5505  lcn -a .venv/bin/
+ 5506  vim logs/venv_lumi_22441329.out 
+ 5507  grep -ir datashader ../project_46500288_material/bris-multisource-extension/*
+ 5508  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5509  lcn logs/
+ 5510  tail -flcn logs/venv_lumi_22441433.out 
+ 5511  vim logs/venv_lumi_22441433.out 
+ 5512  rm -rf .venv
+ 5513  lcn
+ 5514  lcn -a
+ 5515  lcn logs/
+ 5516  tail -f logs/venv_lumi_22441437.out 
+ 5517  vim logs/venv_lumi_22441437.out 
+ 5518  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5519  rm -rf .venv
+ 5520  lcn logs/
+ 5521  tail -f logs/venv_lumi_22441524.out 
+ 5522  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5523  rm -rf .venv
+ 5524  cat jobs/job_venv.sh 
+ 5525  vim pyproject.toml 
+ 5526  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5527  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5528  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5529  grep -ir numpy ../project_46500288_material/bris-multisource-extension/*
+ 5530  vim -R uv.lock 
+ 5531  lcn -a
+ 5532  lcn
+ 5533  squeue --me
+ 5534  lcn logs/
+ 5535  tail -f logs/venv_lumi_22442469.out
+ 5536  lcn logs/
+ 5537  tail -f logs/dop_lumi_test_22442477.out 
+ 5538  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5539  lcn
+ 5540  lcn logs/
+ 5541  tail -f logs/venv_lumi_22442584.out
+ 5542  grep -i datashader logs/venv_lumi_22442584.out
+ 5543  lcn logs/
+ 5544  tail -f logs/dop_lumi_test_22442591.out 
+ 5545  scratch3 
+ 5546  cd cherri-dop/
+ 5547  lcn logs/
+ 5548  vim logs/dop_lumi_test_22440079.out 
+ 5549  vim pyproject.toml 
+ 5550  vim uv.lock 
+ 5551  vim jobs/job_venv.sh 
+ 5552  lcn -a
+ 5553  cd logs/
+ 5554  lcn
+ 5555  rm dop_lumi_test_224*
+ 5556  lcn
+ 5557  cd ..
+ 5558  vim jobs/job_venv.sh 
+ 5559  sbatch jobs/job_venv.sh
+ 5560  squeue --me
+ 5561  lcn
+ 5562  vim uv.lock 
+ 5563  sbatch jobs/job_venv.sh
+ 5564  squeue --me
+ 5565  sbatch jobs/job_venv.sh
+ 5566  vim uv.lock 
+ 5567  sbatch jobs/job_venv.sh
+ 5568  squeue --me
+ 5569  vim uv.lock 
+ 5570  uv venv -p 3.11
+ 5571  uv sync --all-groups
+ 5572  vim uv.lock 
+ 5573  vim pyproject.toml 
+ 5574  rm -rf .venv
+ 5575  uv venv -p 3.11
+ 5576  uv sync --all-groups
+ 5577  vim uv.lock 
+ 5578  rm -rf .venv
+ 5579  uv venv -p 3.11
+ 5580  uv sync --all-groups
+ 5581  rm -rf .venv
+ 5582  vim uv.lock 
+ 5583  vim pyproject.toml 
+ 5584  grep -ir numpy *
+ 5585  vim uv.lock 
+ 5586  rm -rf .venv
+ 5587  uv venv -p 3.11
+ 5588  uv sync --all-groups
+ 5589  rm -rf .venv
+ 5590  vim uv.lock 
+ 5591  uv venv -p 3.11
+ 5592  uv sync --all-groups
+ 5593  rm -rf .venv
+ 5594  vim uv.lock 
+ 5595  uv venv -p 3.11
+ 5596  uv sync --all-groups
+ 5597  rm -rf .venv
+ 5598  sbatch jobs/job_venv.sh
+ 5599  qstat
+ 5600  squeue --me
+ 5601  lcn -a
+ 5602  lcn -a .venv/bin/
+ 5603  squeue --me
+ 5604  sbatch jobs/job_dop_lumi.sh
+ 5605  squeue --me
+ 5606  lcn .venv/bin/
+ 5607  vim pyproject.toml 
+ 5608  rm -rf .venv
+ 5609  sbatch jobs/job_venv.sh
+ 5610  lcn .venv/bin/
+ 5611  squeue --me
+ 5612  lcn .venv/bin/
+ 5613  vim pyproject.toml 
+ 5614  sbatch jobs/job_dop_lumi.sh
+ 5615  squeue --me
+ 5616  scratch3 
+ 5617  cd cherri-dop/
+ 5618  lcn logs/
+ 5619  vim logs/dop_lumi_test_22442591.out 
+ 5620  lcn
+ 5621  lcn output
+ 5622  lcn output/logs/
+ 5623  lcn output/logs/mlflow/
+ 5624  lcn outputs/
+ 5625  lcn outputs/2026-09-30/
+ 5626  lcn outputs/2026-09-30/01-53-00/
+ 5627  vim outputs/2026-09-30/01-53-00/train.log 
+ 5628  lcn
+ 5629  vim logs/dop_lumi_test_22442591.out 
+ 5630  lcn logs/
+ 5631  tail -f logs/dop_lumi_test_22448258.out
+ 5632  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5633  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5634  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5635  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5636  git status
+ 5637  vim jobs/job_dop_lumi.sh 
+ 5638  lcn logs/
+ 5639  tail -f logs/dop_lumi_test_22448662.out
+ 5640  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5641  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5642  lcn logs/
+ 5643  tail -f logs/dop_lumi_test_22449177.out
+ 5644  vim ../project_46500288_material/bris-multisource-extension/job_inf.sh 
+ 5645  vim ../project_46500288_material/bris-multisource-extension/job_radar.sh 
+ 5646  vim ../project_46500288_material/bris-multisource-extension/job_bris_sparse_meps.sh 
+ 5647  lcn
+ 5648  cd logs/
+ 5649  lcn
+ 5650  cd ..
+ 5651  lcn
+ 5652  lcn output
+ 5653  lcn output/plots/
+ 5654  lcn output/plots/733cb5f5a8714b0d8df97af6b011bb30/
+ 5655  lcn output/plots/733cb5f5a8714b0d8df97af6b011bb30/plots/
+ 5656  lcn output/logs/
+ 5657  lcn output/logs/mlflow/
+ 5658  lcn output/logs/mlflow/377960578884334021/
+ 5659  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/
+ 5660  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/met
+ 5661  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5662  cd output
+ 5663  lcn
+ 5664  rm -rf logs/ plots/
+ 5665  cd ..
+ 5666  lcn
+ 5667  lcn outputs/
+ 5668  lcn outputs/2026-09-30/
+ 5669  lcn outputs/2026-09-30/12-24-09/
+ 5670  lcn
+ 5671  scratch3 
+ 5672  cd cherri-dop/
+ 5673  lcn
+ 5674  vim training_configs/config_test.yaml 
+ 5675  lcn
+ 5676  vim jobs/job_dop_lumi.sh 
+ 5677  sbatch jobs/job_dop_lumi.sh
+ 5678  lcn
+ 5679  lcn output/
+ 5680  lcn output/plots/
+ 5681  lcn output/plots/81465613d51b4224a2b50627297101c4/
+ 5682  lcn output/plots/81465613d51b4224a2b50627297101c4/plots/
+ 5683  lcn output/
+ 5684  lcn output/logs/
+ 5685  lcn output/logs/mlflow/
+ 5686  lcn output/logs/mlflow/377960578884334021/
+ 5687  lcn output/logs/mlflow/377960578884334021/81465613d51b4224a2b50627297101c4/
+ 5688  vim pyproject.toml 
+ 5689  vim uv.lock 
+ 5690  rm -rf .venv
+ 5691  uv venv -p 3.11
+ 5692  uv sync --all-groups
+ 5693  vim uv.lock 
+ 5694  rm -rf .venv
+ 5695  uv venv -p 3.11
+ 5696  uv sync --all-groups
+ 5697  rm -rf .venv
+ 5698  sbatch jobs/job_venv.sh
+ 5699  squeue --me
+ 5700  lcn .venv/bin/
+ 5701  lcn .venv/bin/trimesh 
+ 5702  lcn
+ 5703  sbatch jobs/job_dop_lumi.sh
+ 5704  squeue --me
+ 5705  lcn
+ 5706  lcn logs/
+ 5707  lcn
+ 5708  vim training_configs/config_test.yaml 
+ 5709  sbatch jobs/job_dop_lumi.sh
+ 5710  lcn logs/
+ 5711  squeue --me
+ 5712  lcn
+ 5713  lcn output
+ 5714  squeue --me
+ 5715  lcn output
+ 5716  lcn output/logs/
+ 5717  lcn output/logs/mlflow/
+ 5718  lcn output/logs/mlflow/377960578884334021/
+ 5719  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/
+ 5720  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5721  squeue --me
+ 5722  lcn
+ 5723  lcn outputs/
+ 5724  lcn outputs/2026-09-30/
+ 5725  lcn outputs/2026-09-30/12-
+ 5726  lcn outputs/2026-09-30/12-24-09/
+ 5727  vim outputs/2026-09-30/12-24-09/train.log 
+ 5728  squeue --me
+ 5729  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5730  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/
+ 5731  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/artifacts/
+ 5732  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/
+ 5733  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/artifacts/
+ 5734  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5735  squeue --me
+ 5736  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5737  squeue --me
+ 5738  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5739  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/
+ 5740  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5741  squeue --me
+ 5742  lcn output/logs/mlflow/377960578884334021/733cb5f5a8714b0d8df97af6b011bb30/metrics/
+ 5743  vim training_configs/config_test.yaml 
+ 5744  vim jobs/job_dop_lumi.sh 
+ 5745  sbatch jobs/job_dop_lumi.sh
+ 5746  squeue --me
+ 5747  scratch3 
+ 5748  squeue --me
+ 5749  cd cherri-dop/
+ 5750  lcn
+ 5751  lcn jobs/
+ 5752  lcn
+ 5753  squeue --me
+ 5754  lcn
+ 5755  lcn training_configs/
+ 5756  cd training_configs/
+ 5757  diff config_test.yaml  config_ms.yaml 
+ 5758  lcn
+ 5759  git status
+ 5760  cd ..
+ 5761  lcn
+ 5762  git remote -v
+ 5763  git add .
+ 5764  git commit -m "Modifications for venv installation and AIFS training config"
+ 5765  git push -u origin main
+ 5766  lcn
+ 5767  squeue --me
+ 5768  lcn
+ 5769  squeue --me
+ 5770  scratch3 
+ 5771  cd cherri-dop/
+ 5772  lcn
+ 5773  lcn output
+ 5774  lcn logs/
+ 5775  cat logs/dop_lumi_test_22449177.out
+ 5776  vim pyproject.toml 
+ 5777  squeue --me
+ 5778  lcn logs/
+ 5779  date
+ 5780  lcn logs/
+ 5781  squeue --me
+ 5782  lcn
+ 5783  lcn -a
+ 5784  vim .gitignore 
+ 5785  git rm -r --cached -- logs/ outputs/
+ 5786  lcn
+ 5787  git status
+ 5788  git diff --cached --stat
+ 5789  git add .gitignore
+ 5790  git commit -m "Ignore generated logs and training outputs"
+ 5791  git push -u origin main
+ 5792  git status
+ 5793  squeue --me
+ 5794  lcn
+ 5795  lcn logs/
+ 5796  squeue --me
+ 5797  scratch3 
+ 5798  cd cherri-dop/
+ 5799  lcn logs/
+ 5800  vim logs/dop_lumi_test_22450277.out
+ 5801  scratch3 
+ 5802  cd cherri-dop/
+ 5803  lcn
+ 5804  lcn output
+ 5805  lcn output/logs/
+ 5806  lcn output/logs/mlflow/
+ 5807  lcn output/logs/mlflow/279048007793159483/
+ 5808  lcn output/logs/mlflow/279048007793159483/08b6ae89ff3e47788b34abd3474d3ead/
+ 5809  lcn output/logs/mlflow/279048007793159483/08b6ae89ff3e47788b34abd3474d3ead/metrics/
+ 5810  scratch3 
+ 5811  cd cherri-dop/
+ 5812  lcn logs/
+ 5813  vim logs/dop_lumi_test_22450277.out
+ 5814  scratch3 
+ 5815  cd cherri-dop/
+ 5816  lcn
+ 5817  lcn training_configs/
+ 5818  vim training_configs/config_test.yaml 
+ 5819  lcn
+ 5820  find . -name conv.py
+ 5821  vim -R ./.venv/lib/python3.11/site-packages/anemoi/models/layers/conv.py
+ 5822  scratch3 
+ 5823  cd cherri-dop/
+ 5824  lcn
+ 5825  vim -R ./.venv/lib/python3.11/site-packages/anemoi/models/layers/conv.py
+ 5826  grep -ir GraphTransformerConv .venv/lib/python3.11/site-packages/anemoi/*
+ 5827  vim -R .venv/lib/python3.11/site-packages/anemoi/training/config/model/graphtransformer_multi.yaml
+ 5828  vim training_configs/config_test.yaml 
+ 5829  vim -R .venv/lib/python3.11/site-packages/anemoi/training/config/model/graphtransformer_multi.yaml
+ 5830  vim training_configs/config_test.yaml 
+ 5831  vim -R .venv/lib/python3.11/site-packages/anemoi/training/config/model/graphtransformer_multi.yaml
+ 5832  vim training_configs/config_test.yaml 
+ 5833  sbatch jobs/job_dop_lumi.sh
+ 5834  squeue --me
+ 5835  scratch3 
+ 5836  cd cherri-dop/
+ 5837  lcn
+ 5838  lcn logs/
+ 5839  vim logs/dop_lumi_test_22450277.out
+ 5840  lcn logs/
+ 5841  squeue --me
+ 5842  scr3
+ 5843  squeue --me
+ 5844  scratch3
+ 5845  cd cherri-dop/
+ 5846  lcn logs/
+ 5847  vim logs/dop_lumi_test_22478010.out
+ 5848  vim uv.lock 
+ 5849  lcn .venv/bin/
+ 5850  lcn .venv/bin/setup*
+ 5851  find . -name s"etuptools*"
+ 5852  find . -name "setuptools*"
+ 5853  lcn logs/
+ 5854  vim logs/dop_lumi_test_22478010.out
+ 5855  scratch3 
+ 5856  cd cherri-dop/
+ 5857  lcn
+ 5858  vim ../project_46500288_material/bris-multisource-extension/pyproject.toml 
+ 5859  vim ../project_46500288_material/bris-multisource-extension/uv.lock 
+ 5860  vim training_configs/config_test.yaml 
+ 5861  sbatch jobs/job_dop_lumi.sh
+ 5862  squeue --me
+ 5863  scratch3 
+ 5864  cd cherri-dop/
+ 5865  lcn logs/
+ 5866  vim logs/dop_lumi_test_22483651.out
+ 5867  scratch3 
+ 5868  cd cherri-dop/
+ 5869  git status
+ 5870  scratch3 
+ 5871  cd cherri-dop/
+ 5872  lcn
+ 5873  vim -R ./.venv/lib/python3.11/site-packages/anemoi/models/layers/conv.py
+ 5874  lcn logs/
+ 5875  vim logs/dop_lumi_test_22483651.out
+ 5876  vim /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py
+ 5877  vim logs/dop_lumi_test_22483651.out
+ 5878  vim /pfs/lustrep3/scratch/project_465003270/milemate/cherri-dop/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py
+ 5879  scratch3 
+ 5880  cd cherri-dop/
+ 5881  lcn
+ 5882  vim -R ./.venv/lib/python3.11/site-packages/anemoi/models/layers/conv.py
+ 5883  grep -ir "out = self.message(" .venv/lib/python3.11/site-pac
+ 5884  grep -ir "out = self.message(" .venv/lib/python3.11/site-packages/anemoi/*
+ 5885  grep -ir "out = self.message(" .venv/lib/python3.11/site-packages/*
+ 5886  find .venv/lib/. -name "*GraphTransformer*"
+ 5887  grep -ir "GraphTransformerConv_propagate" .venv/lib/python3.11/site-packages/*
+ 5888  scratch3 
+ 5889  cd cherri-dop/
+ 5890  lcn
+ 5891  lcn logs/
+ 5892  vim logs/dop_lumi_test_22483651.out
+ 5893  scratch3 
+ 5894  cd cherri-dop/
+ 5895  lcn
+ 5896  history > hist_20261005.txt
