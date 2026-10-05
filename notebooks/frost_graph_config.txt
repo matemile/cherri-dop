@@ -1,0 +1,49 @@
+# FROST additions to the existing graph configuration
+#
+# Merge `frost` into graph.nodes. Merge the two list items into graph.edges;
+# keep the existing hidden-to-hidden processor edge and graph.attributes.
+
+graph:
+  nodes:
+    frost:
+      node_builder:
+        _target_: anemoi.graphs.nodes.AnemoiDatasetNodes
+        dataset: ${dataloader.training.datasets.frost.dataset_config}
+      attributes:
+        timedelta:
+          _target_: anemoi.graphs.nodes.attributes.Timedeltas
+          scale_seconds: 10800.0
+
+  edges:
+  - source_name: frost
+    target_name: hidden
+    edge_builders:
+    - _target_: anemoi.graphs.edges.ReversedKNNEdges
+      num_nearest_neighbours: 8
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes: ${graph.attributes.edges}
+
+  - source_name: hidden
+    target_name: frost
+    edge_builders:
+    - _target_: anemoi.graphs.edges.KNNEdges
+      num_nearest_neighbours: 3
+      source_mask_attr_name: null
+      target_mask_attr_name: null
+    attributes:
+      edge_length: ${graph.attributes.edges.edge_length}
+      edge_dirs: ${graph.attributes.edges.edge_dirs}
+      target_timedelta:
+        _target_: anemoi.graphs.edges.attributes.Timedeltas
+        node_axis: target
+        scale_seconds: 10800.0
+
+# The spatial cut belongs under every FROST system input config 
+# (training, validation, and test), not under graph:
+#
+#   area: [90, -180, 20, 180]
+#
+# Compatibility note: anemoi-datasets 0.5.44 accepts `area` in the API, but
+# tabular Cropping currently raises NotImplementedError. Until that upstream
+# compatibility issue is fixed, use a pre-cropped tabular store for training.
