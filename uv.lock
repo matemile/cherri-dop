@@ -8,6 +8,12 @@ resolution-markers = [
     "(python_full_version < '3.12' and platform_machine != 'ARM64') or (python_full_version < '3.12' and sys_platform != 'win32')",
 ]
 
+[manifest]
+overrides = [
+    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec" },
+    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec" },
+]
+
 [[package]]
 name = "aiohappyeyeballs"
 version = "2.7.1"
@@ -140,8 +146,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-graphs"
-version = "0.9.7.post285"
-source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f#bbcef312be1a3e1ee2ded38568977feb13c8949f" }
+version = "0.0.0.post1633"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec#c659d084a7a40c791aa4aa4e5aaf95f52df866ec" }
 dependencies = [
     { name = "anemoi-utils" },
     { name = "hydra-core" },
@@ -189,8 +195,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-models"
-version = "0.19.0.post285"
-source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=models&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f#bbcef312be1a3e1ee2ded38568977feb13c8949f" }
+version = "0.0.0.post1633"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec#c659d084a7a40c791aa4aa4e5aaf95f52df866ec" }
 dependencies = [
     { name = "anemoi-graphs" },
     { name = "anemoi-utils" },
@@ -200,12 +206,6 @@ dependencies = [
     { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "torch" },
     { name = "torch-geometric" },
-]
-
-[package.optional-dependencies]
-migrations = [
-    { name = "jinja2" },
-    { name = "rich" },
 ]
 
 [[package]]
@@ -225,12 +225,12 @@ wheels = [
 
 [[package]]
 name = "anemoi-training"
-version = "0.17.0.post285"
-source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f#bbcef312be1a3e1ee2ded38568977feb13c8949f" }
+version = "0.0.0.post1633"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec#c659d084a7a40c791aa4aa4e5aaf95f52df866ec" }
 dependencies = [
     { name = "anemoi-datasets" },
     { name = "anemoi-graphs" },
-    { name = "anemoi-models", extra = ["migrations"] },
+    { name = "anemoi-models" },
     { name = "anemoi-transform" },
     { name = "anemoi-utils", extra = ["mlflow", "provenance"] },
     { name = "einops" },
@@ -820,11 +820,11 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anemoi-datasets" },
-    { name = "anemoi-graphs", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f" },
+    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec" },
     { name = "anemoi-inference" },
-    { name = "anemoi-models", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=models&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f" },
+    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec" },
     { name = "anemoi-registry" },
-    { name = "anemoi-training", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=bbcef312be1a3e1ee2ded38568977feb13c8949f" },
+    { name = "anemoi-training", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=c659d084a7a40c791aa4aa4e5aaf95f52df866ec" },
     { name = "boto3", specifier = ">=1.39.3" },
     { name = "datashader", specifier = ">=0.19.1" },
     { name = "earthkit-data", specifier = ">=0.19" },

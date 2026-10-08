@@ -34,6 +34,10 @@ dev = [
 
 [tool.uv]
 package = false
+override-dependencies = [
+    "anemoi-graphs",
+    "anemoi-models",
+]
 
 [tool.uv.sources]
 anemoi-training = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "training" }
