@@ -10,36 +10,42 @@ A reproducible Python environment of a DOP framework for CHERRI project purposes
 
 ## Create or update the environment
 
+On ATOS, set `SCRATCH` and create the project's single environment with:
+
 ```bash
-uv sync --all-groups
+export SCRATCH=/ec/res4/scratch/sbaa
+bash scripts/setup_anemoi_env.sh
 ```
 
-The environment is created in `.venv/`.
+The environment is created in `anemoi-env/`. It uses uv-managed Python 3.11 with development headers, as required by Triton's runtime compiler.
 
 ## Run commands
 
 ```bash
-uv run python scripts/check_install.py
-uv run python -c "import anemoi.training; print('Anemoi import succeeded')"
+source anemoi-env/bin/activate
+uv run --active python scripts/check_install.py
+uv run --active python -c "import anemoi.training; print('Anemoi import succeeded')"
 ```
 
 ## Activate interactively
 
 ```bash
-source .venv/bin/activate
+source anemoi-env/bin/activate
 ```
 
 ## Reproducible CI installation
 
 ```bash
-uv sync --locked --all-groups
+source anemoi-env/bin/activate
+uv sync --active --locked --all-groups
 ```
 
 ## Update dependencies
 
 ```bash
+source anemoi-env/bin/activate
 uv lock --upgrade
-uv sync --all-groups
+uv sync --active --all-groups
 ```
 
 Review the `uv.lock` changes, test the environment, and commit both

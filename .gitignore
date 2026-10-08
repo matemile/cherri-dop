@@ -1,5 +1,7 @@
 # uv environment
 .venv/
+.venv-triton/
+anemoi-env/
 
 # Python artifacts
 __pycache__/
@@ -24,6 +26,7 @@ htmlcov/
 
 # Logs and generated training output
 *.log
+*.out
 logs/
 outputs/
 output/
