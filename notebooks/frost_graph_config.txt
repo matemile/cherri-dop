@@ -39,11 +39,13 @@ graph:
         node_axis: target
         scale_seconds: 10800.0
 
-# The spatial cut belongs under every FROST system input config 
-# (training, validation, and test), not under graph:
+# Create the strict latitude > 20 store once from the repository root:
 #
-#   area: [90, -180, 20, 180]
+#   .venv/bin/python scripts/crop_tabular_zarr.py \
+#     ../../datasets/metno-frost-dwh-hourly-2020-2025-v2-tabular-1h-observations.zarr \
+#     ../../datasets/metno-frost-dwh-hourly-2020-2025-v2-tabular-1h-observations-lat-gt-20.zarr
 #
-# Compatibility note: anemoi-datasets 0.5.44 accepts `area` in the API, but
-# tabular Cropping currently raises NotImplementedError. Until that upstream
-# compatibility issue is fixed, use a pre-cropped tabular store for training.
+# Point system.input.frost at the new store. Do not add `area` to the FROST
+# dataset_config: tabular Cropping in anemoi-datasets 0.5.44 raises
+# NotImplementedError, while the pre-cropped store works with the dynamic
+# observation graph used during training.

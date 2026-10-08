@@ -24,8 +24,8 @@ def _(mo):
     The selected window is read directly from the tabular Zarr arrays. This
     avoids loading Earthkit, which requires Python's optional `sqlite3` module
     and is not available in this repository's HPC `.venv`. The observations
-    are cropped to latitude greater than 20 degrees, matching the
-    `anemoi-datasets` area declared in the graph configuration.
+    come from the strict latitude greater than 20 degrees store created by
+    `scripts/crop_tabular_zarr.py`, matching the training graph snippet.
     """)
 
 
@@ -76,7 +76,7 @@ def _(Path, dop, os, repo_root):
             os.environ.get(
                 "FROST_DATASET",
                 repo_root
-                / "../../datasets/metno-frost-dwh-hourly-2020-2025-v2-tabular-1h-observations.zarr",
+                / "../../datasets/metno-frost-dwh-hourly-2020-2025-v2-tabular-1h-observations-lat-gt-20.zarr",
             )
         )
         .expanduser()
@@ -86,12 +86,10 @@ def _(Path, dop, os, repo_root):
     window = "(-3h,+0h]"
     window_index = 1
     minimum_latitude = 20.0
-    area = [90.0, -180.0, minimum_latitude, 180.0]
     hidden_resolution = int(dop.graph.nodes.hidden.node_builder.resolution)
     graph_path = repo_root / "notebooks/frost_graph.pt"
     plot_path = repo_root / "notebooks/frost_graph.png"
     return (
-        area,
         frequency,
         frost_path,
         graph_path,
@@ -111,8 +109,8 @@ def _(mo):
     `frequency` sets the spacing between reference times. The default reference
     is 12 hours after the first timestamp, and `window` selects the three hourly
     groups in $(-3\,\mathrm{h}, 0\,\mathrm{h}]$. Only their one contiguous data
-    slice is read from the 44-million-row store, then cropped to observations
-    north of 20 degrees.
+    slice is read from the pre-cropped 44-million-row store. The strict
+    latitude condition is checked again before graph construction.
     """)
 
 
@@ -161,7 +159,14 @@ def _(frequency, frost_path, minimum_latitude, np, window, window_index, zarr):
             "The selected FROST date ranges are not a contiguous data slice."
         )
 
-    area_mask = observations[:, latitude_index] > minimum_latitude
+    area_mask = np.isfinite(observations[:, latitude_index]) & (
+        observations[:, latitude_index] > minimum_latitude
+    )
+    if not np.all(area_mask):
+        raise ValueError(
+            f"The pre-cropped store contains observations at or south of "
+            f"{minimum_latitude:g} degrees."
+        )
     observations = observations[area_mask]
     timedeltas_array = timedeltas_array[area_mask]
     latitudes = observations[:, latitude_index]
@@ -188,14 +193,13 @@ def _(mo):
 
 
 @app.cell
-def _(OmegaConf, area, dop, frequency, frost_path, hidden_resolution, window):
+def _(OmegaConf, dop, frequency, frost_path, hidden_resolution, window):
     template = OmegaConf.to_container(dop.graph, resolve=True)
     frost_node = template["nodes"]["microwave"]
     frost_node["node_builder"]["dataset"] = {
         "dataset": str(frost_path),
         "frequency": frequency,
         "window": window,
-        "area": area,
     }
     hidden_node = template["nodes"]["hidden"]
     hidden_node["node_builder"]["resolution"] = hidden_resolution

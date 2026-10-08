@@ -36,9 +36,9 @@ dev = [
 package = false
 
 [tool.uv.sources]
-anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "bbcef312be1a3e1ee2ded38568977feb13c8949f", subdirectory = "training" }
-anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "bbcef312be1a3e1ee2ded38568977feb13c8949f", subdirectory = "models" }
-anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "bbcef312be1a3e1ee2ded38568977feb13c8949f", subdirectory = "graphs" }
+anemoi-training = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "training" }
+anemoi-models = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "models" }
+anemoi-graphs = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "graphs" }
 torch = { index = "pytorch-cu128" }
 
 [[tool.uv.index]]
