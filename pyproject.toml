@@ -1,9 +1,9 @@
 [project]
 name = "cherri-dop"
 version = "0.1.0"
-description = "Reproducible uv-managed development env for CHERRI project and DOP framework using Anemoi."
+description = "Reproducible uv-managed development env for CHERRI project and DOP framework for Anemoi on LUMI (torch from container)."
 readme = "README.md"
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.12,<3.13"          # must match container Python 3.12.3
 dependencies = [
     "anemoi-training",
     "anemoi-models",
@@ -15,35 +15,63 @@ dependencies = [
     "zarr<3.0.0",
     "termcolor>=3.1.0",
     "eckitlib==1.31.4",
-    "torch==2.10.0+cu128",
-    "torch-geometric==2.6.1",
-    "ipykernel>=7.0.0a1",
+    "pytorch-lightning>=2.6,<3",
+    "ipykernel>=7.0",
     "jupyter>=1.1.1",
     "boto3>=1.39.3",
     "trimesh>=4.11.2",
     "datashader",
+    # deps of the container's torch / torch-geometric (torch itself is overridden away)
+    "filelock",
+    "typing-extensions>=4.10",
+    "setuptools",
+    "sympy>=1.13.3",
+    "networkx",
+    "jinja2",
+    "fsspec",
+    "numpy",
+    "aiohttp",
+    "psutil",
+    "pyparsing",
+    "requests",
+    "tqdm",
+    "aiohttp",
+    "psutil>=5.8.0",
+    "pyparsing",
+    "requests",
+    "tqdm",
+    "xxhash",
+    # torch / torch-geometric intentionally NOT listed: provided by the container
 ]
 
 [dependency-groups]
-dev = [
-    "pytest",
-    "ruff",
-]
+dev = ["pytest", "ruff"]
 
 [tool.uv]
 package = false
+# Only resolve for LUMI (Linux x86_64) -> smaller, simpler lock file
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+# Drop everything the container already provides (ROCm builds).
+# The "never" marker is never true, so uv removes these from the resolution.
+override-dependencies = [
+    "torch ; sys_platform == 'never'",
+    "torchvision ; sys_platform == 'never'",
+    "torchaudio ; sys_platform == 'never'",
+    "triton ; sys_platform == 'never'",
+    "pytorch-triton-rocm ; sys_platform == 'never'",
+    "torch-geometric ; sys_platform == 'never'",
+    "torch-scatter ; sys_platform == 'never'",
+    "torch-sparse ; sys_platform == 'never'",
+    "torch-cluster ; sys_platform == 'never'",
+    "pyg-lib ; sys_platform == 'never'",
+]
+
+# Optional: pin shared packages to the container's versions so the venv
+# doesn't load a different numpy than torch was built against, e.g.
+# constraint-dependencies = ["numpy==<container version>"]
 
 [tool.uv.sources]
-#anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "training" }
 anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "training" }
-#anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "models" }
-#anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "models" }
-anemoi-models = { path = "../bris-gitsource/anemoi-core/models", editable = true }
-#anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", branch = "feat/richer-batch", subdirectory = "graphs" }
-anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "graphs"  }
-torch = { index = "pytorch-cu128" }
-
-[[tool.uv.index]]
-name = "pytorch-cu128"
-url = "https://download.pytorch.org/whl/cu128"
-explicit = true
+anemoi-models   = { path = "../bris-gitsource/anemoi-core/models", editable = true }
+anemoi-graphs   = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "graphs" }

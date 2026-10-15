@@ -91,12 +91,12 @@ dataloader:
   pin_memory: true
   read_group_size: ${system.hardware.num_gpus_per_model}
   num_workers:
-    training: 4
-    validation: 4
-    test: 4
-  batch_size:
     training: 2
     validation: 2
+    test: 2
+  batch_size:
+    training: 1
+    validation: 1
     test: 1
   limit_batches:
     training: null
@@ -288,7 +288,7 @@ diagnostics:
           - '#f800fd'
           variables: ${diagnostics.plot.settings.precip_and_related_fields}
     frequency:
-      batch: 5
+      batch: null
       epoch: 1
     parameters: []
     sample_idx: 0
@@ -384,7 +384,7 @@ diagnostics:
       warmup: 0
   log:
     mlflow:
-      enabled: true
+      enabled: false
       _target_: anemoi.training.diagnostics.mlflow.logger.AnemoiMLflowLogger
       offline: true
       authentication: true
@@ -589,13 +589,13 @@ model:
     sub_graph_edge_attributes: ${model.attributes.edges}
     num_channels: ${model.num_channels}
     num_layers: 16
-    num_chunks: 4
+    num_chunks: 8
     mlp_hidden_ratio: 2.67 # GraphTransformer/Transformer only; use 4 (mlp) or ~2.67 (glu/swiglu/geglu/reglu)
     mlp_implementation: swiglu
     num_heads: 16 # GraphTransformer or Transformer only
     window_size: 1120
     dropout_p: 0.0
-    attention_implementation: scaled_dot_product_attention
+    attention_implementation: flash_attention
     softcap: 0.0
     use_alibi_slopes: False # Transformer only
     qk_norm: False
@@ -613,7 +613,7 @@ model:
         num_channels: ${model.num_channels}
         trainable_size: ${model.edge_trainable_parameters.data2hidden}
         sub_graph_edge_attributes: ${model.attributes.edges}
-        num_chunks: 4
+        num_chunks: 8
         mlp_hidden_ratio: 2.67 # GraphTransformer/Transformer only; use 4 (mlp) or ~2.67 (glu/swiglu/geglu/reglu)
         mlp_implementation: swiglu
         num_heads: 16 # GraphTransformer or Transformer only
