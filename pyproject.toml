@@ -70,6 +70,9 @@ override-dependencies = [
 # constraint-dependencies = ["numpy==<container version>"]
 
 [tool.uv.sources]
-anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "training" }
-anemoi-models   = { path = "../bris-gitsource/anemoi-core/models", editable = true }
-anemoi-graphs   = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "graphs" }
+#anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "training" }
+#anemoi-models   = { path = "../bris-gitsource/anemoi-intern-core/models", editable = true }
+#anemoi-graphs   = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "638ebda82e03c48b78ad33a5e4c31e19a8ae529f", subdirectory = "graphs" }
+anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "e4877d3811afc593c1f9d58d427282f7c64910a8", subdirectory = "training" }
+anemoi-models   = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "e4877d3811afc593c1f9d58d427282f7c64910a8", subdirectory = "models" }
+anemoi-graphs   = { git = "https://github.com/ecmwf/anemoi-core.git", rev = "e4877d3811afc593c1f9d58d427282f7c64910a8", subdirectory = "graphs" }

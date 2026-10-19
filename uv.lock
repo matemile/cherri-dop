@@ -95,8 +95,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-graphs"
-version = "0.9.7.post407"
-source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=638ebda82e03c48b78ad33a5e4c31e19a8ae529f#638ebda82e03c48b78ad33a5e4c31e19a8ae529f" }
+version = "0.9.7.post503"
+source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=e4877d3811afc593c1f9d58d427282f7c64910a8#e4877d3811afc593c1f9d58d427282f7c64910a8" }
 dependencies = [
     { name = "anemoi-utils" },
     { name = "hydra-core" },
@@ -137,7 +137,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-models"
-source = { editable = "../bris-gitsource/anemoi-core/models" }
+version = "0.19.0.post503"
+source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=models&rev=e4877d3811afc593c1f9d58d427282f7c64910a8#e4877d3811afc593c1f9d58d427282f7c64910a8" }
 dependencies = [
     { name = "anemoi-graphs" },
     { name = "anemoi-utils" },
@@ -151,36 +152,6 @@ migrations = [
     { name = "jinja2" },
     { name = "rich" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "anemoi-graphs", specifier = ">=0.9.4" },
-    { name = "anemoi-models", extras = ["all", "docs", "tests"], marker = "extra == 'dev'" },
-    { name = "anemoi-models", extras = ["migrations"], marker = "extra == 'all'" },
-    { name = "anemoi-models", extras = ["spectral"], marker = "extra == 'tests'" },
-    { name = "anemoi-transform", marker = "extra == 'spectral'", specifier = ">=0.1.2" },
-    { name = "anemoi-utils", specifier = ">=0.1.9" },
-    { name = "einops", specifier = ">=0.6.1" },
-    { name = "hydra-core", specifier = ">=1.3" },
-    { name = "hypothesis", marker = "extra == 'tests'", specifier = ">=6.11" },
-    { name = "jinja2", marker = "extra == 'migrations'", specifier = ">=3.1" },
-    { name = "nbsphinx", marker = "extra == 'docs'" },
-    { name = "pandoc", marker = "extra == 'docs'" },
-    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.3.3" },
-    { name = "pytest", marker = "extra == 'tests'", specifier = ">=8" },
-    { name = "pytest-mock", marker = "extra == 'tests'", specifier = ">=3" },
-    { name = "rich", marker = "extra == 'migrations'" },
-    { name = "rstfmt", marker = "extra == 'docs'" },
-    { name = "scipy", specifier = ">=1.6" },
-    { name = "sphinx", marker = "python_full_version >= '3.11' and extra == 'docs'", specifier = ">=8.2" },
-    { name = "sphinx", marker = "python_full_version < '3.11' and extra == 'docs'", specifier = "<8.2" },
-    { name = "sphinx-argparse", marker = "extra == 'docs'", specifier = "<0.5" },
-    { name = "sphinx-rtd-theme", marker = "extra == 'docs'" },
-    { name = "torch", specifier = ">=2.3,<2.11" },
-    { name = "torch-dct", marker = "extra == 'spectral'", specifier = ">=0.1.6" },
-    { name = "torch-geometric", specifier = ">=2.3" },
-]
-provides-extras = ["all", "dev", "docs", "migrations", "spectral", "tests"]
 
 [[package]]
 name = "anemoi-registry"
@@ -199,8 +170,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-training"
-version = "0.17.0.post407"
-source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=638ebda82e03c48b78ad33a5e4c31e19a8ae529f#638ebda82e03c48b78ad33a5e4c31e19a8ae529f" }
+version = "0.17.0.post503"
+source = { git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=e4877d3811afc593c1f9d58d427282f7c64910a8#e4877d3811afc593c1f9d58d427282f7c64910a8" }
 dependencies = [
     { name = "anemoi-datasets" },
     { name = "anemoi-graphs" },
@@ -647,11 +618,11 @@ dev = [
 requires-dist = [
     { name = "aiohttp" },
     { name = "anemoi-datasets" },
-    { name = "anemoi-graphs", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=638ebda82e03c48b78ad33a5e4c31e19a8ae529f" },
+    { name = "anemoi-graphs", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=graphs&rev=e4877d3811afc593c1f9d58d427282f7c64910a8" },
     { name = "anemoi-inference" },
-    { name = "anemoi-models", editable = "../bris-gitsource/anemoi-core/models" },
+    { name = "anemoi-models", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=models&rev=e4877d3811afc593c1f9d58d427282f7c64910a8" },
     { name = "anemoi-registry" },
-    { name = "anemoi-training", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=638ebda82e03c48b78ad33a5e4c31e19a8ae529f" },
+    { name = "anemoi-training", git = "https://github.com/ecmwf/anemoi-core.git?subdirectory=training&rev=e4877d3811afc593c1f9d58d427282f7c64910a8" },
     { name = "boto3", specifier = ">=1.39.3" },
     { name = "datashader" },
     { name = "earthkit-data", specifier = ">=0.19" },
