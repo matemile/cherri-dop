@@ -27,7 +27,7 @@ unset PYTHONPATH PYTHONHOME || true
 mkdir -p "$UV_CACHE_DIR"
 
 singularity exec -B /pfs,/scratch --rocm "$TORCH_SIF" env -u PYTHONPATH -u BASH_ENV \
-  bash --noprofile --norc -c 'cd /scratch/project_465003270/milemate/base-dop && bash ./scripts/make_container_shim2.sh'
+  bash --noprofile --norc -c 'cd /scratch/project_465003270/milemate/base-dop && bash ./scripts/make_container_shim.sh'
 
 #singularity exec --rocm "$TORCH_SIF" env -u PYTHONPATH -u BASH_ENV bash --noprofile --norc -c '
 #  cd /scratch/project_465003270/milemate/base-dop

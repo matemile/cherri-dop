@@ -43,7 +43,7 @@ rm -rf .venv .container-site
 "$UV_BIN" sync --all-groups --locked
 
 # 3) expose ONLY torch/PyG from the container (replaces the old _container_site.pth)
-bash ./scripts/make_container_shim2.sh
+bash ./scripts/make_container_shim.sh
 
 # 4) test
 #.venv/bin/python - <<EOF
