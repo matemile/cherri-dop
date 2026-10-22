@@ -22,6 +22,7 @@ dependencies = [
     "jupyter>=1.1.1",
     "boto3>=1.39.3",
     "datashader>=0.19.1",
+    "cartopy>=0.25.0",
     "trimesh>=5.1.0",
     "marimo>=0.25.1",
 ]
@@ -40,9 +41,9 @@ override-dependencies = [
 ]
 
 [tool.uv.sources]
-anemoi-training = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "training" }
-anemoi-models = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "models" }
-anemoi-graphs = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "c659d084a7a40c791aa4aa4e5aaf95f52df866ec", subdirectory = "graphs" }
+anemoi-training = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "d09ea3b7d6ef74851e78767f58244da65a4c2d0a", subdirectory = "training" }
+anemoi-models = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "d09ea3b7d6ef74851e78767f58244da65a4c2d0a", subdirectory = "models" }
+anemoi-graphs = { git = "https://github.com/OpheliaMiralles/anemoi-core.git", rev = "d09ea3b7d6ef74851e78767f58244da65a4c2d0a", subdirectory = "graphs" }
 torch = { index = "pytorch-cu128" }
 
 [[tool.uv.index]]

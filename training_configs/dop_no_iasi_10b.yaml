@@ -1,0 +1,18 @@
+defaults:
+- dop_no_iasi
+- _self_
+
+dataloader:
+  limit_batches:
+    training: 10
+    validation: 2
+    test: 2
+
+training:
+  max_epochs: 1
+  max_steps: 10
+
+system:
+  output:
+    root: ${oc.env:SCRATCH,.}/cherri-dop/native-observations-10b/
+    plots: ${oc.env:PWD,.}/plots

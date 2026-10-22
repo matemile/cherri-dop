@@ -14,7 +14,7 @@ from omegaconf import OmegaConf, open_dict
 
 SOURCES = {
     "microwave": {
-        "filename": "mars-odb-radiances-tabular-20200101-20220306-3h.zarr",
+        "filename": "metno-odb-radiances-mars-2020-2025-v2-tabular-3h-observations.zarr",
         "prognostics": ["brightness_temperature"],
         "forcings": [
             "channel",
@@ -30,13 +30,21 @@ SOURCES = {
             "datum_status",
         ],
     },
-    "iasi": {
-        "filename": "metop-iasi-radiances-tabular-20200101-20220108-3h.zarr",
-        "prognostics": ["wavenumber_radiance"],
-        "forcings": ["channel", "wavenumber_cm1"],
-    },
     "ascat": {
-        "filename": "metop-ascat-tabular-20200101-20220108-3h.zarr",
+        "datasets": [
+            {
+                "input": "ascat_2020_2022",
+                "filename": "metno-metop-wind-ascat-2020-2022-v1-tabular-3h-observations.zarr",
+                "start": "2020-01-01T00:00:00",
+                "end": "2022-01-08T21:00:00",
+            },
+            {
+                "input": "ascat_2022_2025",
+                "filename": "metno-metop-wind-ascat-2022-2025-v1-tabular-3h-observations.zarr",
+                "start": "2022-01-09T00:00:00",
+                "end": "2025-12-31T21:00:00",
+            },
+        ],
         "prognostics": ["wind_speed", "wind_dir"],
         "forcings": [
             "wvc_quality_flag",
@@ -60,18 +68,12 @@ def main() -> None:
         "--data-root",
         type=Path,
         default=Path("../../datasets"),
-        help="directory containing the native MARS-ODB, IASI, and ASCAT stores",
+        help="directory containing the native MARS-ODB and ASCAT stores",
     )
     parser.add_argument(
-        "--output", type=Path, default=Path("training_configs/dop.yaml")
+        "--output", type=Path, default=Path("training_configs/dop_no_iasi.yaml")
     )
     parser.add_argument("--max-rows-per-window", type=int, default=32768)
-    parser.add_argument(
-        "--iasi-channel",
-        type=int,
-        action="append",
-        help="optional repeatable IASI channel filter for a smaller proof run",
-    )
     parser.add_argument("--hidden-resolution", type=int, default=5)
     parser.add_argument("--num-channels", type=int, default=128)
     parser.add_argument("--processor-layers", type=int, default=4)
@@ -81,16 +83,18 @@ def main() -> None:
 
     data_root = args.data_root.resolve()
     for name, source in SOURCES.items():
-        path = data_root / source["filename"]
-        if not path.exists():
-            raise FileNotFoundError(f"Missing {name} dataset: {path}")
-        root = zarr.open(path, mode="r")
-        expected = set(source["prognostics"] + source["forcings"])
-        missing = expected - set(root.attrs["variables"])
-        if missing:
-            raise ValueError(
-                f"{path} is missing variables: {', '.join(sorted(missing))}"
-            )
+        stores = source.get("datasets", [source])
+        for store in stores:
+            path = data_root / store["filename"]
+            if not path.exists():
+                raise FileNotFoundError(f"Missing {name} dataset: {path}")
+            root = zarr.open(path, mode="r")
+            expected = set(source["prognostics"] + source["forcings"])
+            missing = expected - set(root.attrs["variables"])
+            if missing:
+                raise ValueError(
+                    f"{path} is missing variables: {', '.join(sorted(missing))}"
+                )
 
     if args.core is None:
         config_dir = Path(str(files("anemoi.training") / "config")).resolve()
@@ -108,6 +112,16 @@ def main() -> None:
     metric_variables = {}
     for name, source in SOURCES.items():
         variables = source["prognostics"] + source["forcings"]
+        dataset = f"${{system.input.{name}}}"
+        if "datasets" in source:
+            dataset = [
+                {
+                    "dataset": f"${{system.input.{store['input']}}}",
+                    "start": store["start"],
+                    "end": store["end"],
+                }
+                for store in source["datasets"]
+            ]
         data_configs[name] = {
             "forcing": source["forcings"],
             "diagnostic": [],
@@ -124,18 +138,15 @@ def main() -> None:
         }
         loaders[name] = {
             "dataset_config": {
-                "dataset": f"${{system.input.{name}}}",
+                "dataset": dataset,
                 "frequency": "${data.frequency}",
                 "window": "(-3h,+0h]",
                 "select": variables,
             },
             "start": "2020-01-01T00:00:00",
-            "end": "2020-01-05T12:00:00",
+            "end": "2025-10-31T21:00:00",
             "max_rows_per_window": args.max_rows_per_window,
-            "trajectory": None,
         }
-        if name == "iasi" and args.iasi_channel:
-            loaders[name]["row_filters"] = {"channel": args.iasi_channel}
         scalers[name] = {
             "general_variable": {
                 "_target_": "anemoi.training.losses.scalers.GeneralVariableLossScaler",
@@ -157,18 +168,18 @@ def main() -> None:
         groups[name] = {"default": "sfc", "sfc": {"param": source["prognostics"]}}
         metric_variables[name] = source["prognostics"]
 
-    config.data.frequency = "12h"
+    config.data.frequency = "3h"
     config.data.resolution = "native-observations"
     config.data.datasets = OmegaConf.create(data_configs)
     for split in ("training", "validation", "test"):
         split_loaders = copy.deepcopy(loaders)
         for loader in split_loaders.values():
             if split == "validation":
-                loader["start"] = "2020-01-06T00:00:00"
-                loader["end"] = "2020-01-07T12:00:00"
+                loader["start"] = "2025-11-01T00:00:00"
+                loader["end"] = "2025-11-30T21:00:00"
             elif split == "test":
-                loader["start"] = "2020-01-08T00:00:00"
-                loader["end"] = "2020-01-09T12:00:00"
+                loader["start"] = "2025-12-01T00:00:00"
+                loader["end"] = "2025-12-31T21:00:00"
         config.dataloader[split].datasets = OmegaConf.create(split_loaders)
     config.dataloader.prefetch_factor = 1
     config.dataloader.persistent_workers = False
@@ -176,8 +187,8 @@ def main() -> None:
     config.dataloader.batch_size.validation = 1
     config.dataloader.batch_size.test = 1
     config.dataloader.limit_batches.training = None
-    config.dataloader.limit_batches.validation = 2
-    config.dataloader.limit_batches.test = 2
+    config.dataloader.limit_batches.validation = None
+    config.dataloader.limit_batches.test = None
     config.dataloader.num_workers.training = 1
     config.dataloader.num_workers.validation = 1
     config.dataloader.num_workers.test = 1
@@ -186,8 +197,8 @@ def main() -> None:
         {
             "_target_": "anemoi.training.tasks.OffsetForecaster",
             "input_offsets": ["0h"],
-            "output_offsets": ["12h"],
-            "rollout_shift": "12h",
+            "output_offsets": ["3h"],
+            "rollout_shift": "3h",
             "rollout": {"start": 1, "epoch_increment": 0, "maximum": 1},
             "validation_rollout": 1,
         },
@@ -197,9 +208,12 @@ def main() -> None:
     config.training.validation_metrics = OmegaConf.create({"datasets": metrics})
     config.training.variable_groups = OmegaConf.create({"datasets": groups})
     config.training.metrics = OmegaConf.create({"datasets": metric_variables})
-    config.training.max_epochs = 1
+    config.training.max_epochs = None
     config.training.num_sanity_val_steps = 0
     config.training.precision = "bf16-mixed"
+    with open_dict(config.training.strategy):
+        config.training.strategy.static_graph = False
+        config.training.strategy.find_unused_parameters = True
 
     config.model.num_channels = args.num_channels
     config.model.processor.num_layers = args.processor_layers
@@ -324,7 +338,34 @@ def main() -> None:
         },
     )
 
-    config.diagnostics.plot.callbacks = []
+    focus_area = {"latlon_bbox": [20.0, -180.0, 90.0, 360.0]}
+    config.diagnostics.plot.settings.projection_kind = "north_polar_stereo"
+    config.diagnostics.plot.settings.datashader = False
+    config.diagnostics.plot.focus_areas = OmegaConf.create(
+        {"north_of_20n": focus_area},
+    )
+    config.diagnostics.plot.callbacks = OmegaConf.create(
+        [
+            {
+                "_target_": "anemoi.training.diagnostics.callbacks.plot.BatchOutputPlot",
+                "tag_infix": "sample",
+                "focus_area": focus_area,
+                "dataset_names": [name],
+                "sample_idx": 0,
+                "parameters": source["prognostics"],
+                "every_n_batches": 750,
+                "with_auxiliary": True,
+                "plot_fn": {
+                    "_target_": (
+                        "anemoi.training.diagnostics.evaluation.plotting.batch_output."
+                        "sample_plot_fn"
+                    ),
+                    "_partial_": True,
+                },
+            }
+            for name, source in SOURCES.items()
+        ],
+    )
     config.diagnostics.plot.datasets_to_plot = list(SOURCES)
     config.diagnostics.plot.parameters = []
     config.diagnostics.callbacks = []
@@ -338,9 +379,12 @@ def main() -> None:
 
     with open_dict(config.system.input):
         for name, source in SOURCES.items():
-            config.system.input[name] = (
-                f"${{oc.env:DOP_DATA_ROOT,../../datasets}}/{source['filename']}"
-            )
+            stores = source.get("datasets", [source])
+            for store in stores:
+                input_name = store.get("input", name)
+                config.system.input[input_name] = (
+                    f"${{oc.env:DOP_DATA_ROOT,../../datasets}}/{store['filename']}"
+                )
         config.system.input.graph = "${system.output.root}/graph.pt"
     config.system.output.root = "${oc.env:SCRATCH,.}/cherri-dop/native-observations/"
     config.system.hardware.accelerator = "gpu"
