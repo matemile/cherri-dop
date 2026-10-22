@@ -375,7 +375,7 @@ system:
     truncation_inv: null
     warm_start: null
     dataset_b: aifs-ea-an-oper-0001-mars-${data.resolution}-1979-2023-6h-v8
-    microwave: ${oc.env:DOP_DATA_ROOT,../../datasets}/mars-odb-radiances-tabular-20200101-20220306-3h.zarr
+    microwave: ${oc.env:DOP_DATA_ROOT,../../datasets}/metno-odb-radiances-mars-2020-2025-v2-tabular-3h-observations.zarr
     iasi: ${oc.env:DOP_DATA_ROOT,../../datasets}/metop-iasi-radiances-tabular-20200101-20220108-3h.zarr
     ascat: ${oc.env:DOP_DATA_ROOT,../../datasets}/metop-ascat-tabular-20200101-20220108-3h.zarr
   hardware:

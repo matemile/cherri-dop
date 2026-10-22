@@ -17,7 +17,7 @@ plt.switch_backend("Agg")
 
 
 DATASET_FILES = {
-    "microwave": "mars-odb-radiances-tabular-20200101-20220306-3h.zarr",
+    "microwave": "metno-odb-radiances-mars-2020-2025-v2-tabular-3h-observations.zarr",
     "iasi": "metop-iasi-radiances-tabular-20200101-20220108-3h.zarr",
     "ascat": "metop-ascat-tabular-20200101-20220108-3h.zarr",
     "frost": "metno-frost-dwh-hourly-2020-2025-v2-tabular-1h-observations-lat-gt-20.zarr",

@@ -28,3 +28,10 @@ htmlcov/
 # files 
 notebooks/*.pt
 notebooks/*marimo*
+
+# Local training artifacts
+.lumi-deps/
+cherri-dop/
+logs/
+outputs/
+plots/
