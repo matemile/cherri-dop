@@ -241,7 +241,7 @@ def main() -> None:
     config.model.node_trainable_parameters = OmegaConf.create({"hidden": 8})
     config.model.edge_trainable_parameters.data2hidden = 0
     config.model.edge_trainable_parameters.hidden2data = 0
-    config.model.bounding = OmegaConf.create({"datasets": {}})
+    config.model.bounding = OmegaConf.create([])
 
     graph_nodes = {
         name: {

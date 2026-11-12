@@ -53,12 +53,14 @@ def read_window(path: Path, epoch: int, variables: list[str], max_rows: int):
     stored_variables = list(store.attrs["variables"])
     columns = [len(meta) + stored_variables.index(name) for name in variables]
     payload = {
-        "data": torch.from_numpy(rows[:, columns].astype("float32", copy=False)),
+        "data": torch.from_numpy(rows[:, columns].astype("float32", copy=False)).unsqueeze(0),
+        "data_type": "tabular",
+        "variables": variables,
         "latitudes": rows[:, meta.index("__latitude")],
         "longitudes": rows[:, meta.index("__longitude")],
         "timedeltas": timedeltas,
         "boundaries": [(0, len(rows))],
-        "layout": ("grid", "variables"),
+        "layout": ("ensemble", "grid", "variables"),
     }
     return payload, rows[:, len(meta) :], stored_variables
 
@@ -119,20 +121,24 @@ def main() -> None:
     epoch = int(np.datetime64(args.date).astype("datetime64[s]").astype(np.int64))
     output_epoch = epoch + args.lead_hours * 3600
 
-    inputs, targets, truth = {}, {}, {}
+    inputs, targets, target_forcings, truth = {}, {}, {}, {}
     for name in model.data_indices:
         dataset_path = args.data_root / DATASET_FILES[name]
         input_names = list(model.data_indices[name].model.input.ordered_names)
-        forcing_names = list(model._target_forcing_names(name))
+        indices = model.data_indices[name].data.input
+        forcing_names = [indices.full_index_to_name[int(index)] for index in indices.forcing]
         inputs[name], _, _ = read_window(
             dataset_path, epoch, input_names, args.max_rows
         )
-        targets[name], values, stored_names = read_window(
+        target_forcings[name], values, stored_names = read_window(
             dataset_path, output_epoch, forcing_names, args.max_rows
         )
+        target_forcings[name]["timedeltas"] += args.lead_hours * 3600
+        targets[name] = {key: value for key, value in target_forcings[name].items() if key != "data"}
+        targets[name]["variables"] = list(model.data_indices[name].model.output.ordered_names)
         truth[name] = (values, stored_names)
         inputs[name]["data"] = inputs[name]["data"].to(device)
-        targets[name]["data"] = targets[name]["data"].to(device)
+        target_forcings[name]["data"] = target_forcings[name]["data"].to(device)
 
     hidden = core._graph_name_hidden
     providers = []
@@ -159,11 +165,11 @@ def main() -> None:
         else nullcontext()
     )
     with torch.inference_mode(), autocast:
-        predictions = model.predict_step(inputs, targets)
+        predictions = model.predict_step(inputs, target_template=targets, target_forcing=target_forcings)
 
     args.output.mkdir(parents=True, exist_ok=True)
     torch.save(predictions, args.output / "predictions.pt")
-    torch.save(core._graph_data.cpu(), args.output / "static_graph.pt")
+    torch.save(model.graph_data.cpu(), args.output / "static_graph.pt")
     for name, role, provider in providers:
         graph = provider.consume_captured_graph()
         if graph is None:
@@ -173,7 +179,7 @@ def main() -> None:
         plot_graph(graph, args.output / f"{name}_{role}_graph.png")
 
     for name, payload in predictions.items():
-        values = payload["data"].detach().float().cpu().numpy()
+        values = payload["data"].squeeze(0).detach().float().cpu().numpy()
         latitude = payload["latitudes"].detach().cpu().numpy()
         longitude = payload["longitudes"].detach().cpu().numpy()
         longitude = (longitude + 180) % 360 - 180

@@ -122,6 +122,8 @@ dataloader:
   prefetch_factor: 2
   pin_memory: true
   read_group_size: ${system.hardware.num_gpus_per_model}
+  loading_policy:
+    _target_: anemoi.training.data.loading.SynchronizedLoadingPolicy
   num_workers:
     training: 4
     validation: 4
@@ -436,8 +438,6 @@ diagnostics:
       save_dir: ${system.output.logs.mlflow}
       log_model: false
     interval: 100
-    wandb:
-      entity: a
   debug:
     anomaly_detection: false
   enable_checkpointing: true
@@ -459,7 +459,7 @@ diagnostics:
   print_memory_summary: false
 system:
   output:
-    root: ${oc.env:SCRATCH}/anemoi-test/dop/
+    root: ${oc.env:SCRATCH,.}/anemoi-test/dop/
     logs:
       root: logs
       wandb: wandb
@@ -478,7 +478,6 @@ system:
     loss_matrices_path: null
     truncation: null
     truncation_inv: null
-    warm_start: null
   hardware:
     accelerator: auto
     num_gpus_per_node: ${oc.decode:${oc.env:SLURM_GPUS_PER_NODE,1}}
@@ -615,8 +614,6 @@ model:
 
   processor:
     _target_: anemoi.models.layers.processor.TransformerProcessor
-    trainable_size: ${model.edge_trainable_parameters.hidden2hidden}
-    sub_graph_edge_attributes: ${model.attributes.edges}
     num_channels: ${model.num_channels}
     num_layers: 16
     num_chunks: 4
@@ -863,10 +860,6 @@ training:
     lr: 1.65e-4 # 3.125e-04
     pl_lr_scheduler:
       interval: step
-  run_id: null
-  fork_run_id: null
-  transfer_learning: false
-  load_weights_only: false
   update_ds_stats_on_ckpt_load:
     states: false
     tendencies: true
@@ -886,7 +879,6 @@ training:
   loss_gradient_scaling: false
   max_epochs: 100
   max_steps: 150000
-  submodules_to_freeze: []
   training_loss:
     datasets:
       era5:

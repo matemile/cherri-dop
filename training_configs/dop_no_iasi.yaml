@@ -576,8 +576,7 @@ model:
     - edge_length
     - edge_dirs
     nodes: []
-  bounding:
-    datasets: {}
+  bounding: []
 task:
   _target_: anemoi.training.tasks.OffsetForecaster
   input_offsets:

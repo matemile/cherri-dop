@@ -63,6 +63,8 @@ dataloader:
   persistent_workers: false
   fake_dataloading: false
   read_group_size: ${system.hardware.num_gpus_per_model}
+  loading_policy:
+    _target_: anemoi.training.data.loading.SynchronizedLoadingPolicy
   num_workers:
     training: 1
     validation: 1
@@ -373,7 +375,6 @@ system:
     loss_matrices_path: null
     truncation: null
     truncation_inv: null
-    warm_start: null
     dataset_b: aifs-ea-an-oper-0001-mars-${data.resolution}-1979-2023-6h-v8
     microwave: ${oc.env:DOP_DATA_ROOT,../../datasets}/metno-odb-radiances-mars-2020-2025-v2-tabular-3h-observations.zarr
     iasi: ${oc.env:DOP_DATA_ROOT,../../datasets}/metop-iasi-radiances-tabular-20200101-20220108-3h.zarr
@@ -649,8 +650,7 @@ model:
     - edge_length
     - edge_dirs
     nodes: []
-  bounding:
-    datasets: {}
+  bounding: []
 task:
   _target_: anemoi.training.tasks.OffsetForecaster
   input_offsets:
@@ -713,10 +713,6 @@ training:
     lr: 6.25e-05
     pl_lr_scheduler:
       interval: step
-  run_id: null
-  fork_run_id: null
-  transfer_learning: false
-  load_weights_only: false
   update_ds_stats_on_ckpt_load:
     states: false
     tendencies: true
@@ -741,7 +737,6 @@ training:
   loss_gradient_scaling: false
   max_epochs: 1
   max_steps: 150000
-  submodules_to_freeze: []
   validation_metrics:
     datasets:
       microwave:

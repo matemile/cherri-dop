@@ -10,8 +10,8 @@ resolution-markers = [
 
 [manifest]
 overrides = [
-    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a" },
-    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a" },
+    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=785b13afc345248bd575f071f9536b87758d6738" },
+    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=785b13afc345248bd575f071f9536b87758d6738" },
 ]
 
 [[package]]
@@ -146,8 +146,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-graphs"
-version = "0.9.7.post531"
-source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a#d09ea3b7d6ef74851e78767f58244da65a4c2d0a" }
+version = "0.0.0.post1957"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=785b13afc345248bd575f071f9536b87758d6738#785b13afc345248bd575f071f9536b87758d6738" }
 dependencies = [
     { name = "anemoi-utils" },
     { name = "hydra-core" },
@@ -195,8 +195,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-models"
-version = "0.19.0.post531"
-source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a#d09ea3b7d6ef74851e78767f58244da65a4c2d0a" }
+version = "0.0.0.post1957"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=785b13afc345248bd575f071f9536b87758d6738#785b13afc345248bd575f071f9536b87758d6738" }
 dependencies = [
     { name = "anemoi-graphs" },
     { name = "anemoi-utils" },
@@ -225,8 +225,8 @@ wheels = [
 
 [[package]]
 name = "anemoi-training"
-version = "0.17.0.post531"
-source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a#d09ea3b7d6ef74851e78767f58244da65a4c2d0a" }
+version = "0.0.0.post1957"
+source = { git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=785b13afc345248bd575f071f9536b87758d6738#785b13afc345248bd575f071f9536b87758d6738" }
 dependencies = [
     { name = "anemoi-datasets" },
     { name = "anemoi-graphs" },
@@ -248,7 +248,6 @@ dependencies = [
     { name = "torchinfo" },
     { name = "torchvision" },
     { name = "tqdm" },
-    { name = "zarr" },
 ]
 
 [[package]]
@@ -864,11 +863,11 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anemoi-datasets" },
-    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a" },
+    { name = "anemoi-graphs", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=graphs&rev=785b13afc345248bd575f071f9536b87758d6738" },
     { name = "anemoi-inference" },
-    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a" },
+    { name = "anemoi-models", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=models&rev=785b13afc345248bd575f071f9536b87758d6738" },
     { name = "anemoi-registry" },
-    { name = "anemoi-training", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=d09ea3b7d6ef74851e78767f58244da65a4c2d0a" },
+    { name = "anemoi-training", git = "https://github.com/OpheliaMiralles/anemoi-core.git?subdirectory=training&rev=785b13afc345248bd575f071f9536b87758d6738" },
     { name = "boto3", specifier = ">=1.39.3" },
     { name = "cartopy", specifier = ">=0.25.0" },
     { name = "datashader", specifier = ">=0.19.1" },
